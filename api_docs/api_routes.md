@@ -212,7 +212,9 @@ Users should be able to view all Posts.
           "price": 300,
           "caption": "Caption Here",
           "available": true,
-          "imageUrl": "image.url"
+          "imageUrl": "image.url",
+          "createdAt": "2024-10-29 18:38:09.043894",
+          "updatedAt": "2024-10-29 18:38:09.043894"
         }
         // more posts...
       ]
@@ -288,7 +290,7 @@ Return details of a post of the current session user. Takes user to their profil
         "updatedAt": "2024-10-29 18:38:09.043894"
       },
       {
-        // more listed products
+        // more listed posts
       }
     ]
     ```
@@ -304,7 +306,7 @@ Return details of a post of the current session user. Takes user to their profil
 
 ### Get all Posts by a user's Id
 
-Return all products by specified user's id. Goes to an individual artists profile page.
+Return all posts by specified user's id. Goes to an individual artists profile page.
 
 - **Require Authentication**: False
 - **Request**
@@ -332,7 +334,7 @@ Return all products by specified user's id. Goes to an individual artists profil
         "updatedAt": "2024-10-29 18:38:09.043894"
       },
       {
-        // more listed products
+        // more listed posts
       }
     ]
     ```
@@ -382,8 +384,10 @@ Artists (users) should be able to create a Post.
         "style": "Black and Grey Botanicals",
         "price": 600,
         "caption": "Caption Here",
-        "available": true,
+        "available": false,
         "imageUrl": "image.url",
+        "createdAt": "2024-10-29 18:38:09.043894",
+        "updatedAt": "2024-10-29 18:38:09.043894"
       }
     }
     ```
@@ -439,10 +443,12 @@ Users should be able to update their Post(s).
         "userId": 3,
         "size": "5-6 inches",
         "style": "Black and Grey Botanicals",
-        "price": 700,
-        "caption": "Edited caption Here",
+        "price": 600,
+        "caption": "Caption Here",
         "available": false,
         "imageUrl": "image.url",
+        "createdAt": "2024-10-29 18:38:09.043894",
+        "updatedAt": "2024-10-29 18:38:09.043894"
       }
     }
     ```
@@ -501,16 +507,16 @@ Users should be able to delete their Post(s).
     }
     ```
 
-## Reviews
+## Comments
 
-### Get all reviews by product's id
+### Get all comments by post's id
 
-Users should be able to view all reviews on a Product.
+Users should be able to view all comments on a Post.
 
 - **Require authentication**: False
 - **Request**
   - **Method**: GET
-  - **Route path**: /api/products/:productId/reviews
+  - **Route path**: /api/posts/:postId/comments
   - **Body**: None
 - **Successful Response**
 
@@ -518,41 +524,43 @@ Users should be able to view all reviews on a Product.
   - **Body**:
     ```json
     {
-      "reviews": [
+      "comments": [
         {
           "id": 1,
-          "productId": 1,
+          "postId": 1,
           "userId": 1,
-          "review": "Random comment"
+          "content": "Ooooh so sick!",
+          "createdAt": "2024-11-29 19:38:09.043894",
+          "updatedAt": "2024-11-29 19:38:09.043894"
         }
-        // more reviews...
+        // more comments...
       ]
     }
     ```
 
-- **Error Response: Couldn't find a product by specified id**
+- **Error Response: Couldn't find a post by specified id**
 
   - **Status Code**: 404
   - **Body**:
     ```json
     {
-      "message": "Product could not be found!"
+      "message": "Post could not be found!"
     }
     ```
 
-### Create and return a review for a product by id
+### Create and return a comment for a post by id
 
-Users should be able to create a review for a Product.
+Users should be able to create a comment for a Post.
 
 - **Require authentication**: True
 - **Request**
 
   - **Method**: POST
-  - **Route path**: /api/products/:productId/reviews
+  - **Route path**: /api/posts/:postId/comments
   - **Body**:
     ```json
     {
-      "review": "Random comment"
+      "comment": "Need to get this!!"
     }
     ```
 
@@ -562,11 +570,13 @@ Users should be able to create a review for a Product.
   - **Body**:
     ```json
     {
-      "review": {
+      "comment": {
         "id": 2,
-        "productId": 1,
-        "userId": 2,
-        "review": "Random comment"
+        "postId": 2,
+        "userId": 1,
+        "content": "Need to get this!!",
+        "createdAt": "2024-11-29 19:38:09.043894",
+        "updatedAt": "2024-11-29 19:38:09.043894"
       }
     }
     ```
@@ -577,46 +587,46 @@ Users should be able to create a review for a Product.
   - **Body**:
     ```json
     {
-      "message": "Bad **Request**",
+      "message": "Bad Request",
       "errors": {
-        "review": "Review is required"
+        "comment": "Comment is required"
       }
     }
     ```
 
-- **Error Response: Couldn't find a product by specified id**
+- **Error Response: Couldn't find a post by specified id**
 
   - **Status Code**: 404
   - **Body**:
     ```json
     {
-      "message": "Product could not be found"
+      "message": "Post could not be found"
     }
     ```
 
-- **Error Response: Review from the current user already Exists for the Product**
+- **Error Response: Comment from the current user already exists for the Post**
 
   - **Status Code**: 500
   - **Body**:
     ```json
     {
-      "message": "User already has a review for this product"
+      "message": "User already has a comment for this post"
     }
     ```
 
-### Update and return an existing review
+### Update and return an existing comment
 
-Users should be able to update their review for a Product.
+Users should be able to update their comment for a Post.
 
 - **Require authentication**: True
 - **Request**
 
   - **Method**: Put
-  - **Route path**: /api/reviews/:reviewId
+  - **Route path**: /api/comments/:commentId
   - **Body**:
     ```json
     {
-      "review": "Random updated comment"
+      "comment": "Rex was awesome!! Super kind with a light touch. I love my tattoo!"
     }
     ```
 
@@ -626,11 +636,13 @@ Users should be able to update their review for a Product.
 
 ```json
 {
-  "review": {
+  "comment": {
     "id": 2,
-    "productId": 1,
+    "postId": 1,
     "userId": 2,
-    "review": "Random updated comment"
+    "comment": "Rex was awesome!! Super kind with a light touch. I love my tattoo!",
+    "createdAt": "2024-11-29 19:38:09.043894",
+    "updatedAt": "2024-11-29 19:38:09.043894"
   }
 }
 ```
@@ -641,25 +653,25 @@ Users should be able to update their review for a Product.
   - **Body**:
     ```json
     {
-      "message": "Bad **Request**",
+      "message": "Bad Request",
       "errors": {
-        "review": "Review is required"
+        "comment": "Comment is required"
       }
     }
     ```
 
-- **Error Response: Couldn't find a product by specified id**
+- **Error Response: Couldn't find a post by specified id**
 
   - **Status Code**: 404
   - **Body**:
 
     ```json
     {
-      "message": "Product could not be found!"
+      "message": "Post could not be found!"
     }
     ```
 
-  - **Error Response: Couldn't find a product by specified id**
+- **Error Response: User is not logged in**
 
   - **Status Code**: 403
   - **Body**:
@@ -669,133 +681,14 @@ Users should be able to update their review for a Product.
     }
     ```
 
-### Delete an existing Review
+### Delete an existing comment
 
-Users should be able to delete their review from a Product.
-
-- **Require authentication**: True
-- **Request**
-  - **Method**: DELETE
-  - **Route path**: /api/reviews/:reviewId
-  - **Body**: None
-- **Successful Response**
-
-  - **Status Code**: 200
-  - **Body**:
-    ```json
-    {
-      "message": "Review successfully deleted"
-    }
-    ```
-
-- **Error Response: Couldn't find a review by specified id**
-
-  - **Status Code**: 404
-  - **Body**:
-    ```json
-    {
-      "message": "Review couldn't be found"
-    }
-    ```
-
-## Shopping Cart
-
-### View all products in the cart.
-
-Users should be able to view all products added to their cart.
-
-- **Require authentication**: True
-- **Request**
-  - **Method**: GET
-  - **Route path**: /api/cart
-  - **Body**: None
-- **Successful Response**
-
-  - **Status Code**: 200
-  - **Body**:
-    ```json
-    {
-      "cart": {
-        "id": 1,
-        "products": [
-          {
-            "productId": 1,
-            "name": "ProductName",
-            "quantity": 2,
-            "price": 2
-          }
-          // more products in cart
-        ]
-      }
-    }
-    ```
-
-- **Error Response: User not logged in**
-
-  - **Status Code**: 401
-  - **Body**:
-    ```json
-    {
-      "message": "Unauthorized"
-    }
-    ```
-
-### Add product to shopping cart
-
-Users should be able to add products to their shopping cart.
-
-- **Require authentication**: True
-- **Request**
-
-  - **Method**: POST
-  - **Route path**: /api/cart
-  - **Body**:
-    ```json
-    {
-      "productId": 1,
-      "quantity": 2
-    }
-    ```
-
-- **Successful Response**
-
-  - **Status Code**: 200
-  - **Body**:
-    ```json
-    {
-      "message": "Product has been added to cart",
-      "cart": {
-        "id": 1
-        "products": [
-          {
-            "productId": 1,
-            "name": "ProductName",
-            "quantity": 2,
-            "price": 2
-          }
-        ]
-      }
-    }
-    ```
-
-- **Error Response: Body Validation Errors**
-
-  - **Status Code**: 400
-  - **Body**:
-    ```json
-    {
-      "message": "Product not found"
-    }
-    ```
-
-### Remove product from shopping cart
-
-Users should be able to remove products from their shopping cart.
+Users should be able to delete their comment from a post.
 
 - **Require authentication**: True
 - **Request**
   - **Method**: DELETE
-  - **Route path**: /api/cart/:productId
+  - **Route path**: /api/comments/:commentId
   - **Body**: None
 - **Successful Response**
 
@@ -803,59 +696,30 @@ Users should be able to remove products from their shopping cart.
   - **Body**:
     ```json
     {
-      "message": "Product removed from Cart"
+      "message": "Comment successfully deleted"
     }
     ```
 
-- **Error Response: Can't find product**
+- **Error Response: Couldn't find a comment by specified id**
 
   - **Status Code**: 404
   - **Body**:
     ```json
     {
-      "message": "Can't find product in Cart"
+      "message": "comment couldn't be found"
     }
     ```
 
-### Perform a "transaction"
+## Likes
 
-Users should be able to perform a "transaction" to complete their purchase.
+### View likes
 
-- **Require authentication**: True
-- **Request**
-  - **Method**: POST
-  - **Route path**: /api/cart/checkout
-  - **Body**: None
-- **Successful Response**
-
-  - **Status Code**: 200
-  - **Body**:
-    ```json
-    {
-      "message": "Your transaction of 19.98 was successful"
-    }
-    ```
-
-- **Error Response**
-
-  - **Status Code**: 404
-  - **Body**:
-    ```json
-    {
-      "message": "Your cart is empty"
-    }
-    ```
-
-## Wishlist
-
-### View wishlist
-
-Users should be able to view all of their wishlisted products.
+Users should be able to view all of their liked posts.
 
 - **Require authentication**: True
 - **Request**
   - **Method**: GET
-  - **Route path**: /api/wishlist
+  - **Route path**: /api/likes
   - **Body**: None
 - **Successful Response**
   - **Status Code**: 200
@@ -863,36 +727,48 @@ Users should be able to view all of their wishlisted products.
 
 ```json
 {
-  "wishlist": [
+  "likes": [
     {
-      "productId": 1,
-      "productName": "ProductName",
+      "postId": 1,
       "userId": 1,
-      "price": 2
+      "size": "2-3 inches",
+      "style": "American Traditional",
+      "price": 300,
+      "caption": "Caption Here",
+      "available": true,
+      "imageUrl": "image.url",
+      "createdAt": "2024-10-29 18:38:09.043894",
+      "updatedAt": "2024-10-29 18:38:09.043894"
     },
     {
-      "productId": 2,
-      "name": "ProductName2",
-      "userId": 1,
-      "price": 4
+      "postId": 2,
+      "userId": 3,
+      "size": "5-6 inches",
+      "style": "Black and Grey Botanicals",
+      "price": 600,
+      "caption": "Caption Here",
+      "available": false,
+      "imageUrl": "image.url",
+      "createdAt": "2024-10-29 18:38:09.043894",
+      "updatedAt": "2024-10-29 18:38:09.043894"
     }
   ]
 }
 ```
 
-### Add product to Wishlist
+### Add post to likes
 
-Users should be able to wishlisted products.
+Users should be able to liked posts.
 
 - **Require authentication**: True
 - **Request**
 
   - **Method**: POST
-  - **Route path**: /api/wishlist
+  - **Route path**: /api/likes
   - **Body**:
     ```json
     {
-      "productId": 1
+      "postId": 1
     }
     ```
 
@@ -902,35 +778,41 @@ Users should be able to wishlisted products.
   - **Body**:
     ```json
     {
-      "message": "Product added to the wishlist"
-      "wishlist": [
+      "message": "post added to the likes",
+      "likes": [
         {
-          "productId": 1,
-          "productName": "ProductName",
-          "userId": 2,
-          "price": 2
+          "postId": 1,
+          "userId": 1,
+          "size": "2-3 inches",
+          "style": "American Traditional",
+          "price": 300,
+          "caption": "Caption Here",
+          "available": true,
+          "imageUrl": "image.url",
+          "createdAt": "2024-10-29 18:38:09.043894",
+          "updatedAt": "2024-10-29 18:38:09.043894"
         }
       ]
     }
     ```
 
-- **Error Response: Product already exists in wishlist**
+- **Error Response: post already exists in likes**
   - **Status Code**: 400
   - **Body**:
     ```json
     {
-      "message": "Product is already in the wishlist"
+      "message": "Post is already in the likes"
     }
     ```
 
-### Delete product from Wishlist
+### Delete post from likes
 
-Users should be able to delete products from their Wishlist.
+Users should be able to delete posts from their likes.
 
 - **Request** Authentication: True
 - **Request**
   - **Method**: DELETE
-  - **Route path**: /api/wishlist/:productId
+  - **Route path**: /api/likes/:postId
   - **Body**: None
 - **Successful Response**
 
@@ -938,7 +820,7 @@ Users should be able to delete products from their Wishlist.
   - **Body**:
     ```json
     {
-      "message": "Product removed from the wishlist"
+      "message": "Post removed from the likes"
     }
     ```
 
@@ -947,6 +829,10 @@ Users should be able to delete products from their Wishlist.
   - **Body**:
     ```json
     {
-      "message": "Product not found in wishlist"
+      "message": "Post not found in likes"
     }
     ```
+
+## Bookings TBD until requirements complete
+
+## Messages TBD until requirements complete
