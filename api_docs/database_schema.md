@@ -1,5 +1,7 @@
 # **Database Schema**
 
+![flashdrop-database-schema](FlashDrop-Schema.png)
+
 ## `users`
 
 | column name     | data type | details               |
