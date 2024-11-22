@@ -24,7 +24,7 @@
 | size        | string    | not null              |
 | price       | decimal   | not null              |
 | caption     | string    | not null              |
-| available   | boolean   | not null              |
+| available   | boolean   | not null, default=true|
 | imageUrl    | string    | not null              |
 | createdAt   | datetime  | not null              |
 | updatedAt   | datetime  | not null              |

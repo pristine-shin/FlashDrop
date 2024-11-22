@@ -320,16 +320,16 @@ Return all products by specified user's id. Goes to an individual artists profil
     ```json
     [
       {
-        "productId": 1,
-        "name": "Adele - 30",
-        "userId": 1,
-        "type": "CD",
-        "genre": "",
-        "price": "14.99",
-        "description": "Adele's highly anticipated album showcasing her powerful vocals and emotional lyrics.",
-        "imageUrl": ".../seed-images/products/Adele-30(CD).jpg",
-        "createdAt": "2024-10-30 23:51:27",
-        "updatedAt": "2024-10-30 23:51:27"
+        "postId": 2,
+        "userId": 3,
+        "size": "5-6 inches",
+        "style": "Black and Grey Botanicals",
+        "price": 600,
+        "caption": "Caption Here",
+        "available": false,
+        "imageUrl": "image.url",
+        "createdAt": "2024-10-29 18:38:09.043894",
+        "updatedAt": "2024-10-29 18:38:09.043894"
       },
       {
         // more listed products
@@ -346,25 +346,26 @@ Return all products by specified user's id. Goes to an individual artists profil
     }
     ```
 
-### Create a Product
+### Create a Post
 
-Users should be able to create a Product.
+Artists (users) should be able to create a Post.
 
 - **Require authentication**: True
+- **Validations**: User must be an artist in order to create a post
 - **Request**
 
   - **Method**: POST
-  - **Route path**: /api/products
+  - **Route path**: /api/posts
   - **Body**:
     ```json
     {
-      "name": "ProductName2",
-      "userId": 2,
-      "type": "CD",
-      "genre": "Rock",
-      "price": 4,
-      "description": "Description here too",
-      "imageUrl": "image.url"
+      "userId": 3,
+      "size": "5-6 inches",
+      "style": "Black and Grey Botanicals",
+      "price": 600,
+      "caption": "Caption Here",
+      "available": true,
+      "imageUrl": "image.url",
     }
     ```
 
@@ -374,15 +375,15 @@ Users should be able to create a Product.
   - **Body**:
     ```json
     {
-      "product": {
-        "productId": 2,
-        "name": "ProductName2",
-        "userId": 2,
-        "type": "CD",
-        "genre": "Rock",
-        "price": 4,
-        "description": "Description here too",
-        "imageUrl": "image.url"
+      "post": {
+        "postId": 2,
+        "userId": 3,
+        "size": "5-6 inches",
+        "style": "Black and Grey Botanicals",
+        "price": 600,
+        "caption": "Caption Here",
+        "available": true,
+        "imageUrl": "image.url",
       }
     }
     ```
@@ -394,36 +395,36 @@ Users should be able to create a Product.
     {
       "message": "Bad Request",
       "errors": {
-        "name": "Name is required",
         "userId": "User is required",
-        "type": "Type is required",
+        "size": "Size is required",
+        "style": "Style is required",
         "price": "Price must be a positive number",
-        "description": "Description is required",
+        "caption": "Caption is required",
         "imageUrl": "Image is required"
       }
     }
     ```
 
-### Update and Return existing Product
+### Update and Return existing Post
 
-Users should be able to update their Product(s).
+Users should be able to update their Post(s).
 
 - **Require authentication**: True
-- **Require proper Authentication: Product must belong to the user**
+- **Require proper Authentication: Post must belong to the user**
 - **Request**
 
   - **Method**: Put
-  - **Route path**: /api/products/:productId
+  - **Route path**: /api/posts/:postId
   - **Body**:
     ```json
     {
-      "name": "ProductName",
-      "userId": 1,
-      "type": "CD",
-      "genre": "Rock",
-      "price": 2,
-      "description": "Updated description here",
-      "imageUrl": "image.url"
+      "userId": 3,
+      "size": "5-6 inches",
+      "style": "Black and Grey Botanicals",
+      "price": 700,
+      "caption": "Edited caption Here",
+      "available": false,
+      "imageUrl": "image.url",
     }
     ```
 
@@ -433,15 +434,15 @@ Users should be able to update their Product(s).
   - **Body**:
     ```json
     {
-      "product": {
-        "productId": 1,
-        "name": "ProductName",
-        "userId": 1,
-        "type": "CD",
-        "genre": "Rock",
-        "price": 2,
-        "description": "Updated description here",
-        "imageUrl": "image.url"
+      "post": {
+        "postId": 2,
+        "userId": 3,
+        "size": "5-6 inches",
+        "style": "Black and Grey Botanicals",
+        "price": 700,
+        "caption": "Edited caption Here",
+        "available": false,
+        "imageUrl": "image.url",
       }
     }
     ```
@@ -453,34 +454,34 @@ Users should be able to update their Product(s).
     {
       "message": "Bad Request",
       "errors": {
-        "name": "Name is required",
         "userId": "User is required",
-        "type": "type is required",
+        "size": "Size is required",
+        "style": "Style is required",
         "price": "Price must be a positive number",
-        "description": "Description is required",
+        "caption": "Caption is required",
         "imageUrl": "Image is required"
       }
     }
     ```
-- **Error Response: Couldn't find a product by specified id**
+- **Error Response: Couldn't find a post by specified id**
   - **Status Code**: 404
   - **Body**:
     ```json
     {
-      "message": "Product could not be found!"
+      "message": "Post could not be found!"
     }
     ```
 
-### Delete an existing product.
+### Delete an existing post.
 
-Users should be able to delete their Product(s).
+Users should be able to delete their Post(s).
 
 - **Require authentication**: True
-- **Require proper Authentication: Product must belong to the user**
+- **Require proper Authentication: Post must belong to the user**
 - **Request**
 
   - **Method**: DELETE
-  - **Route path**: /api/products/:productId
+  - **Route path**: /api/posts/:postId
   - **Body**: None
 
 - **Successful Response**
@@ -488,15 +489,15 @@ Users should be able to delete their Product(s).
   - **Body**:
     ```json
     {
-      "message": "Product successfully deleted"
+      "message": "Post successfully deleted"
     }
     ```
-- **Error Response: Couldn't find a product by specified id**
+- **Error Response: Couldn't find a post by specified id**
   - **Status Code**: 404
   - **Body**:
     ```json
     {
-      "message": "Product not be found!"
+      "message": "Post not be found!"
     }
     ```
 
