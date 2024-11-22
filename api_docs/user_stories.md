@@ -33,7 +33,7 @@ As a registered and unauthorized user, I want to be able to log in to the websit
 As a logged-in user, I want to log out via an easy-to-find "Log Out" button on the navigation bar.
 While on any page of the site:
 
-* I can log out of my account and be redirected to a page displaying recent products or tracks.
+* I can log out of my account and be redirected to a page displaying recent posts or tracks.
   So that I can easily log out and keep my information secure.
 
 <br></br>
@@ -58,7 +58,7 @@ While on any page of the site:
 
 ## **Delete Posts**
 
-* As a logged-in user, I want to be able to delete my product listings.
+* As a logged-in user, I want to be able to delete my post listings.
 
 * I can click "Delete" to remove a post I no longer want to showcase.
 

@@ -38,7 +38,7 @@
 
 * Logged-in users can post comments on posts.
 * Users can edit and delete their own comments.
-* All users can view comments on products, but they don't have access to commenting.
+* All users can view comments on posts, but they don't have access to commenting.
 
 ---
 
@@ -52,7 +52,7 @@
 * Users can edit their previously posted comments.
 
 ### Delete a Comment
-* Users can delete their own comments, removing them from the product’s Comment section.
+* Users can delete their own comments, removing them from the post’s Comment section.
 
 ---
 
