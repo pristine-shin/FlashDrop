@@ -7,12 +7,12 @@
 | column name     | data type | details               |
 | --------------- | --------- | --------------------- |
 | id              | integer   | not null, primary key |
-| bio             | string    |                       |
 | email           | string    | not null, unique      |
 | username        | string    | not null, unique      |
 | hashedPassword  | string    | not null, unique      |
-| is_artist       | boolean   | not null              |
+| is_artist       | boolean   | not null, default=True|
 | profileImageUrl | string    | not null              |
+| bio             | string    |                       |
 | createdAt       | datetime  | not null              |
 | updatedAt       | datetime  | not null              |
 

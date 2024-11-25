@@ -1,6 +1,7 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from datetime import datetime
 
 
 class User(db.Model, UserMixin):
@@ -10,9 +11,19 @@ class User(db.Model, UserMixin):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(40), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
+    username = db.Column(db.String(40), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
+    is_artist = db.Column(db.Boolean, nullable=False, default=True)
+    profileImageUrl = db.Column(db.String)
+    bio = db.Column(db.String)
+    createdAt = db.Column(db.DateTime, default=datetime.now, nullable=False)
+    updatedAt = db.Column(db.DateTime, default=datetime.now, onupdate=datetime.now, nullable=False)
+
+    posts = db.relationship('Post', backref='user', cascade='all, delete-orphan')
+    comments = db.relationship('Comment', backref='user', cascade='all, delete-orphan')
+    likes = db.relationship('Like', backref='user', uselist=False, cascade='all, delete-orphan')
+
 
     @property
     def password(self):
@@ -28,6 +39,14 @@ class User(db.Model, UserMixin):
     def to_dict(self):
         return {
             'id': self.id,
+            'email': self.email,
             'username': self.username,
-            'email': self.email
+            'is_artist': self.is_artist,
+            'profileImageUrl': self.profileImageUrl if self.profileImageUrl else "",
+            'bio': self.bio if self.bio else "",
+            'createdAt': self.createdAt.strftime('%Y-%m-%d %H:%M:%S'),
+            'updatedAt': self.updatedAt.strftime('%Y-%m-%d %H:%M:%S'),
+            # 'posts': [post.to_dict() for post in self.posts],
+            # 'comments': [comment.to_dict() for comment in self.comments],
+            # 'likes': self.like.to_dict() if self.like else None,
         }
