@@ -23,7 +23,7 @@ class User(db.Model, UserMixin):
     posts = db.relationship('Post', backref='user', cascade='all, delete-orphan')
     comments = db.relationship('Comment', backref='user', cascade='all, delete-orphan')
     likes = db.relationship('Like', backref='user', uselist=False, cascade='all, delete-orphan')
-
+    # add bookings and messages if time allows
 
     @property
     def password(self):
