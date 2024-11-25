@@ -2,7 +2,7 @@ from app.models import db, environment, SCHEMA, Post
 from sqlalchemy.sql import text
 
 def seed_products():
-    base_url = 'https://flashdrop-bucket.s3.us-west-1.amazonaws.com'
+    # base_url = 'https://flashdrop-bucket.s3.us-west-1.amazonaws.com'
 
     posts_data = [
         {
