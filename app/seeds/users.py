@@ -167,22 +167,6 @@ def seed_users():
             "profileImageUrl": f"{base_url}/skin_stories.jpg",
             "bio": "Telling stories through ink. 💌 SF/Oakland."
         },
-        {
-            "email": "swoopingswallow@gmail.com",
-            "username": "swooping_swallow",
-            "hashed_password": "hashedpassword123",
-            "is_artist": True,
-            "profileImageUrl": f"{base_url}/swooping_swallow.jpg",
-            "bio": "West Oakland since 1989. DM for sliding scale."
-        },
-        {
-            "email": "pricklypeartatts@gmail.com",
-            "username": "prickly_pear_tatts",
-            "hashed_password": "hashedpassword123",
-            "is_artist": True,
-            "profileImageUrl": f"{base_url}/prickly_pear_tatts.jpg",
-            "bio": "Specialize in free hand collaborative design. 💌 SF/Oakland."
-        },
     ]
 
     #bulk_insert_mappings do not let our passsword hashing happen because it bypasses the model instantiation. Our @password.setter needs to happen on each user.
