@@ -1,7 +1,7 @@
 from app.models import db, environment, SCHEMA, Post
 from sqlalchemy.sql import text
 
-def seed_products():
+def seed_posts():
     # base_url = 'https://flashdrop-bucket.s3.us-west-1.amazonaws.com'
 
     posts_data = [
@@ -1610,10 +1610,10 @@ def seed_products():
     db.session.bulk_insert_mappings(Post, posts_data)
     db.session.commit()
 
-def undo_products():
+def undo_posts():
     if environment == "production":
-        db.session.execute(f"TRUNCATE TABLE {SCHEMA}.products RESTART IDENTITY CASCADE;")
+        db.session.execute(f"TRUNCATE TABLE {SCHEMA}.posts RESTART IDENTITY CASCADE;")
     else:
-        db.session.execute(text("DELETE FROM products"))
+        db.session.execute(text("DELETE FROM posts"))
 
     db.session.commit()
