@@ -205,7 +205,7 @@ Users should be able to view all Posts.
     {
       "posts": [
         {
-          "postId": 1,
+          "id": 1,
           "userId": 1,
           "size": "2-3 inches",
           "style": "American Traditional",
@@ -238,7 +238,7 @@ Return details of a post specified by its id.
   - **Body**:
     ```json
     {
-      "postId": 1,
+      "id": 1,
       "userId": 1,
       "size": "2-3 inches",
       "style": "American Traditional",
@@ -278,7 +278,7 @@ Return details of a post of the current session user. Takes user to their profil
     ```json
     [
       {
-        "postId": 1,
+        "id": 1,
         "userId": 1,
         "size": "2-3 inches",
         "style": "American Traditional",
@@ -322,7 +322,7 @@ Return all posts by specified user's id. Goes to an individual artists profile p
     ```json
     [
       {
-        "postId": 2,
+        "id": 2,
         "userId": 3,
         "size": "5-6 inches",
         "style": "Black and Grey Botanicals",
@@ -378,7 +378,7 @@ Artists (users) should be able to create a Post.
     ```json
     {
       "post": {
-        "postId": 2,
+        "id": 2,
         "userId": 3,
         "size": "5-6 inches",
         "style": "Black and Grey Botanicals",
@@ -439,7 +439,7 @@ Users should be able to update their Post(s).
     ```json
     {
       "post": {
-        "postId": 2,
+        "id": 2,
         "userId": 3,
         "size": "5-6 inches",
         "style": "Black and Grey Botanicals",

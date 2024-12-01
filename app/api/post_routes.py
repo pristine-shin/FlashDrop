@@ -23,7 +23,7 @@ def all_posts():
   allPosts = {
     "posts": [
       {
-        "postId": post.id,
+        "id": post.id,
         "userId": post.userId,
         "size": post.size,
         "style": post.style,
@@ -48,7 +48,7 @@ def post(postId):
     return {"message": "Post not found!"}, 404
 
   PostWithArtist = {
-    "postId": post.id,
+    "id": post.id,
     "userId": post.userId,
     "username": post.user.username,
     "artistBio": post.user.bio,
@@ -123,11 +123,11 @@ def create_post():
 
     newPost = Post(
       userId=current_user.id,
-      name=form.name.data,
-      type=form.type.data,
-      genre=form.genre.data,
+      size=form.size.data,
+      style=form.style.data,
       price=form.price.data,
-      description=form.description.data,
+      caption=form.caption.data,
+      available=form.available.data,
       imageUrl=url
     )
 
@@ -142,11 +142,11 @@ def create_post():
   # data = request.get_json()
   # newPost = Post(
   #   userId=current_user.id,
-  #   name=data['name'],
-  #   type=data['type'],
-  #   genre=data['genre'],
+  #   size=data['size'],
+  #   style=data['style'],
   #   price=data['price'],
-  #   description=data['description'],
+  #   caption=data['caption'],
+  #   available=data['available'],
   #   imageUrl=data['imageUrl'])
   # db.session.add(newPost)
   # db.session.commit()
@@ -172,11 +172,12 @@ def update_post(postId):
   form['csrf_token'].data = request.cookies['csrf_token']
 
   if form.validate_on_submit():
-    post.name = form.name.data
-    post.type=form.type.data
-    post.genre=form.genre.data
-    post.price=form.price.data
-    post.description=form.description.data
+    # post.userId = current_user.id, not sure if i need this
+    post.size=form.size.data,
+    post.style=form.style.data,
+    post.price=form.price.data,
+    post.caption=form.caption.data,
+    post.available=form.available.data,
 
     if form.imageUrl.data:
       new_image = form.imageUrl.data
@@ -193,13 +194,16 @@ def update_post(postId):
     db.session.commit()
 
     updated_post = {
-      "id": postId,
-      "name": post.name,
-      "type": post.type,
-      "genre": post.genre,
-      "price": post.price,
-      "description": post.description,
-      "imageUrl": post.imageUrl
+      "id": post.id,
+      "userId": post.userId,
+      "size": post.size,
+      "style": post.style,
+      "price": round(post.price, 2),
+      "caption": post.caption,
+      "available": post.available,
+      "imageUrl": post.imageUrl,
+      "createdAt": post.createdAt,
+      "updatedAt": post.updatedAt,
     }
 
     return updated_post, 200
@@ -216,16 +220,16 @@ def update_post(postId):
   # if(post):
   #   if(post.get_userId != current_user.id):
   #     return {'message': 'Requires proper authorization!'}, 403
-  #   if "name" in data:
-  #     post.name = data["name"]
-  #   if "type" in data:
-  #     post.type = data["type"]
-  #   if "genre" in data:
-  #     post.genre = data["genre"]
+  #   if "size" in data:
+  #     post.size = data["size"]
+  #   if "style" in data:
+  #     post.style = data["style"]
   #   if "price" in data:
   #     post.price = data["price"]
-  #   if "description" in data:
-  #     post.description = data["description"]
+  #   if "caption" in data:
+  #     post.caption = data["caption"]
+  #   if "available" in data:
+  #     post.available = data["available"]
   #   if "imageUrl" in data:
   #     post.imageUrl = data["imageUrl"]
   #   try:
