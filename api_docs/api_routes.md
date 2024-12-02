@@ -644,7 +644,7 @@ Users should be able to update their comment for a Post.
     "id": 2,
     "postId": 1,
     "userId": 2,
-    "comment": "Rex was awesome!! Super kind with a light touch. I love my tattoo!",
+    "content": "Rex was awesome!! Super kind with a light touch. I love my tattoo!",
     "createdAt": "2024-11-29 19:38:09.043894",
     "updatedAt": "2024-11-29 19:38:09.043894"
   }
