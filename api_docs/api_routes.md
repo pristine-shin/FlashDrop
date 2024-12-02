@@ -348,6 +348,36 @@ Return all posts by specified user's id. Goes to an individual artists profile p
     }
     ```
 
+### Delete an existing post.
+
+Users should be able to delete their Post(s).
+
+- **Require authentication**: True
+- **Require proper Authentication: Post must belong to the user**
+- **Request**
+
+  - **Method**: DELETE
+  - **Route path**: /api/posts/:postId
+  - **Body**: None
+
+- **Successful Response**
+  - **Status Code**: 200
+  - **Body**:
+    ```json
+    {
+      "message": "Post successfully deleted"
+    }
+    ```
+- **Error Response: Couldn't find a post by specified id**
+  - **Status Code**: 404
+  - **Body**:
+    ```json
+    {
+      "message": "Post not be found!"
+    }
+    ```
+
+
 ### Create a Post
 
 Artists (users) should be able to create a Post.
@@ -478,34 +508,6 @@ Users should be able to update their Post(s).
     }
     ```
 
-### Delete an existing post.
-
-Users should be able to delete their Post(s).
-
-- **Require authentication**: True
-- **Require proper Authentication: Post must belong to the user**
-- **Request**
-
-  - **Method**: DELETE
-  - **Route path**: /api/posts/:postId
-  - **Body**: None
-
-- **Successful Response**
-  - **Status Code**: 200
-  - **Body**:
-    ```json
-    {
-      "message": "Post successfully deleted"
-    }
-    ```
-- **Error Response: Couldn't find a post by specified id**
-  - **Status Code**: 404
-  - **Body**:
-    ```json
-    {
-      "message": "Post not be found!"
-    }
-    ```
 
 ## Comments
 
@@ -531,7 +533,9 @@ Users should be able to view all comments on a Post.
           "userId": 1,
           "content": "Ooooh so sick!",
           "createdAt": "2024-11-29 19:38:09.043894",
-          "updatedAt": "2024-11-29 19:38:09.043894"
+          "updatedAt": "2024-11-29 19:38:09.043894",
+          "username": "siiickdude",
+          "profileImageUrl": "example_profile_pic.jpg"
         }
         // more comments...
       ]

@@ -65,14 +65,14 @@ def post(postId):
 
   return jsonify(PostWithArtist)
 
-#Get current user posts (NOT yet in API docs)
+#Get current user posts
 @post_routes.route('/current')
 @login_required
 def current_posts():
   user = current_user.to_dict()
   return {"posts": user["posts"]}
 
-#Get posts by userId (NOT yet in API docs)
+#Get posts by userId
 @post_routes.route('/users/<int:userId>')
 @login_required
 def user_posts(userId):
@@ -256,7 +256,7 @@ def post_comments(postId):
   post_comments = [
       {
           **comment.to_dict(),
-          "artistName": comment.user.artistName,
+          "username": comment.user.username,
           "profileImageUrl": comment.user.profileImageUrl
       }
       for comment in post.comments
@@ -281,9 +281,9 @@ def create_comment(postId):
   form['csrf_token'].data = request.cookies['csrf_token']
   if form.validate_on_submit():
     newComment = Comment(
+      postId = postId,
       userId = current_user.id,
       comment = form.comment.data,
-      postId = postId,
     )
     db.session.add(newComment)
     db.session.commit()
