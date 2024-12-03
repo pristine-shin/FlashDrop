@@ -40,8 +40,8 @@ class Post(db.Model):
             'imageUrl': self.imageUrl,
             'createdAt': self.createdAt.strftime('%Y-%m-%d %H:%M:%S'),
             'updatedAt': self.updatedAt.strftime('%Y-%m-%d %H:%M:%S'),
-            # 'comments': [comment.to_dict() for comment in self.comments],
-            # 'likes': [like.id for like in self.likes],
+            'comments': [comment.to_dict() for comment in self.comments],
+            'likes': [like.id for like in self.likes],
         }
 
     def delete(self):

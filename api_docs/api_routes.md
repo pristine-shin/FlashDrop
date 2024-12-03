@@ -741,6 +741,7 @@ Users should be able to view all of their liked posts.
       "caption": "Caption Here",
       "available": true,
       "imageUrl": "image.url",
+      "username": "rexxx",
       "createdAt": "2024-10-29 18:38:09.043894",
       "updatedAt": "2024-10-29 18:38:09.043894"
     },
@@ -753,6 +754,7 @@ Users should be able to view all of their liked posts.
       "caption": "Caption Here",
       "available": false,
       "imageUrl": "image.url",
+      "username": "ryanashley",
       "createdAt": "2024-10-29 18:38:09.043894",
       "updatedAt": "2024-10-29 18:38:09.043894"
     }
@@ -762,7 +764,7 @@ Users should be able to view all of their liked posts.
 
 ### Add post to likes
 
-Users should be able to liked posts.
+Users should be able to like posts. This should increment the number next to the "likes" on the post itself, as well as add the post to the users "likes" page.
 
 - **Require authentication**: True
 - **Request**
