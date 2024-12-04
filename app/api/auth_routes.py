@@ -141,7 +141,6 @@ def sign_up():
             username=form.data['username'],
             password=form.data['password'],
             is_artist=form.data['is_artist'],
-            password=form.data['password'],
         )
         db.session.add(user)
         db.session.commit()
