@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from app.models import User, db
 from app.aws_helpers import get_unique_filename, update_file_on_s3, remove_file_from_s3
-# from app.forms import EditProfileForm
+from app.forms import EditProfileForm
 
 user_routes = Blueprint('users', __name__)
 
@@ -49,47 +49,48 @@ def delete_current_user():
         db.session.delete(user)
         db.session.commit()
 
-    return {"message": "User deleted successfully."}, 204
+    return {"message": "User deleted successfully."}
 
 
-# #Edit Current User
-# @user_routes.route('/session', methods=['PUT'])
-# @login_required
-# def edit_current_user():
-#     form = EditProfileForm()
+#Edit Current User
+@user_routes.route('/session', methods=['PUT'])
+@login_required
+def edit_current_user():
+    form = EditProfileForm()
 
-#     form["csrf_token"].data = request.cookies.get("csrf_token")
+    form["csrf_token"].data = request.cookies.get("csrf_token")
 
-#     if form.validate_on_submit():
+    if form.validate_on_submit():
 
-#         current_user.bio = form.bio.data
+        current_user.bio = form.bio.data
 
-#         original_profile_url = current_user.profileImageUrl
+        original_profile_url = current_user.profileImageUrl
 
-#         if 'profileImageUrl' in request.files:
-#             profileImage = form.profileImageUrl.data
-#             profileImage.filename = get_unique_filename(profileImage.filename)
+        # right now profileImageUrl coming back null, need to figure out aws with testing
+        if 'profileImageUrl' in request.files:
+            profileImage = form.profileImageUrl.data
+            profileImage.filename = get_unique_filename(profileImage.filename)
 
-#             old_profile_url = original_profile_url if original_profile_url else None
-#             upload = update_file_on_s3(profileImage, old_image_url=old_profile_url)
+            old_profile_url = original_profile_url if original_profile_url else None
+            upload = update_file_on_s3(profileImage, old_image_url=old_profile_url)
 
-#             if "url" not in upload:
-#                 return {"errors": upload["errors"]}, 400
+            if "url" not in upload:
+                return {"errors": upload["errors"]}, 400
 
-#             current_user.profileImageUrl = upload["url"]
+            current_user.profileImageUrl = upload["url"]
 
-#         db.session.commit()
+        db.session.commit()
 
-#         updated_user = {
-#             "id": current_user.id,
-#             "bio": current_user.bio,
-#             "profileImageUrl": current_user.profileImageUrl,
-#         }
+        updated_user = {
+            "id": current_user.id,
+            "bio": current_user.bio,
+            "profileImageUrl": current_user.profileImageUrl,
+        }
 
-#         return {"message": "Profile updated successfully.", "user": updated_user}
+        return {"message": "Profile updated successfully.", "user": updated_user}
 
-#     if form.errors:
-#         return form.errors, 400
+    if form.errors:
+        return form.errors, 400
 
-#     #just in case in other errors
-#     return {"errors": "Invalid requests"}, 400
+    #just in case in other errors
+    return {"errors": "Invalid requests"}, 400
