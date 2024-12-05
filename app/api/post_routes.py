@@ -3,7 +3,7 @@ from flask import Blueprint, request, jsonify
 from flask_login import login_required, current_user
 from app.models import Post, Comment, db, User
 # from app.forms import EditPostForm
-# from app.forms import NewPostForm
+from app.forms import NewPostForm
 # from app.forms import NewCommentForm
 from app.aws_helpers import upload_file_to_s3, get_unique_filename, remove_file_from_s3, update_file_on_s3
 from sqlalchemy.orm import joinedload
@@ -99,59 +99,46 @@ def delete_post(postId):
   else:
     return {"message": "Post not found!"}, 404
 
-# # Create a Post
-# @post_routes.route('/', methods=["POST"])
-# @login_required
-# def create_post():
-#   """
-#   Creates a new Post
-#   """
-#   # Below is for when we have a front end form we are getting data from
-#   form = NewPostForm()
+# Create a Post
+@post_routes.route('/', methods=["POST"])
+@login_required
+def create_post():
+  """
+  Creates a new Post
+  """
+  # Below is for when we have a front end form we are getting data from
+  form = NewPostForm()
 
-#   form["csrf_token"].data = request.cookies.get("csrf_token")
+  form["csrf_token"].data = request.cookies.get("csrf_token")
 
-#   if form.validate_on_submit():
+  if form.validate_on_submit():
 
-#     image = form.imageUrl.data
-#     image.filename = get_unique_filename(image.filename)
-#     upload = upload_file_to_s3(image)
+    image = form.imageUrl.data
+    image.filename = get_unique_filename(image.filename)
+    upload = upload_file_to_s3(image)
 
-#     if "url" not in upload:
-#       return {"error": upload["errors"]}, 400
+    if "url" not in upload:
+      return {"error": upload["errors"]}, 400
 
-#     url = upload["url"]
+    url = upload["url"]
 
-#     newPost = Post(
-#       userId=current_user.id,
-#       size=form.size.data,
-#       style=form.style.data,
-#       price=form.price.data,
-#       caption=form.caption.data,
-#       available=form.available.data,
-#       imageUrl=url
-#     )
+    newPost = Post(
+      userId=current_user.id,
+      size=form.size.data,
+      style=form.style.data,
+      price=form.price.data,
+      caption=form.caption.data,
+      available=form.available.data,
+      imageUrl=url
+    )
 
-#     db.session.add(newPost)
-#     db.session.commit()
-#     return newPost.to_dict(), 201
+    db.session.add(newPost)
+    db.session.commit()
 
-#   if form.errors:
-#     return form.errors, 400
+    return newPost.to_dict(), 201 # this isn't showing up on post man for some reason
 
-#   # this is for testing only, switch back to code above once frontend form exists
-#   # data = request.get_json()
-#   # newPost = Post(
-#   #   userId=current_user.id,
-#   #   size=data['size'],
-#   #   style=data['style'],
-#   #   price=data['price'],
-#   #   caption=data['caption'],
-#   #   available=data['available'],
-#   #   imageUrl=data['imageUrl'])
-#   # db.session.add(newPost)
-#   # db.session.commit()
-#   # return newPost.to_dict(), 201
+  if form.errors:
+    return form.errors, 400
 
 # # Update and Return existing Post
 # @post_routes.route('edit/<int:postId>', methods=["PUT"])

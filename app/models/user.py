@@ -46,7 +46,7 @@ class User(db.Model, UserMixin):
             'bio': self.bio if self.bio else "",
             'createdAt': self.createdAt.strftime('%Y-%m-%d %H:%M:%S'),
             'updatedAt': self.updatedAt.strftime('%Y-%m-%d %H:%M:%S'),
-            # 'posts': [post.to_dict() for post in self.posts],
+            'posts': [post.to_dict() for post in self.posts],
             # 'comments': [comment.to_dict() for comment in self.comments],
             # 'likes': self.like.to_dict() if self.like else None,
         }

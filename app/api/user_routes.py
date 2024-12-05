@@ -66,7 +66,6 @@ def edit_current_user():
 
         original_profile_url = current_user.profileImageUrl
 
-        # right now profileImageUrl coming back null, need to figure out aws with testing
         if 'profileImageUrl' in request.files:
             profileImage = form.profileImageUrl.data
             profileImage.filename = get_unique_filename(profileImage.filename)
