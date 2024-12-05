@@ -8,6 +8,7 @@ def seed_posts():
         {
             "userId": 1,
             "style": "Traditional Japanese",
+            "size": "1-2 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Traditional Japanese.",
             "available": True,
@@ -16,6 +17,7 @@ def seed_posts():
         {
             "userId": 1,
             "style": "Traditional Japanese",
+            "size": "1-3 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Traditional Japanese.",
             "available": True,
@@ -24,6 +26,7 @@ def seed_posts():
         {
             "userId": 1,
             "style": "Traditional Japanese",
+            "size": "2-3 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Traditional Japanese.",
             "available": False,
@@ -32,6 +35,7 @@ def seed_posts():
         {
             "userId": 1,
             "style": "Traditional Japanese",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Traditional Japanese.",
             "available": True,
@@ -40,6 +44,7 @@ def seed_posts():
         {
             "userId": 1,
             "style": "Traditional Japanese",
+            "size": "1-2 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Traditional Japanese.",
             "available": True,
@@ -48,6 +53,7 @@ def seed_posts():
         {
             "userId": 1,
             "style": "Traditional Japanese",
+            "size": "1-2 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Traditional Japanese.",
             "available": False,
@@ -56,6 +62,7 @@ def seed_posts():
         {
             "userId": 1,
             "style": "Traditional Japanese",
+            "size": "2-3 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Traditional Japanese.",
             "available": True,
@@ -64,6 +71,7 @@ def seed_posts():
         {
             "userId": 1,
             "style": "Traditional Japanese",
+            "size": "2-3 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Traditional Japanese.",
             "available": True,
@@ -72,6 +80,7 @@ def seed_posts():
         {
             "userId": 1,
             "style": "Traditional Japanese",
+            "size": "2-3 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Traditional Japanese.",
             "available": False,
@@ -81,6 +90,7 @@ def seed_posts():
             "userId": 1,
             "style": "Traditional Japanese",
             "price": 100.0,
+            "size": "1-2 inches",
             "caption": "A beautiful custom design. Style: Traditional Japanese.",
             "available": True,
             "imageUrl": "https://example.com/images/user1_post10.jpg"
@@ -88,6 +98,7 @@ def seed_posts():
         {
             "userId": 2,
             "style": "Neo-Traditional",
+            "size": "1-2 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Neo-Traditional.",
             "available": True,
@@ -96,6 +107,7 @@ def seed_posts():
         {
             "userId": 2,
             "style": "Neo-Traditional",
+            "size": "1-2 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Neo-Traditional.",
             "available": True,
@@ -104,6 +116,7 @@ def seed_posts():
         {
             "userId": 2,
             "style": "Neo-Traditional",
+            "size": "2-3 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Neo-Traditional.",
             "available": False,
@@ -112,6 +125,7 @@ def seed_posts():
         {
             "userId": 2,
             "style": "Neo-Traditional",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Neo-Traditional.",
             "available": True,
@@ -120,6 +134,7 @@ def seed_posts():
         {
             "userId": 2,
             "style": "Neo-Traditional",
+            "size": "1-2 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Neo-Traditional.",
             "available": True,
@@ -128,6 +143,7 @@ def seed_posts():
         {
             "userId": 2,
             "style": "Neo-Traditional",
+            "size": "1-2 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Neo-Traditional.",
             "available": False,
@@ -136,6 +152,7 @@ def seed_posts():
         {
             "userId": 2,
             "style": "Neo-Traditional",
+            "size": "2-3 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Neo-Traditional.",
             "available": True,
@@ -144,6 +161,7 @@ def seed_posts():
         {
             "userId": 2,
             "style": "Neo-Traditional",
+            "size": "2-3 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Neo-Traditional.",
             "available": True,
@@ -152,6 +170,7 @@ def seed_posts():
         {
             "userId": 2,
             "style": "Neo-Traditional",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Neo-Traditional.",
             "available": False,
@@ -160,6 +179,7 @@ def seed_posts():
         {
             "userId": 2,
             "style": "Neo-Traditional",
+            "size": "2-3 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: Neo-Traditional.",
             "available": True,
@@ -168,6 +188,7 @@ def seed_posts():
         {
             "userId": 3,
             "style": "Black and Grey",
+            "size": "2-3 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Black and Grey.",
             "available": True,
@@ -176,6 +197,7 @@ def seed_posts():
         {
             "userId": 3,
             "style": "Black and Grey",
+            "size": "2-3 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Black and Grey.",
             "available": True,
@@ -184,6 +206,7 @@ def seed_posts():
         {
             "userId": 3,
             "style": "Black and Grey",
+            "size": "2-3 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Black and Grey.",
             "available": False,
@@ -192,6 +215,7 @@ def seed_posts():
         {
             "userId": 3,
             "style": "Black and Grey",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Black and Grey.",
             "available": True,
@@ -200,6 +224,7 @@ def seed_posts():
         {
             "userId": 3,
             "style": "Black and Grey",
+            "size": "2-3 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Black and Grey.",
             "available": True,
@@ -208,6 +233,7 @@ def seed_posts():
         {
             "userId": 3,
             "style": "Black and Grey",
+            "size": "2-3 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Black and Grey.",
             "available": False,
@@ -216,6 +242,7 @@ def seed_posts():
         {
             "userId": 3,
             "style": "Black and Grey",
+            "size": "2-3 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Black and Grey.",
             "available": True,
@@ -224,6 +251,7 @@ def seed_posts():
         {
             "userId": 3,
             "style": "Black and Grey",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Black and Grey.",
             "available": True,
@@ -232,6 +260,7 @@ def seed_posts():
         {
             "userId": 3,
             "style": "Black and Grey",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Black and Grey.",
             "available": False,
@@ -240,6 +269,7 @@ def seed_posts():
         {
             "userId": 3,
             "style": "Black and Grey",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: Black and Grey.",
             "available": True,
@@ -248,6 +278,7 @@ def seed_posts():
         {
             "userId": 4,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Realism.",
             "available": True,
@@ -256,6 +287,7 @@ def seed_posts():
         {
             "userId": 4,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Realism.",
             "available": True,
@@ -264,6 +296,7 @@ def seed_posts():
         {
             "userId": 4,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Realism.",
             "available": False,
@@ -272,6 +305,7 @@ def seed_posts():
         {
             "userId": 4,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Realism.",
             "available": True,
@@ -280,6 +314,7 @@ def seed_posts():
         {
             "userId": 4,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Realism.",
             "available": True,
@@ -288,6 +323,7 @@ def seed_posts():
         {
             "userId": 4,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Realism.",
             "available": False,
@@ -296,6 +332,7 @@ def seed_posts():
         {
             "userId": 4,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Realism.",
             "available": True,
@@ -304,6 +341,7 @@ def seed_posts():
         {
             "userId": 4,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Realism.",
             "available": True,
@@ -312,6 +350,7 @@ def seed_posts():
         {
             "userId": 4,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Realism.",
             "available": False,
@@ -320,6 +359,7 @@ def seed_posts():
         {
             "userId": 4,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: Realism.",
             "available": True,
@@ -328,6 +368,7 @@ def seed_posts():
         {
             "userId": 5,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Illustrative.",
             "available": True,
@@ -336,6 +377,7 @@ def seed_posts():
         {
             "userId": 5,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Illustrative.",
             "available": True,
@@ -344,6 +386,7 @@ def seed_posts():
         {
             "userId": 5,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Illustrative.",
             "available": False,
@@ -352,6 +395,7 @@ def seed_posts():
         {
             "userId": 5,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Illustrative.",
             "available": True,
@@ -360,6 +404,7 @@ def seed_posts():
         {
             "userId": 5,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Illustrative.",
             "available": True,
@@ -368,6 +413,7 @@ def seed_posts():
         {
             "userId": 5,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Illustrative.",
             "available": False,
@@ -376,6 +422,7 @@ def seed_posts():
         {
             "userId": 5,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Illustrative.",
             "available": True,
@@ -384,6 +431,7 @@ def seed_posts():
         {
             "userId": 5,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Illustrative.",
             "available": True,
@@ -392,6 +440,7 @@ def seed_posts():
         {
             "userId": 5,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Illustrative.",
             "available": False,
@@ -400,6 +449,7 @@ def seed_posts():
         {
             "userId": 5,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: Illustrative.",
             "available": True,
@@ -408,6 +458,7 @@ def seed_posts():
         {
             "userId": 6,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Geometric.",
             "available": True,
@@ -416,6 +467,7 @@ def seed_posts():
         {
             "userId": 6,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Geometric.",
             "available": True,
@@ -424,6 +476,7 @@ def seed_posts():
         {
             "userId": 6,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Geometric.",
             "available": False,
@@ -432,6 +485,7 @@ def seed_posts():
         {
             "userId": 6,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Geometric.",
             "available": True,
@@ -440,6 +494,7 @@ def seed_posts():
         {
             "userId": 6,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Geometric.",
             "available": True,
@@ -448,6 +503,7 @@ def seed_posts():
         {
             "userId": 6,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Geometric.",
             "available": False,
@@ -456,6 +512,7 @@ def seed_posts():
         {
             "userId": 6,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Geometric.",
             "available": True,
@@ -464,6 +521,7 @@ def seed_posts():
         {
             "userId": 6,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Geometric.",
             "available": True,
@@ -472,6 +530,7 @@ def seed_posts():
         {
             "userId": 6,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Geometric.",
             "available": False,
@@ -480,6 +539,7 @@ def seed_posts():
         {
             "userId": 6,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: Geometric.",
             "available": True,
@@ -488,6 +548,7 @@ def seed_posts():
         {
             "userId": 7,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Tribal.",
             "available": True,
@@ -496,6 +557,7 @@ def seed_posts():
         {
             "userId": 7,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Tribal.",
             "available": True,
@@ -504,6 +566,7 @@ def seed_posts():
         {
             "userId": 7,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Tribal.",
             "available": False,
@@ -512,6 +575,7 @@ def seed_posts():
         {
             "userId": 7,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Tribal.",
             "available": True,
@@ -520,6 +584,7 @@ def seed_posts():
         {
             "userId": 7,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Tribal.",
             "available": True,
@@ -528,6 +593,7 @@ def seed_posts():
         {
             "userId": 7,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Tribal.",
             "available": False,
@@ -536,6 +602,7 @@ def seed_posts():
         {
             "userId": 7,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Tribal.",
             "available": True,
@@ -544,6 +611,7 @@ def seed_posts():
         {
             "userId": 7,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Tribal.",
             "available": True,
@@ -552,6 +620,7 @@ def seed_posts():
         {
             "userId": 7,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Tribal.",
             "available": False,
@@ -560,6 +629,7 @@ def seed_posts():
         {
             "userId": 7,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: Tribal.",
             "available": True,
@@ -568,6 +638,7 @@ def seed_posts():
         {
             "userId": 8,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Watercolor.",
             "available": True,
@@ -576,6 +647,7 @@ def seed_posts():
         {
             "userId": 8,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Watercolor.",
             "available": True,
@@ -584,6 +656,7 @@ def seed_posts():
         {
             "userId": 8,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Watercolor.",
             "available": False,
@@ -592,6 +665,7 @@ def seed_posts():
         {
             "userId": 8,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Watercolor.",
             "available": True,
@@ -600,6 +674,7 @@ def seed_posts():
         {
             "userId": 8,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Watercolor.",
             "available": True,
@@ -608,6 +683,7 @@ def seed_posts():
         {
             "userId": 8,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Watercolor.",
             "available": False,
@@ -616,6 +692,7 @@ def seed_posts():
         {
             "userId": 8,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Watercolor.",
             "available": True,
@@ -624,6 +701,7 @@ def seed_posts():
         {
             "userId": 8,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Watercolor.",
             "available": True,
@@ -632,6 +710,7 @@ def seed_posts():
         {
             "userId": 8,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Watercolor.",
             "available": False,
@@ -640,6 +719,7 @@ def seed_posts():
         {
             "userId": 8,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: Watercolor.",
             "available": True,
@@ -648,6 +728,7 @@ def seed_posts():
         {
             "userId": 9,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Dotwork.",
             "available": True,
@@ -656,6 +737,7 @@ def seed_posts():
         {
             "userId": 9,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Dotwork.",
             "available": True,
@@ -664,6 +746,7 @@ def seed_posts():
         {
             "userId": 9,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Dotwork.",
             "available": False,
@@ -672,6 +755,7 @@ def seed_posts():
         {
             "userId": 9,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Dotwork.",
             "available": True,
@@ -680,6 +764,7 @@ def seed_posts():
         {
             "userId": 9,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Dotwork.",
             "available": True,
@@ -688,6 +773,7 @@ def seed_posts():
         {
             "userId": 9,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Dotwork.",
             "available": False,
@@ -696,6 +782,7 @@ def seed_posts():
         {
             "userId": 9,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Dotwork.",
             "available": True,
@@ -704,6 +791,7 @@ def seed_posts():
         {
             "userId": 9,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Dotwork.",
             "available": True,
@@ -712,6 +800,7 @@ def seed_posts():
         {
             "userId": 9,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Dotwork.",
             "available": False,
@@ -720,6 +809,7 @@ def seed_posts():
         {
             "userId": 9,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: Dotwork.",
             "available": True,
@@ -728,6 +818,7 @@ def seed_posts():
         {
             "userId": 10,
             "style": "American Traditional",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: American Traditional.",
             "available": True,
@@ -736,6 +827,7 @@ def seed_posts():
         {
             "userId": 10,
             "style": "American Traditional",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: American Traditional.",
             "available": True,
@@ -744,6 +836,7 @@ def seed_posts():
         {
             "userId": 10,
             "style": "American Traditional",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: American Traditional.",
             "available": False,
@@ -752,6 +845,7 @@ def seed_posts():
         {
             "userId": 10,
             "style": "American Traditional",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: American Traditional.",
             "available": True,
@@ -760,6 +854,7 @@ def seed_posts():
         {
             "userId": 10,
             "style": "American Traditional",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: American Traditional.",
             "available": True,
@@ -768,6 +863,7 @@ def seed_posts():
         {
             "userId": 10,
             "style": "American Traditional",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: American Traditional.",
             "available": False,
@@ -776,6 +872,7 @@ def seed_posts():
         {
             "userId": 10,
             "style": "American Traditional",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: American Traditional.",
             "available": True,
@@ -784,6 +881,7 @@ def seed_posts():
         {
             "userId": 10,
             "style": "American Traditional",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: American Traditional.",
             "available": True,
@@ -792,6 +890,7 @@ def seed_posts():
         {
             "userId": 10,
             "style": "American Traditional",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: American Traditional.",
             "available": False,
@@ -800,6 +899,7 @@ def seed_posts():
         {
             "userId": 10,
             "style": "American Traditional",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: American Traditional.",
             "available": True,
@@ -808,6 +908,7 @@ def seed_posts():
         {
             "userId": 11,
             "style": "Fine Line",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Fine Line.",
             "available": True,
@@ -816,6 +917,7 @@ def seed_posts():
         {
             "userId": 11,
             "style": "Fine Line",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Fine Line.",
             "available": True,
@@ -824,6 +926,7 @@ def seed_posts():
         {
             "userId": 11,
             "style": "Fine Line",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Fine Line.",
             "available": False,
@@ -832,6 +935,7 @@ def seed_posts():
         {
             "userId": 11,
             "style": "Fine Line",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Fine Line.",
             "available": True,
@@ -840,6 +944,7 @@ def seed_posts():
         {
             "userId": 11,
             "style": "Fine Line",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Fine Line.",
             "available": True,
@@ -848,6 +953,7 @@ def seed_posts():
         {
             "userId": 11,
             "style": "Fine Line",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Fine Line.",
             "available": False,
@@ -856,6 +962,7 @@ def seed_posts():
         {
             "userId": 11,
             "style": "Fine Line",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Fine Line.",
             "available": True,
@@ -864,6 +971,7 @@ def seed_posts():
         {
             "userId": 11,
             "style": "Fine Line",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Fine Line.",
             "available": True,
@@ -872,6 +980,7 @@ def seed_posts():
         {
             "userId": 11,
             "style": "Fine Line",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Fine Line.",
             "available": False,
@@ -880,6 +989,7 @@ def seed_posts():
         {
             "userId": 11,
             "style": "Fine Line",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: Fine Line.",
             "available": True,
@@ -888,6 +998,7 @@ def seed_posts():
         {
             "userId": 12,
             "style": "Traditional Japanese",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Traditional Japanese.",
             "available": True,
@@ -896,6 +1007,7 @@ def seed_posts():
         {
             "userId": 12,
             "style": "Traditional Japanese",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Traditional Japanese.",
             "available": True,
@@ -904,6 +1016,7 @@ def seed_posts():
         {
             "userId": 12,
             "style": "Traditional Japanese",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Traditional Japanese.",
             "available": False,
@@ -912,6 +1025,7 @@ def seed_posts():
         {
             "userId": 12,
             "style": "Traditional Japanese",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Traditional Japanese.",
             "available": True,
@@ -920,6 +1034,7 @@ def seed_posts():
         {
             "userId": 12,
             "style": "Traditional Japanese",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Traditional Japanese.",
             "available": True,
@@ -928,6 +1043,7 @@ def seed_posts():
         {
             "userId": 12,
             "style": "Traditional Japanese",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Traditional Japanese.",
             "available": False,
@@ -936,6 +1052,7 @@ def seed_posts():
         {
             "userId": 12,
             "style": "Traditional Japanese",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Traditional Japanese.",
             "available": True,
@@ -944,6 +1061,7 @@ def seed_posts():
         {
             "userId": 12,
             "style": "Traditional Japanese",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Traditional Japanese.",
             "available": True,
@@ -952,6 +1070,7 @@ def seed_posts():
         {
             "userId": 12,
             "style": "Traditional Japanese",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Traditional Japanese.",
             "available": False,
@@ -960,6 +1079,7 @@ def seed_posts():
         {
             "userId": 12,
             "style": "Traditional Japanese",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: Traditional Japanese.",
             "available": True,
@@ -968,6 +1088,7 @@ def seed_posts():
         {
             "userId": 13,
             "style": "Neo-Traditional",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Neo-Traditional.",
             "available": True,
@@ -976,6 +1097,7 @@ def seed_posts():
         {
             "userId": 13,
             "style": "Neo-Traditional",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Neo-Traditional.",
             "available": True,
@@ -984,6 +1106,7 @@ def seed_posts():
         {
             "userId": 13,
             "style": "Neo-Traditional",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Neo-Traditional.",
             "available": False,
@@ -992,6 +1115,7 @@ def seed_posts():
         {
             "userId": 13,
             "style": "Neo-Traditional",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Neo-Traditional.",
             "available": True,
@@ -1000,6 +1124,7 @@ def seed_posts():
         {
             "userId": 13,
             "style": "Neo-Traditional",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Neo-Traditional.",
             "available": True,
@@ -1008,6 +1133,7 @@ def seed_posts():
         {
             "userId": 13,
             "style": "Neo-Traditional",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Neo-Traditional.",
             "available": False,
@@ -1016,6 +1142,7 @@ def seed_posts():
         {
             "userId": 13,
             "style": "Neo-Traditional",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Neo-Traditional.",
             "available": True,
@@ -1024,6 +1151,7 @@ def seed_posts():
         {
             "userId": 13,
             "style": "Neo-Traditional",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Neo-Traditional.",
             "available": True,
@@ -1032,6 +1160,7 @@ def seed_posts():
         {
             "userId": 13,
             "style": "Neo-Traditional",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Neo-Traditional.",
             "available": False,
@@ -1040,6 +1169,7 @@ def seed_posts():
         {
             "userId": 13,
             "style": "Neo-Traditional",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: Neo-Traditional.",
             "available": True,
@@ -1048,6 +1178,7 @@ def seed_posts():
         {
             "userId": 14,
             "style": "Black and Grey",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Black and Grey.",
             "available": True,
@@ -1056,6 +1187,7 @@ def seed_posts():
         {
             "userId": 14,
             "style": "Black and Grey",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Black and Grey.",
             "available": True,
@@ -1064,6 +1196,7 @@ def seed_posts():
         {
             "userId": 14,
             "style": "Black and Grey",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Black and Grey.",
             "available": False,
@@ -1072,6 +1205,7 @@ def seed_posts():
         {
             "userId": 14,
             "style": "Black and Grey",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Black and Grey.",
             "available": True,
@@ -1080,6 +1214,7 @@ def seed_posts():
         {
             "userId": 14,
             "style": "Black and Grey",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Black and Grey.",
             "available": True,
@@ -1088,6 +1223,7 @@ def seed_posts():
         {
             "userId": 14,
             "style": "Black and Grey",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Black and Grey.",
             "available": False,
@@ -1096,6 +1232,7 @@ def seed_posts():
         {
             "userId": 14,
             "style": "Black and Grey",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Black and Grey.",
             "available": True,
@@ -1104,6 +1241,7 @@ def seed_posts():
         {
             "userId": 14,
             "style": "Black and Grey",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Black and Grey.",
             "available": True,
@@ -1112,6 +1250,7 @@ def seed_posts():
         {
             "userId": 14,
             "style": "Black and Grey",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Black and Grey.",
             "available": False,
@@ -1120,6 +1259,7 @@ def seed_posts():
         {
             "userId": 14,
             "style": "Black and Grey",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: Black and Grey.",
             "available": True,
@@ -1128,6 +1268,7 @@ def seed_posts():
         {
             "userId": 15,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Realism.",
             "available": True,
@@ -1136,6 +1277,7 @@ def seed_posts():
         {
             "userId": 15,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Realism.",
             "available": True,
@@ -1144,6 +1286,7 @@ def seed_posts():
         {
             "userId": 15,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Realism.",
             "available": False,
@@ -1152,6 +1295,7 @@ def seed_posts():
         {
             "userId": 15,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Realism.",
             "available": True,
@@ -1160,6 +1304,7 @@ def seed_posts():
         {
             "userId": 15,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Realism.",
             "available": True,
@@ -1168,6 +1313,7 @@ def seed_posts():
         {
             "userId": 15,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Realism.",
             "available": False,
@@ -1176,6 +1322,7 @@ def seed_posts():
         {
             "userId": 15,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Realism.",
             "available": True,
@@ -1184,6 +1331,7 @@ def seed_posts():
         {
             "userId": 15,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Realism.",
             "available": True,
@@ -1192,6 +1340,7 @@ def seed_posts():
         {
             "userId": 15,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Realism.",
             "available": False,
@@ -1200,6 +1349,7 @@ def seed_posts():
         {
             "userId": 15,
             "style": "Realism",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: Realism.",
             "available": True,
@@ -1208,6 +1358,7 @@ def seed_posts():
         {
             "userId": 16,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Illustrative.",
             "available": True,
@@ -1216,6 +1367,7 @@ def seed_posts():
         {
             "userId": 16,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Illustrative.",
             "available": True,
@@ -1224,6 +1376,7 @@ def seed_posts():
         {
             "userId": 16,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Illustrative.",
             "available": False,
@@ -1232,6 +1385,7 @@ def seed_posts():
         {
             "userId": 16,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Illustrative.",
             "available": True,
@@ -1240,6 +1394,7 @@ def seed_posts():
         {
             "userId": 16,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Illustrative.",
             "available": True,
@@ -1248,6 +1403,7 @@ def seed_posts():
         {
             "userId": 16,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Illustrative.",
             "available": False,
@@ -1256,6 +1412,7 @@ def seed_posts():
         {
             "userId": 16,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Illustrative.",
             "available": True,
@@ -1264,6 +1421,7 @@ def seed_posts():
         {
             "userId": 16,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Illustrative.",
             "available": True,
@@ -1272,6 +1430,7 @@ def seed_posts():
         {
             "userId": 16,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Illustrative.",
             "available": False,
@@ -1280,6 +1439,7 @@ def seed_posts():
         {
             "userId": 16,
             "style": "Illustrative",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: Illustrative.",
             "available": True,
@@ -1288,6 +1448,7 @@ def seed_posts():
         {
             "userId": 17,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Geometric.",
             "available": True,
@@ -1296,6 +1457,7 @@ def seed_posts():
         {
             "userId": 17,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Geometric.",
             "available": True,
@@ -1304,6 +1466,7 @@ def seed_posts():
         {
             "userId": 17,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Geometric.",
             "available": False,
@@ -1312,6 +1475,7 @@ def seed_posts():
         {
             "userId": 17,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Geometric.",
             "available": True,
@@ -1320,6 +1484,7 @@ def seed_posts():
         {
             "userId": 17,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Geometric.",
             "available": True,
@@ -1328,6 +1493,7 @@ def seed_posts():
         {
             "userId": 17,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Geometric.",
             "available": False,
@@ -1336,6 +1502,7 @@ def seed_posts():
         {
             "userId": 17,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Geometric.",
             "available": True,
@@ -1344,6 +1511,7 @@ def seed_posts():
         {
             "userId": 17,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Geometric.",
             "available": True,
@@ -1352,6 +1520,7 @@ def seed_posts():
         {
             "userId": 17,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Geometric.",
             "available": False,
@@ -1360,6 +1529,7 @@ def seed_posts():
         {
             "userId": 17,
             "style": "Geometric",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: Geometric.",
             "available": True,
@@ -1368,6 +1538,7 @@ def seed_posts():
         {
             "userId": 18,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Tribal.",
             "available": True,
@@ -1376,6 +1547,7 @@ def seed_posts():
         {
             "userId": 18,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Tribal.",
             "available": True,
@@ -1384,6 +1556,7 @@ def seed_posts():
         {
             "userId": 18,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Tribal.",
             "available": False,
@@ -1392,6 +1565,7 @@ def seed_posts():
         {
             "userId": 18,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Tribal.",
             "available": True,
@@ -1400,6 +1574,7 @@ def seed_posts():
         {
             "userId": 18,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Tribal.",
             "available": True,
@@ -1408,6 +1583,7 @@ def seed_posts():
         {
             "userId": 18,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Tribal.",
             "available": False,
@@ -1416,6 +1592,7 @@ def seed_posts():
         {
             "userId": 18,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Tribal.",
             "available": True,
@@ -1424,6 +1601,7 @@ def seed_posts():
         {
             "userId": 18,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Tribal.",
             "available": True,
@@ -1432,6 +1610,7 @@ def seed_posts():
         {
             "userId": 18,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Tribal.",
             "available": False,
@@ -1440,6 +1619,7 @@ def seed_posts():
         {
             "userId": 18,
             "style": "Tribal",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: Tribal.",
             "available": True,
@@ -1448,6 +1628,7 @@ def seed_posts():
         {
             "userId": 19,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Watercolor.",
             "available": True,
@@ -1456,6 +1637,7 @@ def seed_posts():
         {
             "userId": 19,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Watercolor.",
             "available": True,
@@ -1464,6 +1646,7 @@ def seed_posts():
         {
             "userId": 19,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Watercolor.",
             "available": False,
@@ -1472,6 +1655,7 @@ def seed_posts():
         {
             "userId": 19,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Watercolor.",
             "available": True,
@@ -1480,6 +1664,7 @@ def seed_posts():
         {
             "userId": 19,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Watercolor.",
             "available": True,
@@ -1488,6 +1673,7 @@ def seed_posts():
         {
             "userId": 19,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Watercolor.",
             "available": False,
@@ -1496,6 +1682,7 @@ def seed_posts():
         {
             "userId": 19,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Watercolor.",
             "available": True,
@@ -1504,6 +1691,7 @@ def seed_posts():
         {
             "userId": 19,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Watercolor.",
             "available": True,
@@ -1512,6 +1700,7 @@ def seed_posts():
         {
             "userId": 19,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Watercolor.",
             "available": False,
@@ -1520,6 +1709,7 @@ def seed_posts():
         {
             "userId": 19,
             "style": "Watercolor",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: Watercolor.",
             "available": True,
@@ -1528,6 +1718,7 @@ def seed_posts():
         {
             "userId": 20,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Inspired by classic art styles. Style: Dotwork.",
             "available": True,
@@ -1536,6 +1727,7 @@ def seed_posts():
         {
             "userId": 20,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "Another piece I loved working on. Style: Dotwork.",
             "available": True,
@@ -1544,6 +1736,7 @@ def seed_posts():
         {
             "userId": 20,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "A bold statement for my client! Style: Dotwork.",
             "available": False,
@@ -1552,6 +1745,7 @@ def seed_posts():
         {
             "userId": 20,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "Refining my craft with this one. Style: Dotwork.",
             "available": True,
@@ -1560,6 +1754,7 @@ def seed_posts():
         {
             "userId": 20,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "Custom artwork made for you. Style: Dotwork.",
             "available": True,
@@ -1568,6 +1763,7 @@ def seed_posts():
         {
             "userId": 20,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: Dotwork.",
             "available": False,
@@ -1576,6 +1772,7 @@ def seed_posts():
         {
             "userId": 20,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 200.0,
             "caption": "A meaningful piece for a special client. Style: Dotwork.",
             "available": True,
@@ -1584,6 +1781,7 @@ def seed_posts():
         {
             "userId": 20,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 250.0,
             "caption": "One of my favorite styles to work in. Style: Dotwork.",
             "available": True,
@@ -1592,6 +1790,7 @@ def seed_posts():
         {
             "userId": 20,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 300.0,
             "caption": "An iconic piece for a unique individual. Style: Dotwork.",
             "available": False,
@@ -1600,6 +1799,7 @@ def seed_posts():
         {
             "userId": 20,
             "style": "Dotwork",
+            "size": "3-4 inches",
             "price": 100.0,
             "caption": "A beautiful custom design. Style: Dotwork.",
             "available": True,
