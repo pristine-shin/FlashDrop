@@ -21,7 +21,7 @@ class User(db.Model, UserMixin):
     updatedAt = db.Column(db.DateTime, default=datetime.now, onupdate=datetime.now, nullable=False)
 
     posts = db.relationship('Post', backref='user', cascade='all, delete-orphan')
-    # comments = db.relationship('Comment', backref='user', cascade='all, delete-orphan')
+    comments = db.relationship('Comment', backref='user', cascade='all, delete-orphan')
     # likes = db.relationship('Like', backref='user', uselist=False, cascade='all, delete-orphan')
     # add bookings and messages if time allows
 
