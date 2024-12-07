@@ -84,28 +84,33 @@ def user_posts(userId):
 @post_routes.route('/<int:postId>', methods=["DELETE"])
 @login_required
 def delete_post(postId):
-  post = Post.query.get(postId)
+  try:
+    post = Post.query.get(postId)
 
-  if post is None:
-    return {'message': 'Post could not be found!'}, 404
+    if post is None:
+      return {'message': 'Post could not be found!'}, 404
 
-  if(post.get_userId != current_user.id):
-    return {'message': 'Requires proper authorization!'}, 403
+    if(post.get_userId != current_user.id):
+      return {'message': 'Requires proper authorization!'}, 403
 
-  if(post):
+    if(post):
 
-    # Retrieve the post's image URL
-    image_url = post.imageUrl
-    print(f'*********************TESTING IMAGE URL: {image_url}')
-    # Delete the image from S3 if it exists
-    if image_url:
-      remove_file_from_s3(image_url)
+      # Retrieve the post's image URL
+      image_url = post.imageUrl
+      print(f'*********************TESTING IMAGE URL: {image_url}')
+      # Delete the image from S3 if it exists
+      if image_url:
+        remove_file_from_s3(image_url)
 
-    db.session.delete(post)
-    db.session.commit()
-    return {"message": "Post successfully deleted"}
-  else:
-    return {"message": "Post not found!"}, 404
+      db.session.delete(post)
+      db.session.commit()
+      return {"message": "Post successfully deleted"}
+    else:
+      return {"message": "Post not found!"}, 404
+
+  except Exception as e:
+    return {"error": str(e)}, 500
+
 
 # Create a Post
 @post_routes.route('/', methods=["POST"])
@@ -114,42 +119,47 @@ def create_post():
   """
   Creates a new Post
   """
-  form = NewPostForm()
+  try:
+    form = NewPostForm()
+    form["csrf_token"].data = request.cookies.get("csrf_token")
+    if form.validate_on_submit():
 
-  form["csrf_token"].data = request.cookies.get("csrf_token")
+      image = form.imageUrl.data
+      print(f"*********************TESTING Image received: {image}")
+      if image:
+        image.filename = get_unique_filename(image.filename)
+        print(f"*********************TESTING Unique filename generated: {image.filename}")
+        upload = upload_file_to_s3(image)
 
-  if form.validate_on_submit():
+        if "url" not in upload:
+          print(f"*********************TESTING Upload failed: {upload['errors']}")
+          return {"error": upload["errors"]}, 400
 
-    image = form.imageUrl.data
-    # image:  <FileStorage: 'bird_of_paradise_test.jpg' ('image/jpeg')>
-    # image.filename: bird_of_paradise_test.jpg
-    image.filename = get_unique_filename(image.filename)
-    # image.filename: 186cfba85c984b4c8438dd50595a8fe9.jpg
-    upload = upload_file_to_s3(image)
-    # upload: {'url': 'https://flashdrop-bucket.s3.amazonaws.com/186cfba85c984b4c8438dd50595a8fe9.jpg'}
+        url = upload["url"]
+        print(f"*********************TESTING Image uploaded to S3 with URL: {url}")
 
-    if "url" not in upload:
-      return {"error": upload["errors"]}, 400
+      newPost = Post(
+        userId=current_user.id,
+        size=form.size.data,
+        style=form.style.data,
+        price=form.price.data,
+        caption=form.caption.data,
+        available=form.available.data,
+        imageUrl=url
+      )
 
-    url = upload["url"]
+      db.session.add(newPost)
+      db.session.commit()
+      print("*********************TESTING Post successfully created in DB.")
 
-    newPost = Post(
-      userId=current_user.id,
-      size=form.size.data,
-      style=form.style.data,
-      price=form.price.data,
-      caption=form.caption.data,
-      available=form.available.data,
-      imageUrl=url
-    )
+      return newPost.to_dict(), 201
 
-    db.session.add(newPost)
-    db.session.commit()
+    print("*********************TESTING Form validation failed:", form.errors)
+    return {"error": form.errors}, 400
 
-    return newPost.to_dict(), 201 # this isn't showing up on postman for some reason
-
-  if form.errors:
-    return form.errors, 400
+  except Exception as e:
+    print(f"*********************TESTING Unhandled error occurred: {str(e)}")
+    return {"error": str(e)}, 500
 
 # Update and Return existing Post
 @post_routes.route('edit/<int:postId>', methods=["PUT"])
@@ -264,6 +274,6 @@ def create_comment(postId):
     db.session.add(newComment)
     db.session.commit()
     return {"comment": newComment.to_dict()}
-  
+
   if form.errors:
     return form.errors, 400

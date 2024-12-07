@@ -1,5 +1,6 @@
 import boto3
 import botocore
+from botocore.exceptions import ClientError
 import os
 import uuid
 
@@ -42,7 +43,7 @@ def remove_file_from_s3(image_url):
     # AWS needs the image file name, not the URL,
     # so you split that out of the URL
     key = image_url.rsplit("/", 1)[1]
-    print(f'*********************TESTING AWS KEY: {image_url}')
+    print(f'*********************TESTING AWS KEY: {key}')
     try:
         s3.delete_object(
         Bucket=BUCKET_NAME,
