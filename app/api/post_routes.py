@@ -77,8 +77,12 @@ def current_posts():
 @post_routes.route('/users/<int:userId>')
 @login_required
 def user_posts(userId):
-  user = User.query.get(userId).to_dict()
-  return {"posts": user["posts"]}
+  user = User.query.get(userId)
+
+  if user is None:
+    return {'message': 'User could not be found!'}, 404
+
+  return {"posts": user.to_dict()["posts"]}
 
 # Delete an existing post.
 @post_routes.route('/<int:postId>', methods=["DELETE"])
