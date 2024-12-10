@@ -182,11 +182,11 @@ def update_post(postId):
 
   if form.validate_on_submit():
     # post.userId = current_user.id, not sure if i need this
-    post.size=form.size.data,
-    post.style=form.style.data,
-    post.price=form.price.data,
-    post.caption=form.caption.data,
-    post.available=form.available.data,
+    post.size=form.size.data
+    post.style=form.style.data
+    post.price=form.price.data
+    post.caption=form.caption.data
+    post.available=form.available.data
 
     if form.imageUrl.data:
       new_image = form.imageUrl.data
@@ -207,7 +207,7 @@ def update_post(postId):
       "userId": post.userId,
       "size": post.size,
       "style": post.style,
-      "price": post.price,
+      "price": str(round(post.price,2)),
       "caption": post.caption,
       "available": post.available,
       "imageUrl": post.imageUrl,
