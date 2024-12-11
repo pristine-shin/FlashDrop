@@ -39,7 +39,7 @@ def upgrade():
     sa.Column('updatedAt', sa.DateTime(), nullable=False),
     sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id'),
-    # sa.UniqueConstraint('userId')
+    sa.UniqueConstraint('userId')
     )
     op.create_table('posts',
     sa.Column('id', sa.Integer(), nullable=False),
