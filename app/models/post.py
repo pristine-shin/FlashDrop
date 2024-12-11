@@ -11,6 +11,7 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     userId = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
     style = db.Column(db.String, nullable=False)
+    size = db.Column(db.String, nullable=False)
     price = db.Column(db.Numeric, nullable=False)
     caption = db.Column(db.String, nullable=False)
     available = db.Column(db.Boolean, nullable=False, default=True)
@@ -34,6 +35,7 @@ class Post(db.Model):
             'id': self.id,
             'userId': self.userId,
             'style': self.style,
+            'size': self.size,
             'price': str(round(self.price,2)),  # Convert Decimal to string for JSON
             'caption': self.caption,
             'available': self.available,

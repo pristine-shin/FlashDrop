@@ -49,7 +49,7 @@ def delete_current_user():
         db.session.delete(user)
         db.session.commit()
 
-    return {"message": "User deleted successfully."}, 204
+    return {"message": "User deleted successfully."}
 
 
 #Edit Current User
