@@ -205,7 +205,7 @@ Users should be able to view all Posts.
     {
       "posts": [
         {
-          "postId": 1,
+          "id": 1,
           "userId": 1,
           "size": "2-3 inches",
           "style": "American Traditional",
@@ -238,7 +238,7 @@ Return details of a post specified by its id.
   - **Body**:
     ```json
     {
-      "postId": 1,
+      "id": 1,
       "userId": 1,
       "size": "2-3 inches",
       "style": "American Traditional",
@@ -278,7 +278,7 @@ Return details of a post of the current session user. Takes user to their profil
     ```json
     [
       {
-        "postId": 1,
+        "id": 1,
         "userId": 1,
         "size": "2-3 inches",
         "style": "American Traditional",
@@ -322,7 +322,7 @@ Return all posts by specified user's id. Goes to an individual artists profile p
     ```json
     [
       {
-        "postId": 2,
+        "id": 2,
         "userId": 3,
         "size": "5-6 inches",
         "style": "Black and Grey Botanicals",
@@ -347,6 +347,36 @@ Return all posts by specified user's id. Goes to an individual artists profile p
       "message": "Artist not found"
     }
     ```
+
+### Delete an existing post.
+
+Users should be able to delete their Post(s).
+
+- **Require authentication**: True
+- **Require proper Authentication: Post must belong to the user**
+- **Request**
+
+  - **Method**: DELETE
+  - **Route path**: /api/posts/:postId
+  - **Body**: None
+
+- **Successful Response**
+  - **Status Code**: 200
+  - **Body**:
+    ```json
+    {
+      "message": "Post successfully deleted"
+    }
+    ```
+- **Error Response: Couldn't find a post by specified id**
+  - **Status Code**: 404
+  - **Body**:
+    ```json
+    {
+      "message": "Post not be found!"
+    }
+    ```
+
 
 ### Create a Post
 
@@ -378,7 +408,7 @@ Artists (users) should be able to create a Post.
     ```json
     {
       "post": {
-        "postId": 2,
+        "id": 2,
         "userId": 3,
         "size": "5-6 inches",
         "style": "Black and Grey Botanicals",
@@ -439,7 +469,7 @@ Users should be able to update their Post(s).
     ```json
     {
       "post": {
-        "postId": 2,
+        "id": 2,
         "userId": 3,
         "size": "5-6 inches",
         "style": "Black and Grey Botanicals",
@@ -478,34 +508,6 @@ Users should be able to update their Post(s).
     }
     ```
 
-### Delete an existing post.
-
-Users should be able to delete their Post(s).
-
-- **Require authentication**: True
-- **Require proper Authentication: Post must belong to the user**
-- **Request**
-
-  - **Method**: DELETE
-  - **Route path**: /api/posts/:postId
-  - **Body**: None
-
-- **Successful Response**
-  - **Status Code**: 200
-  - **Body**:
-    ```json
-    {
-      "message": "Post successfully deleted"
-    }
-    ```
-- **Error Response: Couldn't find a post by specified id**
-  - **Status Code**: 404
-  - **Body**:
-    ```json
-    {
-      "message": "Post not be found!"
-    }
-    ```
 
 ## Comments
 
@@ -531,7 +533,9 @@ Users should be able to view all comments on a Post.
           "userId": 1,
           "content": "Ooooh so sick!",
           "createdAt": "2024-11-29 19:38:09.043894",
-          "updatedAt": "2024-11-29 19:38:09.043894"
+          "updatedAt": "2024-11-29 19:38:09.043894",
+          "username": "siiickdude",
+          "profileImageUrl": "example_profile_pic.jpg"
         }
         // more comments...
       ]
@@ -640,7 +644,7 @@ Users should be able to update their comment for a Post.
     "id": 2,
     "postId": 1,
     "userId": 2,
-    "comment": "Rex was awesome!! Super kind with a light touch. I love my tattoo!",
+    "content": "Rex was awesome!! Super kind with a light touch. I love my tattoo!",
     "createdAt": "2024-11-29 19:38:09.043894",
     "updatedAt": "2024-11-29 19:38:09.043894"
   }
@@ -737,6 +741,7 @@ Users should be able to view all of their liked posts.
       "caption": "Caption Here",
       "available": true,
       "imageUrl": "image.url",
+      "username": "rexxx",
       "createdAt": "2024-10-29 18:38:09.043894",
       "updatedAt": "2024-10-29 18:38:09.043894"
     },
@@ -749,6 +754,7 @@ Users should be able to view all of their liked posts.
       "caption": "Caption Here",
       "available": false,
       "imageUrl": "image.url",
+      "username": "ryanashley",
       "createdAt": "2024-10-29 18:38:09.043894",
       "updatedAt": "2024-10-29 18:38:09.043894"
     }
@@ -758,7 +764,7 @@ Users should be able to view all of their liked posts.
 
 ### Add post to likes
 
-Users should be able to liked posts.
+Users should be able to like posts. This should increment the number next to the "likes" on the post itself, as well as add the post to the users "likes" page.
 
 - **Require authentication**: True
 - **Request**
