@@ -42,7 +42,7 @@ body {
   .login-section {
     background-color: rgba(0, 0, 0, 0.683);
     border: 1px solid grey;
-    margin-top: 50%;
+    margin-top: 40%;
     padding: 20px;
     border-radius: 5px;
     text-align: center;
@@ -129,29 +129,4 @@ body {
 
   .signup-link:hover {
     text-decoration: underline;
-  }
-
-  .homepage-footer {
-    text-align: center;
-    font-size: 0.9rem;
-    margin-top: auto;
-    margin-bottom: 10px;
-  }
-
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-
-  .footer-links a {
-    color: #8e8e8e;
-    text-decoration: none;
-    font-size: 0.8rem;
-  }
-
-  .footer-meta {
-    color: #8e8e8e;
   }

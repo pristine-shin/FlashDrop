@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import { thunkSignup } from "../../redux/session";
+import "../../../src/index.css";
+import "./SignupForm.css";
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -9,8 +11,10 @@ function SignupFormPage() {
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
-  const [isArtist, setIsArtist] = useState(true);
+  const [is_artist, setIsArtist] = useState(false);
   const [password, setPassword] = useState("");
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [password2Visible, setPassword2Visible] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState({});
 
@@ -44,61 +48,97 @@ function SignupFormPage() {
 
   return (
     <>
-      <h1>Sign Up</h1>
-      {errors.server && <p>{errors.server}</p>}
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </label>
-        {errors.email && <p>{errors.email}</p>}
-        <label>
-          Username
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </label>
-        {errors.username && <p>{errors.username}</p>}
-        <label>
-          Are you a tattoo artist?
-          <input
-            type="checkbox"
-            value={isArtist}
-            onChange={(e) => setIsArtist(e.target.value)}
-            required
-          />
-        </label>
-        {errors.username && <p>{errors.username}</p>}
-        <label>
-          Password
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        {errors.password && <p>{errors.password}</p>}
-        <label>
-          Confirm Password
-          <input
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </label>
-        {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
-        <button type="submit">Sign Up</button>
-      </form>
+      <div className="signup-page">
+        <div className="signup-container">
+          <p className="modal-title">Sign up to get access to your artist's next FlashDrop!</p>
+          {errors.server && <p>{errors.server}</p>}
+          <form className="modal-content" onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label className="label-name">Email</label>
+              <div className="input-error">
+                <input
+                  type="text"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+
+                {errors.email && <p className="error-message">{errors.email}</p>}
+              </div>
+            </div>
+            <div className="form-group">
+              <label className="label-name">Username</label>
+              <div className="input-error">
+                <input
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+
+                {errors.username && (
+                  <p className="error-message">{errors.username}</p>
+                )}
+              </div>
+            </div>
+            <div className="form-group" id="artist-checkbox-container">
+              <label className="label-name">I am a tattoo artist</label>
+              <div className="input-error">
+                <input
+                  id="artist-checkbox"
+                  type="checkbox"
+                  value={is_artist}
+                  onChange={() => setIsArtist(!is_artist)}
+                />
+                {errors.is_artist && (
+                  <p className="error-message">{errors.is_artist}</p>
+                )}
+              </div>
+            </div>
+            <div className="form-group password-field">
+              <label className="label-name">Password</label>
+              <div className="input-error">
+                <input
+                  type={passwordVisible ? 'text' : 'password'}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <button
+                  type="button"
+                  id="show-password"
+                  onClick={() => setPasswordVisible(!passwordVisible)}
+                >
+                  {passwordVisible ? 'Hide' : 'Show'}
+                </button>
+                {errors.password && (
+                  <p className="error-message">{errors.password}</p>
+                )}
+              </div>
+            </div>
+            <div className="form-group password-field">
+              <label className="label-name">Confirm Password</label>
+              <div className="input-error">
+                <input
+                  type={password2Visible ? 'text' : 'password'}
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+                <button
+                  type="button"
+                  id="show-password"
+                  onClick={() => setPassword2Visible(!password2Visible)}
+                >
+                  {password2Visible ? 'Hide' : 'Show'}
+                </button>
+                {errors.confirmPassword && (
+                  <p className="error-message">{errors.confirmPassword}</p>
+                )}
+              </div>
+            </div>
+            <div className="form-group">
+              <button type="submit">Sign Up</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </>
   );
 }

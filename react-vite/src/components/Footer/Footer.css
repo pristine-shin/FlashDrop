@@ -1,0 +1,28 @@
+.footer {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: auto;
+  margin-bottom: 10px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #8e8e8e;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.footer-meta {
+  color: #8e8e8e;
+}
