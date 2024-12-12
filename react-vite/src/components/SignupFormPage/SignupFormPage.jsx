@@ -9,6 +9,7 @@ function SignupFormPage() {
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
+  const [isArtist, setIsArtist] = useState(true);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState({});
@@ -30,6 +31,7 @@ function SignupFormPage() {
         email,
         username,
         password,
+        is_artist
       })
     );
 
@@ -61,6 +63,16 @@ function SignupFormPage() {
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+        </label>
+        {errors.username && <p>{errors.username}</p>}
+        <label>
+          Are you a tattoo artist?
+          <input
+            type="checkbox"
+            value={isArtist}
+            onChange={(e) => setIsArtist(e.target.value)}
             required
           />
         </label>
