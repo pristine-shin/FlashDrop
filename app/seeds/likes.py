@@ -14,15 +14,6 @@ def seed_likes():
         {'userId': 9},
         {'userId': 10},
         {'userId': 11},
-        # {'userId': 12},
-        # {'userId': 13},
-        # {'userId': 14},
-        # {'userId': 15},
-        # {'userId': 16},
-        # {'userId': 17},
-        # {'userId': 18},
-        # {'userId': 19},
-        # {'userId': 20},
     ]
 
 

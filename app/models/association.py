@@ -10,5 +10,5 @@ likes_posts = db.Table(
 )
 
 
-if environment == "postion":
+if environment == "production":
     likes_posts.schema = SCHEMA
