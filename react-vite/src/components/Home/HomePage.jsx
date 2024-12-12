@@ -28,7 +28,7 @@ function HomePage() {
                     <a href="#">Privacy</a>
                     <a href="#">Terms</a>
                 </div>
-                <div className="footer-meta">&copy; 2024 Flashbop from Pristine</div>
+                <div className="footer-meta">&copy; 2024 FlashDrop from Pristine</div>
             </footer>
         </body>
     )
