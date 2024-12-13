@@ -28,7 +28,7 @@ function AllPosts() {
                 <Link to={`/posts/${post.id}`} className="all-post-card-link">
                   <img src={post.imageUrl} alt="post image" className="all-post-image" />
                   <div className="all-post-info">
-                    <h3 className="all-post-name">{post.username}</h3>
+                    <h3 className="all-post-username">{post.username}</h3>
                     <p className="all-post-price">{post.price}</p>
                     <p className="all-post-style">{post.style}</p>
                     <p className="all-post-size">{post.size}</p>

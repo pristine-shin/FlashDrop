@@ -255,7 +255,7 @@ function postsReducer(state = initialState, action) {
     switch (action.type) {
         case LOAD_ALL_POSTS: {
             const allPosts = {};
-            action.posts.forEach(post => allPosts[post.postId] = post)
+            action.posts.forEach(post => allPosts[post.id] = post)
             return {
                 ...state,
                 loading: false,
@@ -264,7 +264,7 @@ function postsReducer(state = initialState, action) {
         }
         case LOAD_LIMITED_POSTS: {
             const ltdPosts = {};
-            action.posts.forEach(post => ltdPosts[post.postId] = post)
+            action.posts.forEach(post => ltdPosts[post.id] = post)
             return {
                 ...state,
                 loading: false,
@@ -277,7 +277,7 @@ function postsReducer(state = initialState, action) {
                 ...state,
                 allPosts: {
                     ...state.allPosts,
-                    [post.postId]: post
+                    [post.id]: post
                 },
             };
         }
