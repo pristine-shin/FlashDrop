@@ -48,22 +48,19 @@
     line-height: 18px;
   }
 
-  .all-post-genre {
-    font-size: 12px;
+  .all-post-createdAt{
+    font-size: 11px;
     color: #999;
     margin: 4px 0;
-    line-height: 18px;
   }
 
-  /* Created time styling */
-  .all-post-description {
+  .all-post-caption {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 13px;
+    font-size: 12px;
     color: #333;
     margin: 4px 0;
     line-height: 18px;
   }
-
 
   /* Container styling for the post row */
   .all-post-row {

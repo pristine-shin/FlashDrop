@@ -18,6 +18,13 @@ function AllPosts() {
     )
   }
 
+  const calculateDaysAgo = (date) => {
+    const createdDate = new Date(date);
+    const now = new Date();
+    const diffInTime = now - createdDate;
+    return Math.floor(diffInTime / (1000 * 3600 * 24));
+  };
+
     return (
         <div className="all-post-row">
         <h2 className="all-posts-heading">Your Feed</h2>
@@ -28,13 +35,13 @@ function AllPosts() {
                 <Link to={`/posts/${post.id}`} className="all-post-card-link">
                   <img src={post.imageUrl} alt="post image" className="all-post-image" />
                   <div className="all-post-info">
-                    <h3 className="all-post-username">{post.username}</h3>
-                    <p className="all-post-price">{post.price}</p>
+                    <h3 className="all-post-username">@{post.username}</h3>
+                    <p className="all-post-price">${post.price}</p>
                     <p className="all-post-style">{post.style}</p>
                     <p className="all-post-size">{post.size}</p>
                     <p className="all-post-available">{post.available}</p>
                     <p className="all-post-caption">{post.caption}</p>
-                    <p className="all-post-createdAt">{post.createdAt}</p>
+                    <p className="all-post-createdAt">{calculateDaysAgo(post.createdAt)} days ago</p>
                   </div>
                 </Link>
               </div>
