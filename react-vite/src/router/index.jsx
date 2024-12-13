@@ -20,6 +20,11 @@ export const router = createBrowserRouter([
         path: "signup",
         element: <SignupFormPage />,
       },
+      ,
+      {
+        path: "/posts",
+        element: <SignupFormPage />,
+      },
     ],
   },
 ]);
