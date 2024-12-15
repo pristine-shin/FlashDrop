@@ -4,15 +4,13 @@ from sqlalchemy.sql import text
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
-    base_url = 'https://flashdrop-bucket.s3.us-west-1.amazonaws.com'
-
     users_data = [
         {
             "email": "inkedbyalex@gmail.com",
             "username": "inked_by_alex",
             "password": "hashedpassword123",
             "is_artist": True,
-            "profileImageUrl": f"{base_url}/inked_by_alex.jpg",
+            "profileImageUrl": "https://res.cloudinary.com/dmvfvyilq/image/upload/v1732557354/999452_v9_ba_mgvp8x.jpg",
             "bio": "Bay Area. Black and gray realism. DM for bookings."
         },
         {
@@ -20,7 +18,7 @@ def seed_users():
             "username": "tattoosbyemma",
             "password": "hashedpassword123",
             "is_artist": True,
-            "profileImageUrl": f"{base_url}/tattoosbyemma.jpg",
+            "profileImageUrl": "https://res.cloudinary.com/dmvfvyilq/image/upload/v1732556546/ink-master-cast-holli-maria_hlyq6y.jpg",
             "bio": "Fine line & floral specialist 🌸 SF based."
         },
         {
@@ -28,7 +26,7 @@ def seed_users():
             "username": "lines_by_leo",
             "password": "hashedpassword123",
             "is_artist": True,
-            "profileImageUrl": f"{base_url}/lines_by_leo.jpg",
+            "profileImageUrl": "https://res.cloudinary.com/dmvfvyilq/image/upload/v1732556593/ink-master-cast-hiram_at0vkk.jpg",
             "bio": "Minimalist designs & geometric art 🔺 Oakland studio."
         },
         {
@@ -36,7 +34,7 @@ def seed_users():
             "username": "art_by_ella",
             "password": "hashedpassword123",
             "is_artist": True,
-            "profileImageUrl": f"{base_url}/art_by_ella.jpg",
+            "profileImageUrl": "https://res.cloudinary.com/dmvfvyilq/image/upload/v1732556545/ink-master-cast-katie_azb3up.jpg",
             "bio": "Nature-inspired tattoos 🌿 SF & Oakland. Booking for 2024!"
         },
         {
@@ -44,7 +42,7 @@ def seed_users():
             "username": "bay_area_ink",
             "password": "hashedpassword123",
             "is_artist": True,
-            "profileImageUrl": f"{base_url}/bay_area_ink.jpg",
+            "profileImageUrl": "https://res.cloudinary.com/dmvfvyilq/image/upload/v1732556546/ink-master-cast-bob-jones_rpklgu.jpg",
             "bio": "Custom designs & bold colors 🎨 Book now."
         },
         {
@@ -52,7 +50,7 @@ def seed_users():
             "username": "vivid_by_vera",
             "password": "hashedpassword123",
             "is_artist": True,
-            "profileImageUrl": f"{base_url}/vivid_by_vera.jpg",
+            "profileImageUrl": "https://res.cloudinary.com/dmvfvyilq/image/upload/v1732556546/ink-master-cast-angel-rose_wkh6z6.jpg",
             "bio": "Vivid watercolor & abstract pieces 💧 SF & Berkeley."
         },
         {
@@ -60,7 +58,7 @@ def seed_users():
             "username": "bold_lines_brian",
             "password": "hashedpassword123",
             "is_artist": True,
-            "profileImageUrl": f"{base_url}/bold_lines_brian.jpg",
+            "profileImageUrl": "https://res.cloudinary.com/dmvfvyilq/image/upload/v1732556546/Ink-Master-Cast-_E2_80_94-chris_iiblv0.jpg",
             "bio": "Traditional tattoos with a modern twist ✨ DM to book."
         },
         {
@@ -68,7 +66,7 @@ def seed_users():
             "username": "flower_tatts",
             "password": "hashedpassword123",
             "is_artist": True,
-            "profileImageUrl": f"{base_url}/flower_tatts.jpg",
+            "profileImageUrl": "https://res.cloudinary.com/dmvfvyilq/image/upload/v1732557435/Screenshot_2024-11-25_at_9.49.32_AM_bqlquj.png",
             "bio": "Floral & nature tattoos 🌼 Oakland. Appointments available."
         },
         {
@@ -76,7 +74,7 @@ def seed_users():
             "username": "ink_by_chris",
             "password": "hashedpassword123",
             "is_artist": True,
-            "profileImageUrl": f"{base_url}/ink_by_chris.jpg",
+            "profileImageUrl": "https://res.cloudinary.com/dmvfvyilq/image/upload/v1732557435/Screenshot_2024-11-25_at_9.49.55_AM_l0hy0v.png",
             "bio": "Bold and vibrant. Oakland-based artist. Walk-ins welcome!"
         },
         {
@@ -84,7 +82,7 @@ def seed_users():
             "username": "fine_line_sf",
             "password": "hashedpassword123",
             "is_artist": True,
-            "profileImageUrl": f"{base_url}/fine_line_sf.jpg",
+            "profileImageUrl": "https://res.cloudinary.com/dmvfvyilq/image/upload/v1732557435/Screenshot_2024-11-25_at_9.50.15_AM_vz9oa7.png",
             "bio": "Specializing in intricate fine line tattoos ✏️ SF Bay Area."
         },
         {
@@ -92,7 +90,7 @@ def seed_users():
             "username": "geo_tatts",
             "password": "hashedpassword123",
             "is_artist": True,
-            "profileImageUrl": f"{base_url}/geo_tatts.jpg",
+            "profileImageUrl": "https://res.cloudinary.com/dmvfvyilq/image/upload/v1732557435/Screenshot_2024-11-25_at_9.49.58_AM_opjxiw.png",
             "bio": "Geometric & abstract designs 📐 Available in SF."
         },
         # {

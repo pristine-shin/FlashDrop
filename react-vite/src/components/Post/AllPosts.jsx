@@ -34,10 +34,10 @@ function AllPosts() {
             <div key={post.id} className="all-post-card">
               <Link to={`/posts/${post.id}`} className="all-post-card-link">
                 <div className="all-post-header">
-                  <img src={post.profileImageUrl} alt="profile pic" />
+                  <img src={post.profileImageUrl} alt="profile pic" className="profile-pic"/>
                   <h3 className="all-post-username">{post.username}</h3>
-                  <img src={post.imageUrl} alt="post image" className="all-post-image" />
                 </div>
+                  <img src={post.imageUrl} alt="post image" className="all-post-image" />
                 <div className="all-post-info">
                   <p className="all-post-price">${post.price}</p>
                   <p className="all-post-style">{post.style}</p>
