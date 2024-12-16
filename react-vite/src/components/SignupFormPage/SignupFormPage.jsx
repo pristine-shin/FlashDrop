@@ -50,7 +50,7 @@ function SignupFormPage() {
     <>
       <div className="signup-page">
         <div className="signup-container">
-          <p className="modal-title">Sign up to get access to your artist's next FlashDrop!</p>
+          <p className="modal-title">Sign up to get access to your artist&apos;s next FlashDrop!</p>
           {errors.server && <p>{errors.server}</p>}
           <form className="modal-content" onSubmit={handleSubmit}>
             <div className="form-group">
