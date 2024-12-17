@@ -25,6 +25,21 @@
     align-items: center;
 }
 
+.price-with-edit-button {
+    display: flex;
+    justify-content: space-between;
+}
+
+#manage-post-button {
+    background-color: white;
+    color: black;
+    width: 40px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* .profile-page-container {
     max-width: 1106px;
     background-color: white;

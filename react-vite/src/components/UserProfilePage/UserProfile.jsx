@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // import RemovePostModal from "../Post/RemovePostModal";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare, faTrash, faEllipsis } from "@fortawesome/free-solid-svg-icons";
 // import "../Post/PostDetail.css";
 import "./UserProfile.css";
 
@@ -12,7 +12,7 @@ import "./UserProfile.css";
 const ProfilePage = () => {
     const [user, setUser] = useState(null);
     const [error, setError] = useState("");
-    //   const [showModal, setShowModal] = useState(false);
+      const [showModal, setShowModal] = useState(false);
     //   const [postIdToDelete, setPostIdToDelete] = useState(null);
 
     useEffect(() => {
@@ -115,7 +115,15 @@ const ProfilePage = () => {
                                     </div>
                                     <img src={post.imageUrl} alt="post image" className="all-post-image" />
                                     <div className="all-post-info">
-                                        <p className="all-post-price">${post.price}</p>
+                                        <div className="price-with-edit-button">
+                                            <p className="all-post-price">${post.price}</p>
+                                            <button
+                                                id="manage-post-button"
+                                                onClick={() => handleOpenModal(post.id)}
+                                            >
+                                                <FontAwesomeIcon icon={faEllipsis} />
+                                            </button>
+                                        </div>
                                         <p className="all-post-style">{post.style}</p>
                                         <p className="all-post-size">{post.size}</p>
                                         <p className="all-post-available">{post.available}</p>
