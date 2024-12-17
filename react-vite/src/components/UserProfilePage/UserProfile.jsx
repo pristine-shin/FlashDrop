@@ -12,7 +12,7 @@ import "./UserProfile.css";
 const ProfilePage = () => {
     const [user, setUser] = useState(null);
     const [error, setError] = useState("");
-      const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     //   const [postIdToDelete, setPostIdToDelete] = useState(null);
 
     useEffect(() => {
@@ -32,15 +32,15 @@ const ProfilePage = () => {
         fetchUser();
     }, []);
 
-    //   const handleOpenModal = (postId) => {
-    //     setPostIdToDelete(postId);
-    //     setShowModal(true);
-    //   };
+    const handleOpenModal = () => {
+        // setPostIdToDelete(postId);
+        setShowModal(true);
+    };
 
-    //   const handleCloseModal = () => {
-    //     setShowModal(false);
-    //     setPostIdToDelete(null);
-    //   };
+    const handleCloseModal = () => {
+        setShowModal(false);
+        // setPostIdToDelete(null);
+    };
 
     //   const handleDeletePost = async (postId) => {
     //     try {
@@ -110,27 +110,33 @@ const ProfilePage = () => {
                         user.posts.map((post) => (
                             <div key={post.id} className="all-post-card">
                                 <Link to={`/posts/${post.id}`} className="all-post-card-link">
-                                    <div className="all-post-header">
-                                        <h3 className="all-post-username">{post.username}</h3>
-                                    </div>
                                     <img src={post.imageUrl} alt="post image" className="all-post-image" />
-                                    <div className="all-post-info">
-                                        <div className="price-with-edit-button">
-                                            <p className="all-post-price">${post.price}</p>
-                                            <button
-                                                id="manage-post-button"
-                                                onClick={() => handleOpenModal(post.id)}
+                                </Link>
+                                <div className="all-post-info">
+                                    <div className="price-with-edit-button">
+                                        <div className="all-post-price">${post.price}</div>
+                                        <div className="manage-post-links">
+                                            <Link
+                                                to={`/posts/edit/${post.id}`}
+                                                className="manage-post-button"
                                             >
-                                                <FontAwesomeIcon icon={faEllipsis} />
+                                                <FontAwesomeIcon icon={faPenToSquare} />
+                                            </Link>
+                                            <button
+                                                onClick={() => handleOpenModal(post.id)}
+                                                className="manage-post-button"
+                                            // id="manage-post-button"
+                                            >
+                                                <FontAwesomeIcon icon={faTrash} />
                                             </button>
                                         </div>
-                                        <p className="all-post-style">{post.style}</p>
-                                        <p className="all-post-size">{post.size}</p>
-                                        <p className="all-post-available">{post.available}</p>
-                                        <p className="all-post-caption">{post.caption}</p>
-                                        <p className="all-post-createdAt">{calculateDaysAgo(post.createdAt)} days ago</p>
                                     </div>
-                                </Link>
+                                    <p className="all-post-style">{post.style}</p>
+                                    <p className="all-post-size">{post.size}</p>
+                                    <p className="all-post-available">{post.available}</p>
+                                    <p className="all-post-caption">{post.caption}</p>
+                                    <p className="all-post-createdAt">{calculateDaysAgo(post.createdAt)} days ago</p>
+                                </div>
                             </div>
                         ))
                     ) : (
