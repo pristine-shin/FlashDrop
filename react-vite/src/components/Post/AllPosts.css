@@ -83,6 +83,19 @@
     flex-direction: column;
   }
 
+  .profile-header {
+    margin: 53px 0px 0px 95px;
+    display: flex;
+  }
+
+  #big-profile-pic{
+    margin-top: 15px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 100px;
+  }
+
   .all-posts {
     display: flex;
     flex-wrap: wrap;
@@ -96,12 +109,11 @@
 
   .all-posts-heading {
     text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 400;
-    margin: 0 0 18px;
-    color: #408ea3;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 auto;
+    color: black;
     width: 100%;
     max-width: 1106px;
-    margin: 0 auto;
     padding: 36px 0 18px;
   }

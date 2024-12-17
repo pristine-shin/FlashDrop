@@ -92,14 +92,16 @@ const ProfilePage = () => {
 
     return (
         <div className="all-post-row">
-            <h2 className="all-posts-heading">Your Feed</h2>
+            <div className="profile-header">
+                <img src={user.profileImageUrl} alt="profile pic" id="big-profile-pic"/>
+                <h2 className="all-posts-heading">@{user.username}</h2>
+            </div>
             <div className="all-posts">
                 {user.posts && user.posts.length > 0 ? (
                     user.posts.map((post) => (
                         <div key={post.id} className="all-post-card">
                             <Link to={`/posts/${post.id}`} className="all-post-card-link">
                                 <div className="all-post-header">
-                                    <img src={user.profileImageUrl} alt="profile pic" className="profile-pic" />
                                     <h3 className="all-post-username">{post.username}</h3>
                                 </div>
                                 <img src={post.imageUrl} alt="post image" className="all-post-image" />
