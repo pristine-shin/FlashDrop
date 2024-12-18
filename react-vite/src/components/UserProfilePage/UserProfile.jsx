@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import RemovePostModal from "../Post/RemovePostModal";
+import RemovePostModal from "../Post/RemovePostModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare, faTrash, faEllipsis } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
 // import "../Post/PostDetail.css";
 import "./UserProfile.css";
 
@@ -13,7 +13,7 @@ const ProfilePage = () => {
     const [user, setUser] = useState(null);
     const [error, setError] = useState("");
     const [showModal, setShowModal] = useState(false);
-    //   const [postIdToDelete, setPostIdToDelete] = useState(null);
+    const [postIdToDelete, setPostIdToDelete] = useState(null);
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -32,36 +32,37 @@ const ProfilePage = () => {
         fetchUser();
     }, []);
 
-    const handleOpenModal = () => {
-        // setPostIdToDelete(postId);
+    const handleOpenModal = (postId) => {
+        setPostIdToDelete(postId);
+        console.log(postId, showModal)
         setShowModal(true);
     };
 
     const handleCloseModal = () => {
         setShowModal(false);
-        // setPostIdToDelete(null);
+        setPostIdToDelete(null);
     };
 
-    //   const handleDeletePost = async (postId) => {
-    //     try {
-    //       const response = await fetch(`/api/posts/${postId}`, {
-    //         method: "DELETE",
-    //       });
-    //       if (!response.ok) {
-    //         const errorData = await response.json();
-    //         throw new Error(errorData.message || "Failed to delete post");
-    //       }
-    //       setUser((prevUser) => ({
-    //         ...prevUser,
-    //         posts: prevUser.posts.filter(
-    //           (post) => post.postId !== postId
-    //         ),
-    //       }));
-    //       handleCloseModal();
-    //     } catch (err) {
-    //       setError(err.message);
-    //     }
-    //   };
+    const handleDeletePost = async (postId) => {
+        try {
+            const response = await fetch(`/api/posts/${postId}`, {
+                method: "DELETE",
+            });
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || "Failed to delete post");
+            }
+            setUser((prevUser) => ({
+                ...prevUser,
+                posts: prevUser.posts.filter(
+                    (post) => post.postId !== postId
+                ),
+            }));
+            handleCloseModal();
+        } catch (err) {
+            setError(err.message);
+        }
+    };
 
     // const formatDate = (dateString) => {
     //     const date = new Date(dateString);
@@ -125,7 +126,6 @@ const ProfilePage = () => {
                                             <button
                                                 onClick={() => handleOpenModal(post.id)}
                                                 className="manage-post-button"
-                                            // id="manage-post-button"
                                             >
                                                 <FontAwesomeIcon icon={faTrash} />
                                             </button>
@@ -141,6 +141,15 @@ const ProfilePage = () => {
                         ))
                     ) : (
                         <p>No posts available.</p>
+                    )}
+
+                    {/* Modals */}
+                    {showModal && (
+                        <RemovePostModal
+                            postId={postIdToDelete}
+                            onConfirm={handleDeletePost}
+                            onCancel={handleCloseModal}
+                        />
                     )}
                 </div>
             </div>
