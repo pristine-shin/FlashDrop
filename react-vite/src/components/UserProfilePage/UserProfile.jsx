@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import RemovePostModal from "../Post/RemovePostModal";
+import { thunkRemovePost } from "../../redux/posts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
 // import "../Post/PostDetail.css";
@@ -10,6 +12,7 @@ import "./UserProfile.css";
 // import CircularProgress from '@mui/material/CircularProgress';
 
 const ProfilePage = () => {
+    const dispatch = useDispatch();
     const [user, setUser] = useState(null);
     const [error, setError] = useState("");
     const [showModal, setShowModal] = useState(false);
@@ -44,24 +47,26 @@ const ProfilePage = () => {
     };
 
     const handleDeletePost = async (postId) => {
-        try {
-            const response = await fetch(`/api/posts/${postId}`, {
-                method: "DELETE",
-            });
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.message || "Failed to delete post");
-            }
-            setUser((prevUser) => ({
-                ...prevUser,
-                posts: prevUser.posts.filter(
-                    (post) => post.postId !== postId
-                ),
-            }));
-            handleCloseModal();
-        } catch (err) {
-            setError(err.message);
-        }
+        dispatch(thunkRemovePost(postId))
+
+        // try {
+        //     const response = await fetch(`/api/posts/${postId}`, {
+        //         method: "DELETE",
+        //     });
+        //     if (!response.ok) {
+        //         const errorData = await response.json();
+        //         throw new Error(errorData.message || "Failed to delete post");
+        //     }
+        //     setUser((prevUser) => ({
+        //         ...prevUser,
+        //         posts: prevUser.posts.filter(
+        //             (post) => post.id !== postId
+        //         ),
+        //     }));
+        //     handleCloseModal();
+        // } catch (err) {
+        //     setError(err.message);
+        // }
     };
 
     // const formatDate = (dateString) => {
