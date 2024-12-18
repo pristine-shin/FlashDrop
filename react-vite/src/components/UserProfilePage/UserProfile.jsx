@@ -37,13 +37,19 @@ const ProfilePage = () => {
 
     const handleOpenModal = (postId) => {
         setPostIdToDelete(postId);
-        console.log(postId, showModal)
         setShowModal(true);
     };
 
     const handleCloseModal = () => {
         setShowModal(false);
         setPostIdToDelete(null);
+    };
+
+    const handleOverlayClick = (event) => {
+        // If the click happens directly on the overlay (not inside the modal), close the modal
+        if (event.target.classList.contains("modal-overlay")) {
+            handleCloseModal();
+        }
     };
 
     const handleDeletePost = async (postId) => {
@@ -148,14 +154,31 @@ const ProfilePage = () => {
                         <p>No posts available.</p>
                     )}
 
-                    {/* Modals */}
+                    {/* Modals
                     {showModal && (
                         <RemovePostModal
                             postId={postIdToDelete}
                             onConfirm={handleDeletePost}
                             onCancel={handleCloseModal}
                         />
+                    )} */}
+
+                    {/* Modals */}
+                    {showModal && (
+                        <div
+                            className="modal-overlay"
+                            onClick={handleOverlayClick}
+                        >
+                            <div className="modal-content">
+                                <RemovePostModal
+                                    postId={postIdToDelete}
+                                    onConfirm={handleDeletePost}
+                                    onCancel={handleCloseModal}
+                                />
+                            </div>
+                        </div>
                     )}
+
                 </div>
             </div>
         </div>
