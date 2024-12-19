@@ -1,6 +1,6 @@
 from datetime import datetime
 from .db import db, environment, SCHEMA, add_prefix_for_prod
-from .association import likes_posts
+# from .association import likes_posts
 
 class Post(db.Model):
     __tablename__ = 'posts'
@@ -19,8 +19,12 @@ class Post(db.Model):
     createdAt = db.Column(db.DateTime, default=datetime.now, nullable=False)
     updatedAt = db.Column(db.DateTime, default=datetime.now, onupdate=datetime.now, nullable=False)
 
-    comments = db.relationship('Comment', backref='post', cascade='all, delete-orphan')
-    likes = db.relationship('Like', secondary=likes_posts, backref='likes_list', cascade='all, delete')
+    user = db.relationship('User', back_populates='posts')
+    comments = db.relationship('Comment', back_populates='post', cascade='all, delete-orphan')
+    likes = db.relationship('Like', back_populates='post', cascade='all, delete')
+
+    # comments = db.relationship('Comment', backref='post', cascade='all, delete-orphan')
+    # likes = db.relationship('Like', secondary=likes_posts, backref='likes_list', cascade='all, delete')
 
     @property
     def get_userId(self):
@@ -46,9 +50,9 @@ class Post(db.Model):
             'likes': [like.id for like in self.likes],
         }
 
-    def delete(self):
-        # Remove from likes before deleting the product
-        db.session.execute(
-            likes_posts.delete().where(likes_posts.c.postId == self.id)
-        )
-        db.session.delete(self)
+    # def delete(self):
+    #     # Remove from likes before deleting the product
+    #     db.session.execute(
+    #         likes_posts.delete().where(likes_posts.c.postId == self.id)
+    #     )
+    #     db.session.delete(self)
