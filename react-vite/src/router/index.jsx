@@ -6,6 +6,7 @@ import HomePage from '../components/Home/HomePage';
 import AllPosts from '../components/Post/AllPosts';
 import ProfilePage from '../components/UserProfilePage/UserProfile';
 import EditPost from '../components/Post/EditPost';
+import AddPost from '../components/Post/AddPost';
 
 export const router = createBrowserRouter([
   {
@@ -34,7 +35,11 @@ export const router = createBrowserRouter([
       {
         path: "/posts/edit/:postId",
         element: <EditPost />
-      }
+      },
+      {
+        path: "/posts/new",
+        element: <AddPost />,
+      },
     ],
   },
 ]);
