@@ -1,6 +1,5 @@
 from datetime import datetime
 from .db import db, environment, SCHEMA, add_prefix_for_prod
-from .association import likes_posts
 
 class Post(db.Model):
     __tablename__ = 'posts'
@@ -20,7 +19,6 @@ class Post(db.Model):
     updatedAt = db.Column(db.DateTime, default=datetime.now, onupdate=datetime.now, nullable=False)
 
     comments = db.relationship('Comment', backref='post', cascade='all, delete-orphan')
-    likes = db.relationship('Like', secondary=likes_posts, backref='likes_list', cascade='all, delete')
 
     @property
     def get_userId(self):
@@ -43,12 +41,9 @@ class Post(db.Model):
             'createdAt': self.createdAt.strftime('%Y-%m-%d %H:%M:%S'),
             'updatedAt': self.updatedAt.strftime('%Y-%m-%d %H:%M:%S'),
             'comments': [comment.to_dict() for comment in self.comments],
-            'likes': [like.id for like in self.likes],
         }
 
+
+    # not sure if i need this, need to review routes
     def delete(self):
-        # Remove from likes before deleting the product
-        db.session.execute(
-            likes_posts.delete().where(likes_posts.c.postId == self.id)
-        )
         db.session.delete(self)
