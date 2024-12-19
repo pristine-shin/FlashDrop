@@ -33,7 +33,7 @@ const ProfilePage = () => {
         };
 
         fetchUser();
-    }, []);
+    }, [postIdToDelete, dispatch]);
 
     const handleOpenModal = (postId) => {
         setPostIdToDelete(postId);
@@ -42,7 +42,7 @@ const ProfilePage = () => {
 
     const handleCloseModal = () => {
         setShowModal(false);
-        setPostIdToDelete(null);
+        // setPostIdToDelete(null);
     };
 
     const handleOverlayClick = (event) => {
@@ -53,27 +53,16 @@ const ProfilePage = () => {
     };
 
     const handleDeletePost = async (postId) => {
-        dispatch(thunkRemovePost(postId))
-
-        // try {
-        //     const response = await fetch(`/api/posts/${postId}`, {
-        //         method: "DELETE",
-        //     });
-        //     if (!response.ok) {
-        //         const errorData = await response.json();
-        //         throw new Error(errorData.message || "Failed to delete post");
-        //     }
-        //     setUser((prevUser) => ({
-        //         ...prevUser,
-        //         posts: prevUser.posts.filter(
-        //             (post) => post.id !== postId
-        //         ),
-        //     }));
-        //     handleCloseModal();
-        // } catch (err) {
-        //     setError(err.message);
-        // }
+        dispatch(thunkRemovePost(postId)).then(() => setPostIdToDelete(null))
+        // setUser((prevUser) => ({
+        //     ...prevUser,
+        //     posts: prevUser.posts.filter(
+        //         (post) => post.postId !== postId
+        //     ),
+        // }));
+        handleCloseModal();
     };
+
 
     // const formatDate = (dateString) => {
     //     const date = new Date(dateString);
