@@ -67,10 +67,12 @@
 }
 
 
-/* .profile-page-container {
-    max-width: 1106px;
+.profile-page-container {
+    /* max-width: 1106px; */
     background-color: white;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-} */
+    justify-content: center;
+}

@@ -121,7 +121,7 @@ function EditPost() {
           </label>
           {errors.price && <p className="error-message">{errors.price}</p>}
 
-          <label className="label caption">caption:</label>
+          <label className="label caption">Caption:</label>
           <textarea
             value={caption}
             onChange={(e) => setCaption(e.target.value)}
@@ -155,7 +155,7 @@ function EditPost() {
           </div>
           {errors.imageUrl && <p className="error-message">{errors.imageUrl}</p>}
 
-          <label className="label available">available:</label>
+          <label className="label available">Available:</label>
           <select
             value={available}
             onChange={(e) => setAvailable(e.target.value)}
@@ -165,8 +165,8 @@ function EditPost() {
             <option value={true}>Yes</option>
             <option value={false}>No</option>
           </select>
-                  {errors.available && <p className="error-message">{errors.available}</p>}
-                  <div className="ctas">
+          {errors.available && <p className="error-message">{errors.available}</p>}
+          <div className="ctas">
             <button type="submit" className="button submit">
               Update Post
             </button>
