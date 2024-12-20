@@ -5,6 +5,7 @@ import SignupFormPage from '../components/SignupFormPage';
 import HomePage from '../components/Home/HomePage';
 import AllPosts from '../components/Post/AllPosts';
 import ProfilePage from '../components/UserProfilePage/UserProfile';
+import ArtistProfile from '../components/UserProfilePage/ArtistProfile';
 import EditPost from '../components/Post/EditPost';
 import AddPost from '../components/Post/AddPost';
 
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
       {
         path: "/profile/session",
         element: <ProfilePage />,
+      },
+      {
+        path: "/profile/:userId",
+        element: <ArtistProfile />,
       },
       {
         path: "/posts/edit/:postId",
