@@ -1,26 +1,3 @@
-// import { NavLink } from "react-router-dom";
-// import ProfileButton from "./ProfileButton";
-// import "./Navigation.css";
-
-// function Navigation() {
-//   return (
-//     <nav>
-//       <ul>
-//         <li>
-//           <NavLink to="/">Home</NavLink>
-//         </li>
-
-//         <li>
-//           <ProfileButton />
-//         </li>
-//       </ul>
-//     </nav>
-//   );
-// }
-
-// export default Navigation;
-
-
 // Navigation.jsx
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
@@ -28,7 +5,7 @@ import ProfileButton from "./ProfileButton";
 import OpenModalMenuItem from "./OpenModalMenuItem";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
-// import AddButton from "./AddButton"
+import AddButton from "./AddButton"
 // import logo from "../../../src/flashdrop-logo.jpg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
@@ -50,15 +27,15 @@ function Navigation() {
         {user ? (
           <>
             <li className="nav-right">
-              {/* <AddButton /> */}
+              <AddButton />
             </li>
             <li className="nav-right">
-              <NavLink to="/wishlist" className="nav-icon-link">
+              <NavLink to="/likes" className="nav-icon-link">
                 <FontAwesomeIcon icon={faHeart} className="nav-icon" />
               </NavLink>
             </li>
             <li className="nav-right">
-              <ProfileButton buttonClass="profile-button" />
+              <ProfileButton />
             </li>
           </>
         ) : (
