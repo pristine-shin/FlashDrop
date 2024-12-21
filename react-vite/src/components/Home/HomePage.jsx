@@ -1,24 +1,25 @@
+import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import LoginFormPage from "../LoginFormPage";
+import AllPosts from "../Post/AllPosts";
 import "./HomePage.css";
 
 function HomePage() {
+    const user = useSelector((store) => store.session.user);
 
     return (
-        <body className="homepage">
-            <div className="homepage-content">
-                <div className="login-section">
-                    <h1 className="app-title">FlashDrop</h1>
-                    <LoginFormPage />
-
-                    <div className="signup-section">
-                        <span>Don’t have an account? </span>
-                        <a href="/signup" className="signup-link">
-                            Sign up
-                        </a>
+        <>
+            {user ? (
+                <AllPosts />
+            ) : (
+                <body className="homepage">
+                    <div className="homepage-content">
+                        <LoginFormPage />
                     </div>
-                </div>
-            </div>
-        </body>
+                </body>
+
+            )}
+        </>
     )
 }
 

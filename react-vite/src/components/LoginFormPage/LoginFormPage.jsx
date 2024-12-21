@@ -72,7 +72,9 @@ function LoginFormPage() {
 
   return (
     <>
-      <form className="modal-content" onSubmit={handleSubmit}>
+    <div className="login-section">
+      <h1 className="app-title">FlashDrop</h1>
+      <form className="form-content" onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Username / Email</label>
           <input
@@ -114,6 +116,13 @@ function LoginFormPage() {
           <button type="button" id="demo-login-button" onClick={demoUserLogin}>Demo Login</button>
         </div>
       </form>
+      <div className="signup-section">
+        <span>Don’t have an account? </span>
+        <a href="/signup" className="signup-link">
+          Sign up
+        </a>
+      </div>
+    </div>
     </>
   );
 }
