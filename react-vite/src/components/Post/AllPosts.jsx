@@ -27,17 +27,19 @@ function AllPosts() {
 
   return (
     <div className="all-post-row">
-      <h2 className="all-posts-heading">Your Feed</h2>
+      {/* <h2 className="all-posts-heading">Your Feed</h2> */}
       <div className="all-posts">
         {allPosts.length > 0 ? (
           allPosts.map((post) => (
             <div key={post.id} className="all-post-card">
-              <Link to={`/posts/${post.id}`} className="all-post-card-link">
+              <Link to={`/profile/${post.userId}`} className="all-post-card-link">
                 <div className="all-post-header">
-                  <img src={post.profileImageUrl} alt="profile pic" className="profile-pic"/>
+                  <img src={post.profileImageUrl} alt="profile pic" className="profile-pic" />
                   <h3 className="all-post-username">{post.username}</h3>
                 </div>
-                  <img src={post.imageUrl} alt="post image" className="all-post-image" />
+              </Link>
+              <Link to={`/posts/${post.id}`} className="all-post-card-link">
+                <img src={post.imageUrl} alt="post image" className="all-post-image" />
                 <div className="all-post-info">
                   <p className="all-post-price">${post.price}</p>
                   <p className="all-post-style">{post.style}</p>
