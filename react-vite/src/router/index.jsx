@@ -4,6 +4,7 @@ import LoginFormPage from '../components/LoginFormPage';
 import SignupFormPage from '../components/SignupFormPage';
 import HomePage from '../components/Home/HomePage';
 import AllPosts from '../components/Post/AllPosts';
+import PostDetail from '../components/Post/PostDetail';
 import ProfilePage from '../components/UserProfilePage/UserProfile';
 import ArtistProfile from '../components/UserProfilePage/ArtistProfile';
 import EditPost from '../components/Post/EditPost';
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
       {
         path: "/posts",
         element: <AllPosts />,
+      },
+      {
+        path: "/posts/:postId",
+        element: <PostDetail />,
       },
       {
         path: "/profile/session",
