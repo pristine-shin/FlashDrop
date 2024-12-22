@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-// import AddCommentModal from "../Comment/AddCommentModal";
-// import EditCommentModal from "../Comment/EditCommentModal";
-// import RemoveCommentModal from "../Comment/RemoveCommentModal";
-// import {
-//   thunkRemoveComment,
-//   thunkGetUserComments,
-// } from "../../redux/comments";
+import AddCommentModal from "../Comment/AddCommentModal";
+import EditCommentModal from "../Comment/EditCommentModal";
+import RemoveCommentModal from "../Comment/RemoveCommentModal";
 import {
-//   thunkGetPostComments,
+  thunkRemoveComment,
+  thunkGetUserComments,
+} from "../../redux/comments";
+import {
+  thunkGetPostComments,
   thunkGetPostById,
 } from "../../redux/posts";
 // import { thunkAddFavoritesItem, selectFavoritesItem, thunkRemoveFavoritesItem, thunkGetFavorites } from "../../redux/favorites";
@@ -57,12 +57,12 @@ const PostDetail = () => {
     dispatch(thunkGetPostById(postId)).then((res) => setPost(res));
   }, [postId, dispatch]);
 
-  // useEffect(() => {
-  //   dispatch(thunkGetUserComments());
-  //   dispatch(thunkGetPostComments(postId)).then((res) =>
-  //     setComments(res.comments)
-  //   );
-  // }, [currentComment, dispatch, postId]);
+  useEffect(() => {
+    dispatch(thunkGetUserComments());
+    dispatch(thunkGetPostComments(postId)).then((res) =>
+      setComments(res.comments)
+    );
+  }, [currentComment, dispatch, postId]);
 
   // useEffect(() => {
   //   if (sessionUser) dispatch(thunkGetFavorites())
@@ -132,122 +132,14 @@ const PostDetail = () => {
         </div>
       )}
       <div className="post-row">
-        <div className="banner-container">
-          {/* Banner Section */}
-          {post?.bannerImageUrl && (
-            <div
-              className="banner"
-              style={{ backgroundImage: `url(${post.bannerImageUrl})` }}
-            />
-          )}
-        </div>
         <div className="post-detail">
           <div className="post-column">
             <div className="post-meta">
-              <div className="post-info-column">
-                <h2 className="post-name">{post.name}</h2>
-                <p className="post-artist">
-                  by{" "}
-                  <span
-                    className="post-artist-name"
-                    style={{ cursor: "pointer" }}
-                    onClick={() => openModal("/images/meme.jpg")}
-                  >
-                    {post.artistName}
-                  </span>
-                </p>
-                {[
-                  "music",
-                  "cd",
-                  "cassette",
-                  "vinyl_lp",
-                  "double_vinyl_lp",
-                  "vinyl_7",
-                  "vinyl_box_set",
-                  "other_vinyl",
-                  "CD",
-                  "Vinyl",
-                ].includes(post.type) && (
-                    <img
-                      src="/images/play.png"
-                      alt="Post Image"
-                      className="post-play"
-                      style={{ cursor: "pointer" }}
-                      onClick={() => openModal("/images/meme.jpg")}
-                    />
-                  )}
-                {showModal && (
-                  <div
-                    className="confirmation-modal-overlay"
-                    onClick={closeModal}
-                  >
-                    <div
-                      className="confirmation-modal-content"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <img
-                        src={modalImage}
-                        alt="Modal Content"
-                        className="modal-image"
-                      />
-                    </div>
-                  </div>
-                )}
 
-                <p className="post-type">{post.type}</p>
-                <p className="post-genre">
-                  {post.genre ? post.genre : "Streaming + Download"}
-                </p>
-                <p className="post-description">{post.description}</p>
-                <p className="download-available">
-                  Download available in 16-bit/44.1kHz.
-                </p>
-                <p className="post-price">
-                  ${post.price}
-                  <span className="USD">USD</span>
-                  <span className="or-more">or more</span>
-                </p>
-                <p className="lyric">
-                  {post.artistName} ๏ vocals, guitars, charango, cellos,
-                  percussions
-                  <br></br>
-                  Tuulia ๏ vocals<br></br>
-                  Misha Mullov-Abbado ๏ double bass<br></br>
-                  Shir-Ran Yinon ๏ violin<br></br>
-                  <br></br>
-                  <br></br>
-                  Spririts around we’re grateful for your presence<br></br>
-                  Ancestors around we hear your songs in the wind<br></br>
-                  We walk on holy ground<br></br>
-                  listen to the ancient sound<br></br>
-                  Spirits around we’re dancing with you<br></br>
-                  <br></br>
-                  Andelelele<br></br>
-                  Andelelele<br></br>
-                  Andelelele leyo<br></br>
-                  <br></br>
-                  <br></br>
-                  from {post.artistName}, released February 3, 2023<br></br>
-                  Music & lyrics by {post.artistName}
-                  <br></br>
-                  <br></br>
-                  <br></br>
-                  all rights reserved<br></br>
-                </p>
-                <p className="tag-title">Tags</p>
-                <p
-                  className="tags"
-                  style={{ cursor: "pointer" }}
-                  onClick={() => openModal("/images/meme.jpg")}
-                >
-                  #world #medicinemusic world medicina medicine music medicine
-                  songs world music Leipzig
-                </p>
-              </div>
               <div className="post-image-column">
                 <img
                   src={post.imageUrl}
-                  alt={post.name}
+                  alt="post image"
                   className="post-image-big"
                 />
                 <button
@@ -280,7 +172,7 @@ const PostDetail = () => {
                   )} */}
                 {/* Comments Section */}
                 <div className="comments-section">
-                  <p className="comments-title">supported by</p>
+                  <p className="comments-title">Comments</p>
                   {comments.length > 0 ? (
                     <>
                       {comments.map((comment, index) => (
@@ -288,7 +180,7 @@ const PostDetail = () => {
                           <div className="comment-image">
                             <img
                               src={comment.profileImageUrl}
-                              alt={`${comment.artistName}'s profile`}
+                              alt={`${comment.username}'s profile pic`}
                               className="profile-image"
                             />
                           </div>
@@ -296,10 +188,10 @@ const PostDetail = () => {
                             <p className="comment-content">
                               <span className="comment-name">
                                 <strong>
-                                  {comment.artistName || "Anonymous"}
+                                  {comment.username || "Anonymous"}
                                 </strong>
                               </span>
-                              {comment.comment}
+                              {comment.content}
                             </p>
                             {sessionUser && sessionUser.id === comment.userId ? (
                               <>
@@ -330,25 +222,6 @@ const PostDetail = () => {
                           </div>
                         </div>
                       ))}
-                      <p
-                        className="more"
-                        style={{ cursor: "pointer" }}
-                        onClick={() => openModal("/images/meme.jpg")}
-                      >
-                        more...
-                      </p>
-                      <img
-                        src="/images/supporters.png"
-                        alt="Supporter Icon"
-                        className="supporter-image"
-                      />
-                      <p
-                        className="more"
-                        style={{ cursor: "pointer" }}
-                        onClick={() => openModal("/images/meme.jpg")}
-                      >
-                        more...
-                      </p>
                     </>
                   ) : (
                     <p>No comments available for this post.</p>
@@ -376,11 +249,10 @@ const PostDetail = () => {
 
             <img
               src={post.profileImageUrl}
-              alt={`${post.artistName}'s profile`}
+              alt={`${post.username}'s profile`}
               className="profile-image-small"
             />
-            <p className="post-artist">{post.artistName}</p>
-            <p className="US">US</p>
+            <p className="post-artist">{post.username}</p>
             <button
               className="follow"
               style={{ cursor: "pointer" }}
@@ -392,27 +264,6 @@ const PostDetail = () => {
               {post.artistBio}<br></br>
               <br></br>
             </p>
-            <p
-              className="bio-more"
-              style={{ cursor: "pointer" }}
-              onClick={() => openModal("/images/meme.jpg")}
-            >
-              more<br></br>
-              <br></br>aquario-music.com
-            </p>
-            <p className="artist-discography">discography</p>
-            <img
-              src={post.imageUrl}
-              alt={post.name}
-              className="post-image-small"
-            />
-            <p
-              className="post-name-small"
-              style={{ cursor: "pointer" }}
-              onClick={() => openModal("/images/meme.jpg")}
-            >
-              {post.name}
-            </p>
             <p className="post-created-time">
               {formatDate(post.createdAt)}
             </p>
@@ -422,11 +273,9 @@ const PostDetail = () => {
               style={{ cursor: "pointer" }}
               onClick={() => openModal("/images/meme.jpg")}
             >
-              <br></br>Contact {post.artistName}
+              <br></br>Contact {post.username}
               <br></br>
-              <br></br>Streaming and Download help
-              <br></br>
-              <br></br>Report this album or account
+              <br></br>Report this post or account
             </p>
           </div>
         </div>

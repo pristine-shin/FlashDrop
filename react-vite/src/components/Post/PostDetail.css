@@ -1,5 +1,6 @@
 .post-row {
     width: 975px;
+    padding-top: 53px;
     margin: auto;
     display: flex;
     flex-direction: column;
