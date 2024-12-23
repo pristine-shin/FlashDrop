@@ -36,6 +36,7 @@
 
 .manage-post-button {
   background-color: white;
+  border: none;
   color: black;
   width: 40px;
   height: 20px;

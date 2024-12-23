@@ -8,8 +8,8 @@ import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
 // import "../Post/PostDetail.css";
 import "./UserProfile.css";
 
-// import Backdrop from '@mui/material/Backdrop';
-// import CircularProgress from '@mui/material/CircularProgress';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const ProfilePage = () => {
     const dispatch = useDispatch();
@@ -81,13 +81,12 @@ const ProfilePage = () => {
 
     if (error) return <p>{error}</p>;
     if (!user) return (
-        // <Backdrop
-        //   sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
-        //   open
-        // >
-        //   <CircularProgress color="inherit" />
-        // </Backdrop>
-        <h1>Loading profile...</h1>
+        <Backdrop
+          sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
+          open
+        >
+          <CircularProgress color="inherit" />
+        </Backdrop>
     );
 
 
@@ -133,7 +132,11 @@ const ProfilePage = () => {
                                     </div>
                                     <p className="all-post-style">{post.style}</p>
                                     <p className="all-post-size">{post.size}</p>
-                                    <p className="all-post-available">{post.available}</p>
+                                    {/* <p className="all-post-available">{post.available? (
+                                        <p>Available for booking</p>
+                                    ) : (
+                                        <p>Not avaialbe for booking. Message artist for a similar design.</p>
+                                    )}</p> */}
                                     <p className="all-post-caption">{post.caption}</p>
                                     <p className="all-post-createdAt">{calculateDaysAgo(post.createdAt)} days ago</p>
                                 </div>

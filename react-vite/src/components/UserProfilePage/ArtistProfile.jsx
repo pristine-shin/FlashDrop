@@ -121,7 +121,12 @@ const ArtistProfile = () => {
                   {/* </div> */}
                   <p className="all-post-style">{post.style}</p>
                   <p className="all-post-size">{post.size}</p>
-                  <p className="all-post-available">{post.available}</p>
+                  {/* <p className="all-post-available">{post.available}</p> */}
+                  <p className="all-post-available">{post.available ? (
+                    <p>Available for booking</p>
+                  ) : (
+                    <p>Not avaialbe for booking. Message artist for a similar design.</p>
+                  )}</p>
                   <p className="all-post-caption">{post.caption}</p>
                   <p className="all-post-createdAt">{calculateDaysAgo(post.createdAt)} days ago</p>
                 </div>
