@@ -4,6 +4,9 @@ import { thunkGetAllPosts, selectAllPostsArry } from "../../redux/posts";
 import { useDispatch, useSelector } from "react-redux";
 import "./AllPosts.css";
 
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+
 function AllPosts() {
   const dispatch = useDispatch();
   const allPosts = useSelector(selectAllPostsArry)
@@ -14,7 +17,12 @@ function AllPosts() {
 
   if (!allPosts) {
     return (
-      <h1>Loading all posts...</h1>
+      <Backdrop
+      sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
+      open
+    >
+      <CircularProgress color="inherit" />
+    </Backdrop>
     )
   }
 
@@ -24,6 +32,15 @@ function AllPosts() {
     const diffInTime = now - createdDate;
     return Math.floor(diffInTime / (1000 * 3600 * 24));
   };
+
+  const shufflePosts = (posts) => {
+    for (let i = posts.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [posts[i], posts[j]] = [posts[j], posts[i]]
+    }
+  }
+
+  shufflePosts(allPosts);
 
   return (
     <div className="all-post-row">
