@@ -4,6 +4,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { thunkSignup } from "../../redux/session";
 import "../../../src/index.css";
 import "./SignupForm.css";
+import "../LoginFormPage/LoginForm.css"
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -48,11 +49,12 @@ function SignupFormPage() {
 
   return (
     <>
-      <div className="signup-page">
-        <div className="signup-container">
-          <p className="modal-title">Sign up to get access to your artist&apos;s next FlashDrop!</p>
+    <div className="signup-page">
+      <div className="signup-content">
+        <div className="login-section">
+          <p id="signup-header">Sign up to get access to your artist&apos;s next FlashDrop!</p>
           {errors.server && <p>{errors.server}</p>}
-          <form className="modal-content" onSubmit={handleSubmit}>
+          <form className="form-content" onSubmit={handleSubmit}>
             <div className="form-group">
               <label className="label-name">Email</label>
               <div className="input-error">
@@ -134,11 +136,12 @@ function SignupFormPage() {
               </div>
             </div>
             <div className="form-group">
-              <button type="submit">Sign Up</button>
+              <button type="submit" id="signup-button">Sign Up</button>
             </div>
           </form>
         </div>
       </div>
+    </div>
     </>
   );
 }

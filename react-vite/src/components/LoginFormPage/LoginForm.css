@@ -61,7 +61,7 @@ input:focus {
   border-color: #a8a8a8;
 }
 
-#login-button {
+#login-button, #signup-button {
   width: 100%;
   padding: 0.6rem;
   font-size: 0.9rem;

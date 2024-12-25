@@ -143,6 +143,7 @@ body {
 .add-button-link {
   font-size: x-large;
   color: black;
+  padding-right: 7px;
 }
 
 li.username {
@@ -150,11 +151,11 @@ li.username {
 }
 
 li .nav-icon {
-  padding: 15px;
+  padding: 10px;
 }
 
 .nav-icon-link:hover{
-  color: #6046FE
+  color: #fe4690
 }
 
 ul.nav-right {

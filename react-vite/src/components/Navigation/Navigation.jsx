@@ -30,9 +30,9 @@ function Navigation() {
               <AddButton />
             </li>
             <li className="nav-right">
-              <NavLink to="/likes" className="nav-icon-link">
-                <FontAwesomeIcon icon={faHeart} className="nav-icon" />
-              </NavLink>
+              {/* <NavLink to="/likes" className="nav-icon-link"> */}
+                <FontAwesomeIcon icon={faHeart} className="nav-icon-link" />
+              {/* </NavLink> */}
             </li>
             <li className="nav-right">
               <ProfileButton />
@@ -40,7 +40,7 @@ function Navigation() {
           </>
         ) : (
           <>
-            <li className="nav-right">
+            {/* <li className="nav-right">
               <OpenModalMenuItem
                 itemText="Log In"
                 modalComponent={<LoginFormModal />}
@@ -53,7 +53,7 @@ function Navigation() {
                 modalComponent={<SignupFormModal />}
                 buttonClass="signup-button"
               />
-            </li>
+            </li> */}
           </>
         )}
       </ul>
