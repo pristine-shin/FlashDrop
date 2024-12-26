@@ -5,7 +5,8 @@ import {
   thunkEditPost,
   thunkGetPostById,
 } from "../../redux/posts";
-import "./EditPost.css";
+// import "./EditPost.css";
+import "./AddPost.css";
 import ConfirmationModal from "../../context/ConfirmationModal";
 
 function EditPost() {
@@ -85,49 +86,12 @@ function EditPost() {
   };
 
   return (
-    <div className="container-edit-post">
-      <form onSubmit={handleSubmit} encType="multipart/form-data" className="edit-post-form">
-        <div className="post">
-          <h2 className="header">Edit Post</h2>
-          <label className="label size">Size:</label>
-          <input
-            type="text"
-            value={size}
-            onChange={(e) => setSize(e.target.value)}
-            className="input size"
-          />
-          {errors.size && <p className="error-message">{errors.size}</p>}
+    <div className="add-post-page">
+      <div className="container-add-post">
+        <form onSubmit={handleSubmit} encType="multipart/form-data" className="edit-post-form">
+          {/* <div className="post"> */}
+          <h2 className="add-edit-header">Edit Post</h2>
 
-          <label className="label style">Style:</label>
-          <input
-            type="text"
-            value={style}
-            onChange={(e) => setStyle(e.target.value)}
-            className="input style"
-          />
-          {errors.style && <p className="error-message">{errors.style}</p>}
-
-          <label className="label price">Price:</label>
-          <label className="label us-dollars">
-            <input
-              type="number"
-              step="0.01"
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
-              min="0.01"
-              className="input price"
-            />
-            US Dollars
-          </label>
-          {errors.price && <p className="error-message">{errors.price}</p>}
-
-          <label className="label caption">Caption:</label>
-          <textarea
-            value={caption}
-            onChange={(e) => setCaption(e.target.value)}
-            className="input textarea caption"
-          />
-          {errors.caption && <p className="error-message">{errors.caption}</p>}
           <div
             className="upload"
             onClick={handleDivClick}
@@ -155,6 +119,46 @@ function EditPost() {
           </div>
           {errors.imageUrl && <p className="error-message">{errors.imageUrl}</p>}
 
+          <label className="label price">Price:</label>
+          <label className="label us-dollars">
+            <input
+              type="number"
+              step="0.01"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              min="0.01"
+              className="input price"
+            />
+            US Dollars
+          </label>
+          {errors.price && <p className="error-message">{errors.price}</p>}
+
+          <label className="label size">Size:</label>
+          <input
+            type="text"
+            value={size}
+            onChange={(e) => setSize(e.target.value)}
+            className="input size"
+          />
+          {errors.size && <p className="error-message">{errors.size}</p>}
+
+          <label className="label style">Style:</label>
+          <input
+            type="text"
+            value={style}
+            onChange={(e) => setStyle(e.target.value)}
+            className="input style"
+          />
+          {errors.style && <p className="error-message">{errors.style}</p>}
+
+          <label className="label caption">Caption:</label>
+          <textarea
+            value={caption}
+            onChange={(e) => setCaption(e.target.value)}
+            className="input textarea caption"
+          />
+          {errors.caption && <p className="error-message">{errors.caption}</p>}
+
           <label className="label available">Available:</label>
           <select
             value={available}
@@ -178,17 +182,18 @@ function EditPost() {
               cancel
             </button>
           </div>
-        </div>
-      </form>
-      {showConfirmModal && (
-        <ConfirmationModal
-          onClose={() => {
-            setShowConfirmModal(false)
-            navigate(`/profile/${sessionUser.id}`);
-          }}
-          message={"You have updated this post!"}
-        />
-      )}
+          {/* </div> */}
+        </form>
+        {showConfirmModal && (
+          <ConfirmationModal
+            onClose={() => {
+              setShowConfirmModal(false)
+              navigate(`/profile/${sessionUser.id}`);
+            }}
+            message={"You have updated this post!"}
+          />
+        )}
+      </div>
     </div>
   );
 }
