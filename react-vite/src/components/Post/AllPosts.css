@@ -44,7 +44,7 @@
     text-align: left;
     padding: 9px 10px 25px 10px;
     background-color: white;
-    height: 208px;
+    height: 150px;
     box-sizing: border-box;
     margin: 0;
   }
@@ -77,7 +77,7 @@
   }
 
   /* Container styling for the post row */
-  .all-post-row {
+  .all-post-container {
     background-color: white;
     display: flex;
     flex-direction: column;

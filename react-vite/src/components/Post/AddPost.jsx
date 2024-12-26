@@ -65,56 +65,11 @@ function AddPost() {
   };
 
   return (
-    <div className="container-add-post">
-      <form onSubmit={handleSubmit} encType="multipart/form-data" className="add-post-form">
-        <div className="post">
-        <h2 className="header">Add a New Post</h2>
-          <label className="label style">
-            Style:
-            <input
-              type="text"
-              value={style}
-              onChange={(e) => setStyle(e.target.value)}
-              placeholder="Post Style"
-              className="input style"
-            />
-          </label>
-          {errors.style && <p className="error-message">{errors.style}</p>}
-
-          <label className="label size">
-            Size:
-            <input
-              type="text"
-              value={size}
-              onChange={(e) => setSize(e.target.value)}
-              placeholder="Post Size"
-              className="input size"
-            />
-          </label>
-          {errors.size && <p className="error-message">{errors.size}</p>}
-
-          <label className="label price">price:</label>
-          <label className="label us-dollars">
-            <input
-              type="number"
-              step="0.01"
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
-              min="0.01"
-              className="input price"
-            />
-            US Dollars
-          </label>
-          {errors.price && <p className="error-message">{errors.price}</p>}
-
-          <label className="label caption">caption:</label>
-          <textarea
-            value={caption}
-            onChange={(e) => setCaption(e.target.value)}
-            placeholder="(Caption here)"
-            className="input textarea caption"
-          />
-          {errors.caption && <p className="error-message">{errors.caption}</p>}
+    <div className="add-post-page">
+      <div className="container-add-post">
+        <form onSubmit={handleSubmit} encType="multipart/form-data" className="add-post-form">
+          {/* <div className="post"> */}
+          <h2 className="add-edit-header">New Post</h2>
 
           <div
             className="upload"
@@ -142,18 +97,69 @@ function AddPost() {
           </div>
           {errors.imageUrl && <p className="error-message">{errors.imageUrl}</p>}
 
-          <label className="label available">available:</label>
-          <select
-            value={available}
-            onChange={(e) => setAvailable(e.target.value)}
-            className="input available"
-            style={{ color: available === "" ? "#AAA" : "#333" }}
-          >
-            <option value={true}>Yes</option>
-            <option value={false}>No</option>
-          </select>
-          {errors.available && <p className="error-message">{errors.available}</p>}
-          
+          <div className="add-post-detail-container">
+            {/* <label className="label price">price:</label> */}
+            <label className="label us-dollars">
+              <input
+                type="number"
+                step="0.01"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+                placeholder="Ex: 350.00"
+                min="0.01"
+                className="input price"
+              />
+              US Dollars
+            </label>
+            {errors.price && <p className="error-message">{errors.price}</p>}
+
+            <label className="label style">
+              Style:
+              <input
+                type="text"
+                value={style}
+                onChange={(e) => setStyle(e.target.value)}
+                placeholder="Ex: American Traditional"
+                className="input style"
+              />
+            </label>
+            {errors.style && <p className="error-message">{errors.style}</p>}
+
+            <label className="label size">
+              Size:
+              <input
+                type="text"
+                value={size}
+                onChange={(e) => setSize(e.target.value)}
+                placeholder="Ex: 6-9 inches"
+                className="input size"
+              />
+            </label>
+            {errors.size && <p className="error-message">{errors.size}</p>}
+
+            <label className="label caption">Caption:</label>
+            <textarea
+              value={caption}
+              onChange={(e) => setCaption(e.target.value)}
+              placeholder="Ex: Want to do more tigers!!! Let's book :)"
+              className="input textarea caption"
+            />
+            {errors.caption && <p className="error-message">{errors.caption}</p>}
+
+            <label className="label available">Available:</label>
+            <select
+              value={available}
+              onChange={(e) => setAvailable(e.target.value)}
+              className="input available"
+              style={{ color: available === "" ? "#AAA" : "#333" }}
+            >
+              <option value={true}>Yes</option>
+              <option value={false}>No</option>
+            </select>
+            {errors.available && <p className="error-message">{errors.available}</p>}
+          </div>
+
+
           <div className="ctas">
             <button type="submit" className="button submit">
               Add Post
@@ -163,22 +169,24 @@ function AddPost() {
               className="button cancel"
               onClick={handleCancel}
             >
-              cancel
+              Cancel
             </button>
           </div>
-        </div>
-      </form>
+          {/* </div> */}
+        </form>
 
-      {showConfirmModal && (
-        <ConfirmationModal
-          onClose={() => {
-            setShowConfirmModal(false)
-            navigate(`/profile/${sessionUser.id}`);
-          }}
-          message={"You have added this post!"}
-        />
-      )}
+        {showConfirmModal && (
+          <ConfirmationModal
+            onClose={() => {
+              setShowConfirmModal(false)
+              navigate(`/profile/${sessionUser.id}`);
+            }}
+            message={"You have added this post!"}
+          />
+        )}
+      </div>
     </div>
+
   );
 }
 

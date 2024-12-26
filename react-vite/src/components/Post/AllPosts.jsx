@@ -43,7 +43,7 @@ function AllPosts() {
   shufflePosts(allPosts);
 
   return (
-    <div className="all-post-row">
+    <div className="all-post-container">
       {/* <h2 className="all-posts-heading">Your Feed</h2> */}
       <div className="all-posts">
         {allPosts.length > 0 ? (
