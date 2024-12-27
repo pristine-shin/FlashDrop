@@ -1,6 +1,11 @@
+.post-detail-page{
+  background-color: #fff;
+  /* display: flex; */
+}
+
 .post-row {
     width: 975px;
-    padding-top: 53px;
+    padding: 53px 20px 20px 20px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -27,17 +32,18 @@
     margin: auto;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 44px;
+    /* padding-bottom: 44px; */
   }
 
   .post-column {
-    width: 756px;
+    /* width: 600px; */
+    width: 450px;
     display: flex;
     flex-direction: column;
   }
 
   .artist-column {
-    width: 120px;
+    width: 300px;
   }
 
   .post-name {
@@ -61,11 +67,11 @@
   }
 
   .post-info-column {
-    width: 376px;
+    width: 450px;
   }
 
   .post-image-column {
-    width: 350px;
+    width: 450px;
   }
 
   .post-image-column button {
@@ -74,8 +80,8 @@
   }
 
   .post-image-big {
-    width: 350px;
-    height: 350px;
+    width: 450px;
+    height: 450px;
     object-fit: cover;
     object-position: center;
     overflow: hidden;
@@ -117,8 +123,9 @@
   }
 
   .profile-image-small {
-    width: 120px;
-    height: 120px;
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
     object-fit: cover;
     object-position: center;
     margin-bottom: 9px;

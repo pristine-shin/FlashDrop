@@ -28,7 +28,7 @@ const AddCommentModal = ({ onClose, setCurrentComment, postId }) => {
     <div id="modal">
       <div id="modal-background" onClick={onClose}></div>
       <div id="modal-content">
-        <h3 className="modal-title">Add a Comment</h3>
+        {/* <h3 className="modal-title">Add a Comment</h3> */}
         <div className="modal-content">
           <textarea
             value={commentText}

@@ -134,7 +134,7 @@ const PostDetail = () => {
       <div className="post-row">
         <div className="post-detail">
           <div className="post-column">
-            <div className="post-meta">
+            {/* <div className="post-meta"> */}
 
               <div className="post-image-column">
                 <img
@@ -243,7 +243,7 @@ const PostDetail = () => {
                   )}
                 </div>
               </div>
-            </div>
+            {/* </div> */}
           </div>
           <div className="artist-column">
 

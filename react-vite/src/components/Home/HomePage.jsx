@@ -12,11 +12,13 @@ function HomePage() {
             {user ? (
                 <AllPosts />
             ) : (
-                <body className="homepage">
-                    <div className="homepage-content">
-                        <LoginFormPage />
+                <div className="background">
+                    <div className="homepage">
+                        <div className="homepage-content">
+                            <LoginFormPage />
+                        </div>
                     </div>
-                </body>
+                </div>
 
             )}
         </>
