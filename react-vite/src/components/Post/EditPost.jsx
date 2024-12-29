@@ -88,7 +88,7 @@ function EditPost() {
   return (
     <div className="add-post-page">
       <div className="container-add-post">
-        <form onSubmit={handleSubmit} encType="multipart/form-data" className="edit-post-form">
+        <form onSubmit={handleSubmit} encType="multipart/form-data" className="add-post-form">
           {/* <div className="post"> */}
           <h2 className="add-edit-header">Edit Post</h2>
 
@@ -119,57 +119,61 @@ function EditPost() {
           </div>
           {errors.imageUrl && <p className="error-message">{errors.imageUrl}</p>}
 
-          <label className="label price">Price:</label>
-          <label className="label us-dollars">
+          <div className="add-post-detail-container">
+
+            {/* <label className="label price">Price:</label> */}
+            <label className="label us-dollars">
+              <input
+                type="number"
+                step="0.01"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+                min="0.01"
+                className="input price"
+              />
+              US Dollars
+            </label>
+            {errors.price && <p className="error-message">{errors.price}</p>}
+
+            <label className="label size">Size:</label>
             <input
-              type="number"
-              step="0.01"
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
-              min="0.01"
-              className="input price"
+              type="text"
+              value={size}
+              onChange={(e) => setSize(e.target.value)}
+              className="input size"
             />
-            US Dollars
-          </label>
-          {errors.price && <p className="error-message">{errors.price}</p>}
+            {errors.size && <p className="error-message">{errors.size}</p>}
 
-          <label className="label size">Size:</label>
-          <input
-            type="text"
-            value={size}
-            onChange={(e) => setSize(e.target.value)}
-            className="input size"
-          />
-          {errors.size && <p className="error-message">{errors.size}</p>}
+            <label className="label style">Style:</label>
+            <input
+              type="text"
+              value={style}
+              onChange={(e) => setStyle(e.target.value)}
+              className="input style"
+            />
+            {errors.style && <p className="error-message">{errors.style}</p>}
 
-          <label className="label style">Style:</label>
-          <input
-            type="text"
-            value={style}
-            onChange={(e) => setStyle(e.target.value)}
-            className="input style"
-          />
-          {errors.style && <p className="error-message">{errors.style}</p>}
+            <label className="label caption">Caption:</label>
+            <textarea
+              value={caption}
+              onChange={(e) => setCaption(e.target.value)}
+              className="input textarea caption"
+            />
+            {errors.caption && <p className="error-message">{errors.caption}</p>}
 
-          <label className="label caption">Caption:</label>
-          <textarea
-            value={caption}
-            onChange={(e) => setCaption(e.target.value)}
-            className="input textarea caption"
-          />
-          {errors.caption && <p className="error-message">{errors.caption}</p>}
+            <label className="label available">Available:</label>
+            <select
+              value={available}
+              onChange={(e) => setAvailable(e.target.value)}
+              className="input available"
+              style={{ color: available === "" ? "#AAA" : "#333" }}
+            >
+              <option value={true}>Yes</option>
+              <option value={false}>No</option>
+            </select>
+            {errors.available && <p className="error-message">{errors.available}</p>}
+          </div>
 
-          <label className="label available">Available:</label>
-          <select
-            value={available}
-            onChange={(e) => setAvailable(e.target.value)}
-            className="input available"
-            style={{ color: available === "" ? "#AAA" : "#333" }}
-          >
-            <option value={true}>Yes</option>
-            <option value={false}>No</option>
-          </select>
-          {errors.available && <p className="error-message">{errors.available}</p>}
           <div className="ctas">
             <button type="submit" className="button submit">
               Update Post
