@@ -84,7 +84,7 @@ p {
   margin-block-end: 0;
 }
 
-
+/********************************/
 /* #modal {
   position: fixed;
   top: 0;
@@ -94,9 +94,9 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
-#modal-background {
+/* #modal-background {
   position: fixed;
   top: 0;
   right: 0;
@@ -104,8 +104,9 @@ p {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
 }
+*/
 
-#modal-content {
+/* #modal-content {
   position: absolute;
   background-color:white;
 } */

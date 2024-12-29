@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import AddCommentModal from "../Comment/AddCommentModal";
 import EditCommentModal from "../Comment/EditCommentModal";
@@ -124,7 +124,7 @@ const PostDetail = () => {
       {showModal && (
         <div className="confirmation-modal-overlay" onClick={closeModal}>
           <div
-            className="confirmation-modal-content"
+            className="tbd-confirmation-modal-content"
             onClick={(e) => e.stopPropagation()}
           >
             <img src={modalImage} alt="Modal Content" className="modal-image" />
@@ -170,12 +170,19 @@ const PostDetail = () => {
                       Favorites
                     </button>
                   )} */}
-              <div className="post-artist-name">
-                @{post.username}
+              <div className="post-caption-area">
+                <Link to={`/profile/${post.userId}`} className="username-link">
+                  <span className="post-artist-name">
+                    {post.username}
+                  </span>
+                </Link>
+                <span>
+                  {post.caption}
+                </span>
               </div>
-              <div>
-                {post.caption}
-              </div>
+              <p className="post-created-time">
+                {formatDate(post.createdAt)}
+              </p>
               {/* Comments Section */}
               <div className="comments-section">
                 <p className="comments-title">Comments</p>
@@ -252,13 +259,15 @@ const PostDetail = () => {
             {/* </div> */}
           </div>
           <div className="artist-column">
+            <Link to={`/profile/${post.userId}`} className="username-link">
 
-            <img
-              src={post.profileImageUrl}
-              alt={`${post.username}'s profile`}
-              className="profile-image-small"
-            />
-            <p className="post-artist">@{post.username}</p>
+              <img
+                src={post.profileImageUrl}
+                alt={`${post.username}'s profile`}
+                className="profile-image-small"
+              />
+              <p className="post-artist">@{post.username}</p>
+            </Link>
             <button
               className="follow"
               style={{ cursor: "pointer" }}
@@ -269,9 +278,6 @@ const PostDetail = () => {
             <p className="detail-artist-bio">
               {post.artistBio}<br></br>
               <br></br>
-            </p>
-            <p className="post-created-time">
-              {formatDate(post.createdAt)}
             </p>
             <p className="artist-contact">Contact / Help</p>
             <p

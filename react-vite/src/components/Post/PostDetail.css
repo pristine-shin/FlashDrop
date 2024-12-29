@@ -5,7 +5,7 @@
 
 .post-row {
     width: 975px;
-    padding: 53px 20px 20px 20px;
+    padding: 73px 20px 20px 20px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -31,6 +31,7 @@
     width: 915px;
     margin: auto;
     display: flex;
+    /* gap: 80px; */
     justify-content: space-between;
     /* padding-bottom: 44px; */
   }
@@ -44,6 +45,7 @@
 
   .artist-column {
     width: 300px;
+    padding: 0px 50px 0px 50px;
   }
 
   .post-name {
@@ -54,10 +56,19 @@
     font-weight: 300;
   }
 
-  .post-artist-name {
-    color: #0687F5;
-    font-weight: bold;
+  .post-caption-area {
     margin: 15px 0px 15px 0px;
+    line-height: 22px;
+  }
+
+  .username-link{
+    text-decoration: none;
+    color: black;
+  }
+  .post-artist-name {
+    color: black;
+    font-weight: bold;
+    margin-right: 10px;
   }
 
   .post-artist{
@@ -145,12 +156,12 @@
     height: 200px;
   }
 
-  .confirmation-modal-content {
+  .tbd-confirmation-modal-content {
     margin-top: 20%;
   }
 
   .comments-section{
-    margin: 0;
+    margin-top: 10px;
   }
 
   .comments-title {
@@ -166,13 +177,15 @@
     width: 100%;
     margin: auto;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+    gap: 20px;
+    /* justify-content: space-between; */
+    margin-bottom: 20px;
   }
 
   .profile-image {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
     object-fit: cover;
     object-position: center;
   }
@@ -191,6 +204,7 @@
 
   .comment-content {
     font-size: 12px;
+    /* line-height: 20px; */
     margin: 0;
     width: 100%;
     white-space: normal;
@@ -223,8 +237,9 @@
 
   .post-created-time{
     font-size: 12px;
-    margin-block-start: 0;
-    margin-block-end: 0;
+    margin-top: 10px;
+    /* margin-block-start: 0;
+    margin-block-end: 0; */
   }
 
   .post-play {
@@ -288,7 +303,7 @@
   .detail-artist-bio {
     font-size: 14px;
     color: #363636;
-    line-height: 15px;
+    line-height: 18px;
   }
 
   .artist-discography {
@@ -301,7 +316,7 @@
     font-size: 14px;
     font-weight: bold;
     color: #363636;
-    margin-top: 36px;
+    margin-top: 16px;
   }
 
   .post-name-small{
