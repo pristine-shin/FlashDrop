@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 // import "../Post/PostDetail.css";
 import "./UserProfile.css";
 
-// import Backdrop from '@mui/material/Backdrop';
-// import CircularProgress from '@mui/material/CircularProgress';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const ArtistProfile = () => {
   const dispatch = useDispatch();
@@ -69,13 +69,13 @@ const ArtistProfile = () => {
 
   if (error) return <p>{error}</p>;
   if (!user) return (
-    // <Backdrop
-    //   sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
-    //   open
-    // >
-    //   <CircularProgress color="inherit" />
-    // </Backdrop>
-    <h1>Loading profile...</h1>
+    <Backdrop
+      sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
+      open
+    >
+      <CircularProgress color="inherit" />
+    </Backdrop>
+    // <h1>Loading profile...</h1>
   );
 
 
