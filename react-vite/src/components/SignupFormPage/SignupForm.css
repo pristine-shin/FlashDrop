@@ -1,8 +1,26 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.background {
+  background-image: url('https://res.cloudinary.com/dmvfvyilq/image/upload/v1733882088/IMG_7945_emljaz.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-attachment: fixed; */
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
 .signup-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 100vh;
   color: #262626;
 }

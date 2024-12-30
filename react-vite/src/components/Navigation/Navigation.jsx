@@ -7,7 +7,7 @@ import OpenModalMenuItem from "./OpenModalMenuItem";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import AddButton from "./AddButton"
-// import logo from "../../../src/flashdrop-logo.jpg"
+import logo from "../../../src/flashdrop-logo.jpg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import "./Navigation.css";
@@ -43,7 +43,7 @@ function Navigation() {
       <ul className="nav-right">
         <li className="nav-logo">
           <NavLink to="/">
-            {/* <img src={logo} alt="Logo" className="logo" /> */}
+            <img src={logo} alt="Logo" className="logo" />
             FlashDrop
           </NavLink>
         </li>
