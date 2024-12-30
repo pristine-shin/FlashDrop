@@ -20,6 +20,9 @@ import {
   faPenToSquare,
   faTrash,
   faShare,
+  faArrowUpRightFromSquare,
+  faCalendarPlus,
+  faCalendarXmark
 } from "@fortawesome/free-solid-svg-icons";
 import "./PostDetail.css";
 import ConfirmationModal from "../../context/ConfirmationModal";
@@ -147,9 +150,11 @@ const PostDetail = () => {
                 style={{ cursor: "pointer" }}
                 onClick={() => openModal("https://res.cloudinary.com/dmvfvyilq/image/upload/v1735340873/modern-coming-soon-loading-icon-600nw-2506897855_zdkeal.jpg")}
               >
-                <FontAwesomeIcon icon={faShare} className="nav-icon" /> Share
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="nav-icon" /> Share
                 / Embed
               </button>
+
+
               {/* Favorites Button */}
               {/* {sessionUser &&
                   (favorites[postId] ?
@@ -170,6 +175,7 @@ const PostDetail = () => {
                       Favorites
                     </button>
                   )} */}
+
               <div className="post-caption-area">
                 <Link to={`/profile/${post.userId}`} className="username-link">
                   <span className="post-artist-name">
@@ -183,6 +189,7 @@ const PostDetail = () => {
               <p className="post-created-time">
                 {formatDate(post.createdAt)}
               </p>
+              
               {/* Comments Section */}
               <div className="comments-section">
                 <p className="comments-title">Comments</p>
@@ -274,6 +281,13 @@ const PostDetail = () => {
               onClick={() => openModal("https://res.cloudinary.com/dmvfvyilq/image/upload/v1735340873/modern-coming-soon-loading-icon-600nw-2506897855_zdkeal.jpg")}
             >
               Follow
+            </button>
+            <button
+              className="follow"
+              style={{ cursor: "pointer" }}
+              onClick={() => openModal("https://res.cloudinary.com/dmvfvyilq/image/upload/v1735340873/modern-coming-soon-loading-icon-600nw-2506897855_zdkeal.jpg")}
+            >
+              Book
             </button>
             <p className="detail-artist-bio">
               {post.artistBio}<br></br>

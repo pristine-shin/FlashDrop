@@ -142,6 +142,7 @@
     object-fit: cover;
     object-position: center;
     margin-bottom: 25px;
+    margin-left: 27px;
     /* margin-top: 12px; */
   }
 
@@ -298,6 +299,7 @@
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 20px;
+    margin-right: 10px;
   }
 
   .detail-artist-bio {
