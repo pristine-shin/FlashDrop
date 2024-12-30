@@ -26,6 +26,7 @@ def all_posts():
         "id": post.id,
         "userId": post.userId,
         "username": post.user.username,
+        "profileImageUrl": post.user.profileImageUrl,
         "size": post.size,
         "style": post.style,
         "price": round(post.price, 2),

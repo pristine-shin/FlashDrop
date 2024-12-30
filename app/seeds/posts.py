@@ -867,7 +867,7 @@ def seed_posts():
             "price": 150.0,
             "caption": "Always thrilled to work on such intricate designs. Style: American Traditional.",
             "available": False,
-            "imageUrl": "https://res.cloudinary.com/dmvfvyilq/image/upload/v1733433270/360_F_317106375_1jZgt43g4veCk14LXQbyMvM4YJyXqY8i_uo1axc.jpg"
+            "imageUrl": "https://res.cloudinary.com/dmvfvyilq/image/upload/v1733433266/il_570xN.5667828062_ayy4_b3qs5d.jpg"
         },
         {
             "userId": 10,

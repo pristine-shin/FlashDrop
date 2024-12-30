@@ -72,7 +72,9 @@ function LoginFormPage() {
 
   return (
     <>
-      <form className="modal-content" onSubmit={handleSubmit}>
+    <div className="login-section">
+      <h1 className="app-title">FlashDrop</h1>
+      <form className="form-content" onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Username / Email</label>
           <input
@@ -103,7 +105,7 @@ function LoginFormPage() {
         {errors.general && <p className="error-message">{errors.general}</p>}
 
         <div className="form-group">
-          <button type="submit">Log In</button>
+          <button type="submit" id="login-button">Log In</button>
         </div>
 
         <div className="or-divider">
@@ -111,12 +113,18 @@ function LoginFormPage() {
         </div>
 
         <div className="form-group">
-          <button type="button" onClick={demoUserLogin}>Demo Login</button>
+          <button type="button" id="demo-login-button" onClick={demoUserLogin}>Demo Login</button>
         </div>
       </form>
+      <div className="signup-section">
+        <span>Don’t have an account? </span>
+        <a href="/signup" className="signup-link">
+          Sign up
+        </a>
+      </div>
+    </div>
     </>
   );
 }
 
 export default LoginFormPage;
-

@@ -1,0 +1,108 @@
+/* Main styling for the post card */
+.all-post-card {
+    width: 300px;
+    height: auto;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5px;
+  }
+
+  .all-post-card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .all-post-header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  .profile-pic {
+    margin-right: 7px;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  /* Image styling for the top of the card */
+  .all-post-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin: 0;
+    display: block;
+  }
+
+  /* Container for post info */
+  .all-post-info {
+    text-align: left;
+    padding: 9px 10px 25px 10px;
+    background-color: white;
+    height: 150px;
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  /* Product name styling */
+  .all-post-username,
+  .all-post-price,
+  .all-post-style,
+  .all-post-size,
+  .all-post-available {
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    margin: 4px 0;
+    line-height: 18px;
+  }
+
+  .all-post-createdAt{
+    font-size: 11px;
+    color: #999;
+    margin: 4px 0;
+  }
+
+  .all-post-caption {
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+    font-size: 12px;
+    color: #333;
+    margin: 4px 0;
+    line-height: 18px;
+  }
+
+  /* Container styling for the post row */
+  .all-post-container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+  }
+
+  .all-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1306px;
+    gap: 19px;
+    padding-bottom: 28px;
+    margin: 0 auto;
+  }
+
+  .all-posts-heading {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 auto;
+    color: black;
+    width: 100%;
+    max-width: 1106px;
+    padding: 36px 0 18px;
+  }

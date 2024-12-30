@@ -1,0 +1,358 @@
+.post-detail-page{
+  background-color: #fff;
+  /* display: flex; */
+}
+
+.post-row {
+    width: 975px;
+    padding: 73px 20px 20px 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    color: #333;
+    border: solid 1px rgb(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+
+  .banner {
+    width: 100%;
+    height: 180px;
+    background-size: contain;
+    background-position: top;
+    margin-bottom: 44px;
+  }
+
+  .banner-container {
+    width: 100%;
+  }
+
+  .post-detail {
+    width: 915px;
+    margin: auto;
+    display: flex;
+    /* gap: 80px; */
+    justify-content: space-between;
+    /* padding-bottom: 44px; */
+  }
+
+  .post-column {
+    /* width: 600px; */
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .artist-column {
+    width: 300px;
+    padding: 0px 50px 0px 50px;
+  }
+
+  .post-name {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  .post-caption-area {
+    margin: 15px 0px 15px 0px;
+    line-height: 22px;
+  }
+
+  .username-link{
+    text-decoration: none;
+    color: black;
+  }
+  .post-artist-name {
+    color: black;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .post-artist{
+    margin: 15px 0px 15px 0px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .post-meta {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .post-info-column {
+    width: 450px;
+  }
+
+  .post-image-column {
+    width: 450px;
+  }
+
+  .post-image-column button {
+    padding-top: 17px;
+    padding-bottom: 7px;
+  }
+
+  .post-image-big {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+  }
+
+  .post-price,
+  .post-dates span {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .post-genre {
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 7px;
+  }
+
+  .post-type {
+    margin: 0 0 7px 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .post-description {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.25em;
+  }
+
+  .post-price {
+    margin: 10px 0 15px 0;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .profile-image-small {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 25px;
+    margin-left: 27px;
+    /* margin-top: 12px; */
+  }
+
+  .post-image-small {
+    width: 120px;
+    padding-top: 1em;
+    margin-bottom: 9px;
+  }
+
+  .modal-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .tbd-confirmation-modal-content {
+    margin-top: 20%;
+  }
+
+  .comments-section{
+    margin-top: 10px;
+  }
+
+  .comments-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding: 25px 0 10px 0;
+    margin-bottom: 5px;
+  }
+
+  .comment {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    /* justify-content: space-between; */
+    margin-bottom: 20px;
+  }
+
+  .profile-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .comment-info {
+    width: 310px;
+  }
+
+  .comment-name {
+    font-size: 12px;
+    display: inline;
+    margin-right: 4px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+  .comment-content {
+    font-size: 12px;
+    /* line-height: 20px; */
+    margin: 0;
+    width: 100%;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  .post-detail-button {
+    background-color: white;
+    border: none;
+    font-weight: 700;
+    color: #0687F5;
+    padding-top: 18px;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    padding-right: 10px;
+  }
+
+  .post-detail-button:hover {
+    background-color: white;
+    border: none;
+    font-weight: 700;
+    color: #0687F5;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .nav-icon {
+    padding-right: 4px;
+  }
+
+  .post-created-time{
+    font-size: 12px;
+    margin-top: 10px;
+    /* margin-block-start: 0;
+    margin-block-end: 0; */
+  }
+
+  .post-play {
+    width: 316px;
+    padding: 24px 0 17px 0;
+  }
+
+  .download-available {
+    font-size: 12px;
+    margin: 10px 0;
+    color: #888;
+  }
+
+  .add-to-cart {
+    color: #0687F5;
+    margin-right: 10px;
+  }
+
+  .add-to-cart:hover {
+    cursor: pointer;
+  }
+
+  .USD {
+    font-size: 12px;
+    color: #888;
+    margin: 0 8px 0 4px;
+  }
+
+  .or-more {
+    font-weight: 300;
+    font-size: 12px;
+    color: #888;
+  }
+
+  .lyric {
+    font-size: 12px;
+    color: #363636;
+    line-height: 15px;
+  }
+
+  .US {
+    font-size: 12px;
+    color: #888;
+    font-weight: 300;
+    margin-bottom: 12px;
+  }
+
+  .follow {
+    color: #0687F5;
+    background-color: #fff;
+    border: solid 1px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    width: 120px;
+    height: 28px;
+    padding: 6px 5px 5px 5px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-right: 10px;
+  }
+
+  .detail-artist-bio {
+    font-size: 14px;
+    color: #363636;
+    line-height: 18px;
+  }
+
+  .artist-discography {
+    font-size: 14px;
+    font-weight: 300;
+    color: #363636;
+  }
+
+  .artist-contact {
+    font-size: 14px;
+    font-weight: bold;
+    color: #363636;
+    margin-top: 16px;
+  }
+
+  .post-name-small{
+    font-size: 12px;
+    font-weight: 300;
+    color: #0687F5;
+    line-height: 15px;
+  }
+
+  .tag-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #363636;
+    margin: 24px 0 7px 0;
+  }
+
+  .tags {
+    font-size: 12px;
+    color: #0687F5;
+    line-height: 18px;
+    font-weight: bold;
+  }
+
+  .more {
+    color: #0687F5;
+    font-size: 11px;
+    line-height: 14px;
+    margin-bottom: 15px;
+  }
+
+  .bio-more {
+    color: #0687F5;
+    font-size: 13px;
+    line-height: 14px;
+    margin-bottom: 21px;
+    font-weight: 300;
+  }

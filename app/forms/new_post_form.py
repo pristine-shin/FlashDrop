@@ -14,5 +14,3 @@ class NewPostForm(FlaskForm):
   available = BooleanField('available', validators=[DataRequired()])
   # imageUrl = URLField('imageUrl', validators=[DataRequired(message="Please provide an image of this item."), URL()])
   imageUrl = FileField('imageUrl', validators=[FileRequired(message="Please provide an image."), FileAllowed(list(ALLOWED_EXTENSIONS))])
-
-

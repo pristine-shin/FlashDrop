@@ -1,0 +1,132 @@
+#big-profile-pic {
+  margin-top: 15px;
+  margin-right: 15px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 100px;
+}
+
+.profile-header {
+  /* margin: 53px 0px 0px 95px; */
+  margin-top: 53px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-header-details {
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.profile-header-row-1 {
+  display: flex;
+  align-items: center;
+}
+
+.price-with-edit-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.manage-post-links {
+  display: flex;
+}
+
+.all-post-available {
+  display: flex;
+}
+
+.available-post-button {
+  background-color: white;
+  border: none;
+  color: black;
+  width: 40px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.booking-icon {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.hide {
+  display: none;
+}
+
+.na-post-button:hover + .hide {
+  display: block;
+  color: rgb(185, 0, 0);
+}
+
+.available-post-button:hover + .hide {
+  display: block;
+  color: black;
+}
+
+
+.na-post-button {
+  background-color: white;
+  border: none;
+  color: rgb(185, 0, 0);
+  width: 40px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.manage-post-button {
+  background-color: white;
+  border: none;
+  color: black;
+  width: 40px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .caption-container {
+  display: flex;
+} */
+
+.all-post-username {
+  margin-right: 5px;
+}
+
+/* .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+} */
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+  position: relative;
+  z-index: 1001;
+}
+
+
+.profile-page-container {
+  /* max-width: 1106px; */
+  background-color: white;
+  /* height: 90%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 40px;
+}

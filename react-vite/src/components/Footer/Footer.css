@@ -1,0 +1,30 @@
+.footer {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: auto;
+  /* margin-bottom: 10px; */
+  padding: 10px 0px 10px 0px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.462);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #636060;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.footer-meta {
+  color: #636060;
+}
