@@ -6,13 +6,12 @@ const RemoveCommentModal = ({ comment, onClose, onConfirm }) => {
     <div id="modal">
       <div id="modal-background" onClick={onClose}></div>
       <div id="modal-content">
-        <h3 className="modal-title">Confirm Removal</h3>
+        <h3 className="modal-title" >Are you sure you want to remove this comment?</h3>
         <div className="modal-content">
-          <p>Are you sure you want to remove this comment?</p>
-          <p><strong>{comment.content}</strong></p>
-          <div className="form-group">
-            <button onClick={onConfirm}>Yes, Remove</button>
-            <button onClick={onClose} style={{ backgroundColor: 'gray', marginLeft: '10px' }}>Cancel</button>
+          <p className='delete-comment-content'>"{comment.content}"</p>
+          <div className="comment-form-group">
+            <button className='submit-delete-comment' onClick={onConfirm}>Yes, Remove</button>
+            <button className='cancel-delete-comment' onClick={onClose} style={{ backgroundColor: 'gray', marginLeft: '10px' }}>Cancel</button>
           </div>
         </div>
       </div>

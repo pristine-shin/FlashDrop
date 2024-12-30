@@ -1,0 +1,107 @@
+.comment-area {
+    width: 93%;
+    height: 80px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.comment-form-group {
+    display: flex;
+}
+
+#add-comment-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #add-comment-modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+
+  #add-comment-modal-content {
+    position: absolute;
+    background-color:white;
+    padding: 20px;
+    border-radius: 20px;
+    width: 30%;
+  }
+
+.modal-title {
+    text-align: center;
+}
+
+.submit-comment {
+    width: 30%;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    background-color: #c33263;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.cancel-comment {
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    width: 30%;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    background-color: rgb(168, 167, 167);
+    border: none;
+    border-radius: 4px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.delete-comment-content{
+    margin-bottom: 30px;
+    /* border: 1px black solid;
+    padding: 10px 30px 50px 10px; */
+}
+
+.submit-delete-comment {
+    width: 50%;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    background-color: #c33263;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.cancel-delete-comment {
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    width: 50%;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    background-color: rgb(168, 167, 167);
+    border: none;
+    border-radius: 4px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}

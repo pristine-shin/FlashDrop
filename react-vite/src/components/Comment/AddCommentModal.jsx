@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import '../../context/Modal.css';
+import './CommentModal.css';
 import { useDispatch } from 'react-redux';
 import {
   thunkAddAPostComment,
@@ -25,25 +26,27 @@ const AddCommentModal = ({ onClose, setCurrentComment, postId }) => {
   };
 
   return (
-    <div id="modal">
-      <div id="modal-background" onClick={onClose}></div>
-      <div id="modal-content">
-        {/* <h3 className="modal-title">Add a Comment</h3> */}
-        <div className="modal-content">
+    <div id="add-comment-modal">
+      <div id="add-comment-modal-background" onClick={onClose}></div>
+      <div id="add-comment-modal-content">
+        {/* <h3 className="add-comment-modal-title">Add a Comment</h3> */}
+        <div className="add-comment-modal-content">
           <textarea
             value={commentText}
             onChange={(e) => setCommentText(e.target.value)}
             placeholder="Write your comment here..."
-            style={{ width: '100%', height: '80px', padding: '10px' }}
+            className='comment-area'
           />
           {errors.comment && <p className="error-message">{errors.comment}</p>}
-          <div className="form-group">
-            <button onClick={handleSubmit}>Submit</button>
-            <button onClick={()=>{
+          <div className="comment-form-group">
+            <button className='submit-comment' onClick={handleSubmit}>Submit</button>
+            <button className='cancel-comment'
+            onClick={()=>{
               setErrors({})
               onClose()
-            }
-            } style={{ backgroundColor: 'gray', marginLeft: '10px' }}>Cancel</button>
+            }}
+            // style={{ backgroundColor: 'gray', marginLeft: '10px' }}
+            >Cancel</button>
           </div>
         </div>
       </div>

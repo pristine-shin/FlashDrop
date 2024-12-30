@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import '../../context/Modal.css';
+import './CommentModal.css';
 import { thunkEditComment } from '../../redux/comments';
 import { useDispatch } from 'react-redux';
 
@@ -34,12 +35,13 @@ const EditCommentModal = ({ comment, onClose, setCurrentComment}) => {
             value={commentText}
             onChange={(e) => setCommentText(e.target.value)}
             placeholder="Edit your comment..."
-            style={{ width: '100%', height: '80px', padding: '10px' }}
+            className='comment-area'
+            // style={{ width: '100%', height: '80px', padding: '10px' }}
           />
           {errors && <p className="error-message">{errors.comment}</p>}
-          <div className="form-group">
-            <button onClick={handleEdit}>Save</button>
-            <button onClick={onClose} style={{ backgroundColor: 'gray', marginLeft: '10px' }}>Cancel</button>
+          <div className="comment-form-group">
+            <button className='submit-delete-comment' onClick={handleEdit}>Save</button>
+            <button className='cancel-delete-comment' onClick={onClose} style={{ backgroundColor: 'gray', marginLeft: '10px' }}>Cancel</button>
           </div>
         </div>
       </div>
