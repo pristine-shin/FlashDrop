@@ -16,7 +16,18 @@ const ProfilePage = () => {
     const [user, setUser] = useState(null);
     const [error, setError] = useState("");
     const [showModal, setShowModal] = useState(false);
+    const [modalImage, setModalImage] = useState("");
     const [postIdToDelete, setPostIdToDelete] = useState(null);
+
+    const openModal = (imagePath) => {
+        setModalImage(imagePath);
+        setShowModal(true);
+    };
+
+    const closeModal = () => {
+        setShowModal(false);
+        setModalImage("");
+    };
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -82,10 +93,10 @@ const ProfilePage = () => {
     if (error) return <p>{error}</p>;
     if (!user) return (
         <Backdrop
-          sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
-          open
+            sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
+            open
         >
-          <CircularProgress color="inherit" />
+            <CircularProgress color="inherit" />
         </Backdrop>
     );
 
@@ -132,12 +143,14 @@ const ProfilePage = () => {
                                     </div>
                                     <p className="all-post-style">{post.style}</p>
                                     <p className="all-post-size">{post.size}</p>
-                                    {/* <p className="all-post-available">{post.available? (
-                                        <p>Available for booking</p>
-                                    ) : (
-                                        <p>Not avaialbe for booking. Message artist for a similar design.</p>
-                                    )}</p> */}
-                                    <p className="all-post-caption">{post.caption}</p>
+                                    <div className="caption-container">
+                                        <span className="all-post-size">
+                                            {user.username}
+                                        </span>
+                                        <span className="all-post-caption">
+                                            {post.caption}
+                                        </span>
+                                    </div>
                                     <p className="all-post-createdAt">{calculateDaysAgo(post.createdAt)} days ago</p>
                                 </div>
                             </div>

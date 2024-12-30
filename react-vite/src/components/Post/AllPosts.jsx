@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { thunkGetAllPosts, selectAllPostsArry } from "../../redux/posts";
 import { useDispatch, useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare, faTrash, faCalendarPlus, faCalendarXmark } from "@fortawesome/free-solid-svg-icons";
+
 import "./AllPosts.css";
 
 import Backdrop from '@mui/material/Backdrop';
@@ -58,11 +61,46 @@ function AllPosts() {
               <Link to={`/posts/${post.id}`} className="all-post-card-link">
                 <img src={post.imageUrl} alt="post image" className="all-post-image" />
                 <div className="all-post-info">
-                  <p className="all-post-price">${post.price}</p>
+                <div className="price-with-edit-button">
+                    <div className="all-post-price">${post.price}</div>
+                    <div className="manage-post-links">
+                      <div className="all-post-available">{post.available ? (
+                        <div className="booking-icon">
+                          <button
+                            className="available-post-button"
+                            style={{ cursor: "pointer" }}
+                            onClick={() => openModal("https://res.cloudinary.com/dmvfvyilq/image/upload/v1735340873/modern-coming-soon-loading-icon-600nw-2506897855_zdkeal.jpg")}
+                          >
+                            <FontAwesomeIcon icon={faCalendarPlus} />
+                          </button>
+                          <div className="hide">Book Now</div>
+                        </div>
+                      ) : (
+                        <div className="booking-icon">
+                          <button
+                            onClick={() => handleOpenModal(post.id)}
+                            className="na-post-button"
+                          >
+                            <FontAwesomeIcon icon={faCalendarXmark} />
+                          </button>
+                          <div className="hide">Unavailable</div>
+                        </div>
+
+                      )}</div>
+                    </div>
+                  </div>
+                  {/* <p className="all-post-price">${post.price}</p> */}
                   <p className="all-post-style">{post.style}</p>
                   <p className="all-post-size">{post.size}</p>
-                  <p className="all-post-available">{post.available}</p>
-                  <p className="all-post-caption">{post.caption}</p>
+                  {/* <p className="all-post-caption">{post.caption}</p> */}
+                  <div className="caption-container">
+                      <span className="all-post-username">
+                        {post.username}
+                      </span>
+                    <span className="all-post-caption">
+                      {post.caption}
+                    </span>
+                  </div>
                   <p className="all-post-createdAt">{calculateDaysAgo(post.createdAt)} days ago</p>
                 </div>
               </Link>

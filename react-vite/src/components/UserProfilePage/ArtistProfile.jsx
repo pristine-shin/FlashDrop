@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare, faTrash, faCalendarPlus, faCalendarXmark } from "@fortawesome/free-solid-svg-icons";
 // import "../Post/PostDetail.css";
 import "./UserProfile.css";
 
@@ -15,8 +15,19 @@ const ArtistProfile = () => {
   const { userId } = useParams();
   const [user, setUser] = useState(null);
   const [error, setError] = useState("");
-  // const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [modalImage, setModalImage] = useState("");
   // console.log(userId)
+
+  const openModal = (imagePath) => {
+    setModalImage(imagePath);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setModalImage("");
+  };
 
   useEffect(() => {
     fetch(`/api/users/${userId}`)
@@ -75,12 +86,21 @@ const ArtistProfile = () => {
     >
       <CircularProgress color="inherit" />
     </Backdrop>
-    // <h1>Loading profile...</h1>
   );
 
 
   return (
     <div className="profile-page-container">
+      {showModal && (
+        <div className="confirmation-modal-overlay" onClick={closeModal}>
+          <div
+            className="tbd-confirmation-modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img src={modalImage} alt="Modal Content" className="modal-image" />
+          </div>
+        </div>
+      )}
       <div className="all-post-row">
         <div className="profile-header">
           <div className="profile-header-row-1">
@@ -102,32 +122,44 @@ const ArtistProfile = () => {
                   <img src={post.imageUrl} alt="post image" className="all-post-image" />
                 </Link>
                 <div className="all-post-info">
-                  {/* <div className="price-with-edit-button"> */}
-                  <div className="all-post-price">${post.price}</div>
-                  {/* <div className="manage-post-links">
-                      <Link
-                        to={`/posts/edit/${post.id}`}
-                        className="manage-post-button"
-                      >
-                        <FontAwesomeIcon icon={faPenToSquare} />
-                      </Link>
-                      <button
-                        onClick={() => handleOpenModal(post.id)}
-                        className="manage-post-button"
-                      >
-                        <FontAwesomeIcon icon={faTrash} />
-                      </button>
-                    </div> */}
-                  {/* </div> */}
+                  <div className="price-with-edit-button">
+                    <div className="all-post-price">${post.price}</div>
+                    <div className="manage-post-links">
+                      <div className="all-post-available">{post.available ? (
+                        <div className="booking-icon">
+                          <button
+                            className="available-post-button"
+                            style={{ cursor: "pointer" }}
+                            onClick={() => openModal("https://res.cloudinary.com/dmvfvyilq/image/upload/v1735340873/modern-coming-soon-loading-icon-600nw-2506897855_zdkeal.jpg")}
+                          >
+                            <FontAwesomeIcon icon={faCalendarPlus} />
+                          </button>
+                          <div className="hide">Book Now</div>
+                        </div>
+                      ) : (
+                        <div className="booking-icon">
+                          <button
+                            onClick={() => handleOpenModal(post.id)}
+                            className="na-post-button"
+                          >
+                            <FontAwesomeIcon icon={faCalendarXmark} />
+                          </button>
+                          <div className="hide">Unavailable</div>
+                        </div>
+
+                      )}</div>
+                    </div>
+                  </div>
                   <p className="all-post-style">{post.style}</p>
                   <p className="all-post-size">{post.size}</p>
-                  {/* <p className="all-post-available">{post.available}</p> */}
-                  <p className="all-post-available">{post.available ? (
-                    <p>Available for booking</p>
-                  ) : (
-                    <p>Not avaialbe for booking. Message artist for a similar design.</p>
-                  )}</p>
-                  <p className="all-post-caption">{post.caption}</p>
+                  <div className="caption-container">
+                      <span className="all-post-size">
+                        {user.username}
+                      </span>
+                    <span className="all-post-caption">
+                      {post.caption}
+                    </span>
+                  </div>
                   <p className="all-post-createdAt">{calculateDaysAgo(post.createdAt)} days ago</p>
                 </div>
               </div>
