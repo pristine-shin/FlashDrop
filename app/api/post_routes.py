@@ -160,7 +160,8 @@ def create_post():
       return newPost.to_dict(), 201
 
     print("*********************TESTING Form validation failed:", form.errors)
-    return {"error": form.errors}, 400
+    if form.errors:
+      return form.errors, 400
 
   except Exception as e:
     print(f"*********************TESTING Unhandled error occurred: {str(e)}")

@@ -21,11 +21,11 @@ function AllPosts() {
   if (!allPosts) {
     return (
       <Backdrop
-      sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
-      open
-    >
-      <CircularProgress color="inherit" />
-    </Backdrop>
+        sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
+        open
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     )
   }
 
@@ -61,7 +61,7 @@ function AllPosts() {
               <Link to={`/posts/${post.id}`} className="all-post-card-link">
                 <img src={post.imageUrl} alt="post image" className="all-post-image" />
                 <div className="all-post-info">
-                <div className="price-with-edit-button">
+                  <div className="price-with-edit-button">
                     <div className="all-post-price">${post.price}</div>
                     <div className="manage-post-links">
                       <div className="all-post-available">{post.available ? (
@@ -94,9 +94,9 @@ function AllPosts() {
                   <p className="all-post-size">{post.size}</p>
                   {/* <p className="all-post-caption">{post.caption}</p> */}
                   <div className="caption-container">
-                      <span className="all-post-username">
-                        {post.username}
-                      </span>
+                    <span className="all-post-username">
+                      {post.username}
+                    </span>
                     <span className="all-post-caption">
                       {post.caption}
                     </span>
@@ -107,7 +107,13 @@ function AllPosts() {
             </div>
           ))
         ) : (
-          <p>No posts available.</p>
+          // <p>No posts available.</p>
+          <Backdrop
+            sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
+            open
+          >
+            <CircularProgress color="inherit" />
+          </Backdrop>
         )}
       </div>
     </div>
