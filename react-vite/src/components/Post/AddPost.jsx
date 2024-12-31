@@ -48,19 +48,27 @@ function AddPost() {
         console.log(`${pair[0]}: ${pair[1]}`);
       }
 
-      const serverResponse = await dispatch(thunkAddPost(formData));
+      try {
+        const serverResponse = await dispatch(
+          thunkAddPost(formData)
+        );
 
-      if (serverResponse) {
-        setErrors(serverResponse);
-      } else {
-        setShowConfirmModal(true);
-        setSize("");
-        setStyle("");
-        setAvailable(true);
-        setPrice("");
-        setCaption("");
-        setImageUrl(null);
+        if (serverResponse) {
+          setErrors(serverResponse);
+        } else {
+          setShowConfirmModal(true);
+          setSize("");
+          setStyle("");
+          setAvailable(true);
+          setPrice("");
+          setCaption("");
+          setImageUrl(null);
+        }
+      } catch (error) {
+        setErrors({server: error.message});
+        console.error("thunkAddPost not working:", error)
       }
+
     }
   };
 
