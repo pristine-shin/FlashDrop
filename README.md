@@ -46,7 +46,7 @@ https://flashdrop.onrender.com/
 
 ### Landing Page
 
-
+![ScreenRecording2025-01-13at10 11 41AM-ezgif com-optimize](https://github.com/user-attachments/assets/aaa59767-ea2f-4b5b-b2ba-b5a6d37aed0d)
 
 ### Posts Page
 
