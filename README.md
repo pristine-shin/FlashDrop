@@ -1,3 +1,71 @@
+# FlashDrop
+
+FlashDrop is a full-stack web application designed as a social media and booking platform exclusively for tattoo artists and clients. Inspired by platforms like Instagram and Depop, FlashDrop provides a space for artists to showcase their work, connect with clients, and manage their portfolio, without the rest of the noise and distraction the infinite scroll on other platforms. Clients can browse through posts, engage with artists, and explore tattoo inspirations all in one place.
+
+## Features
+### Current Features:
+* CRUD for Posts: Artists can create, read, update, and delete posts to showcase their tattoos or flash designs.
+
+* CRUD for Comments: Users can leave comments on posts, edit their thoughts, and delete them if needed.
+
+* Authentication: Secure user authentication with login, signup, and demo account access.
+
+### Planned Features:
+* Likes: Users will be able to like posts to show their appreciation for artists' work. Their likes will be saved in a "Favorites" page for easy access to their collection of liked posts.
+* Bookings: Clients will soon be able to book tattoo appointments directly through the platform.
+* Messaging: A direct messaging system will allow clients and artists to communicate seamlessly.
+
+
+## Live link
+https://flashdrop.onrender.com/
+
+## Tech Stack
+
+### Frameworks and Libraries
+<div style="display: flex; align-items: center; gap: 10px;">
+  <img src="https://img.shields.io/badge/-Python-3776ab?logo=python&logoColor=FFFF66&logoWidth=20" alt="Python" height="25">
+  <img src="https://img.shields.io/badge/-Flask-000000?logo=flask&logoColor=white&logoWidth=20" alt="Flask" height="25">
+  <img src="https://img.shields.io/badge/-Javascript-41454A?logo=javascript&logoColor=F7DF1E&logoWidth=20" alt="Javascript" height="25">
+  <img src="https://img.shields.io/badge/-React-263238?logo=react&logoColor=61DAFB&logoWidth=20" alt="React" height="25">
+  <img src="https://img.shields.io/badge/-Redux-764ABC?logo=redux&logoColor=white&logoWidth=20" alt="Redux" height="25">
+  <img src="https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white&logoWidth=20" alt="CSS3" height="25">
+  <img src="https://img.shields.io/badge/-HTML5-E34F26?logo=HTML5&logoColor=white&logoWidth=20" alt="HTML5" height="25">
+</div>
+
+### Database:
+
+<img src="https://img.shields.io/badge/-PostgreSQL-4169E1?logo=postgresql&logoColor=white&logoWidth=20" alt="PostgreSQL" height="25">
+
+### Hosting:
+
+<img src="https://img.shields.io/badge/-Render-23c43e?logo=render&logoColor=white&logoWidth=20" alt="Render" height="25">
+
+### Index
+
+[Feature List](https://github.com/pristine-shin/FlashDrop/wiki/Features) | [Database Schema](https://github.com/pristine-shin/FlashDrop/wiki/DB-Schema) | [User Stories](https://github.com/pristine-shin/FlashDrop/wiki/User-Stories)
+
+### Landing Page
+
+
+
+### Posts Page
+
+
+
+### Connect With Me:
+
+[<img align="left" alt="PristineShin | LinkedIn" width="22px" src="./readme-logos/linkedin-logo.png" style="margin: 5px;" />][pristine-linkedin]
+
+[pristine-linkedin]: https://www.linkedin.com/in/pristine-shin/
+
+[<img align="left" alt="ZechariahDominguez | Gmail" width="22px" src="./readme-logos/gmail.png" style="margin: 5px;" />][pristine-email]<br>
+
+[pristine-email]: mailto:shin.pristine@gmail.com
+
+
+
+<br></br>
+
 # Flask React Project
 
 This is the starter for the Flask React project.
