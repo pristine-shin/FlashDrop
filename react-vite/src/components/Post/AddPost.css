@@ -8,15 +8,16 @@
 
 .container-add-post {
   width: 40%;
-  min-width: fit-content;
-  height: 900px;
-  padding: 0px 50px 20px 50px;
+  /* min-width: fit-content; */
+  height: 80%;
+  padding: 0px 30px 20px 30px;
+  margin-bottom: 7px;
   font-family: Arial, Helvetica, sans-serif;
   color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 3%;
+  border-radius: 20px;
   background-color: rgba(234, 234, 234, 0.876);
 }
 
@@ -134,8 +135,8 @@
 }
 
 .upload {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   border: 1px #999 dashed;
   text-align: center;
   margin-bottom: 10px;

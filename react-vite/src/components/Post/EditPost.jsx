@@ -192,7 +192,7 @@ function EditPost() {
           <ConfirmationModal
             onClose={() => {
               setShowConfirmModal(false)
-              navigate(`/profile/${sessionUser.id}`);
+              navigate(`/profile/session`);
             }}
             message={"You have updated this post!"}
           />

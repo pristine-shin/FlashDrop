@@ -38,6 +38,10 @@
   display: flex;
 }
 
+.all-post-caption {
+  margin-left: 3px;
+}
+
 .available-post-button {
   background-color: white;
   border: none;
