@@ -15,16 +15,14 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 25px;
   margin-bottom: 10px;
 }
 
-.footer-links a {
+.footer-links a, .footer-meta {
   color: #636060;
   text-decoration: none;
   font-size: 0.8rem;
 }
 
-.footer-meta {
-  color: #636060;
-}
+
