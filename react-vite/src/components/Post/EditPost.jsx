@@ -20,6 +20,7 @@ function EditPost() {
   const [caption, setCaption] = useState("");
   const [available, setAvailable] = useState(true);
   const [imageUrl, setImageUrl] = useState(null);
+  const [previewImage, setPreviewImage] = useState(null);
   const [errors, setErrors] = useState({});
   const fileInputRef = useRef(null);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
@@ -47,8 +48,19 @@ function EditPost() {
   };
 
   const handleFileChange = (e) => {
-    setImageUrl(e.target.files[0]);
+    const file = e.target.files[0];
+    if (file) {
+      setImageUrl(file);
+      const previewURL = URL.createObjectURL(file);
+      setPreviewImage(previewURL);
+    }
   };
+
+  const handleClearFile = () => {
+    fileInputRef.current.value = '';
+    setImageUrl(null);
+    setPreviewImage(null);
+  }
 
   const handleCancel = () => {
     navigate(-1);
@@ -76,7 +88,8 @@ function EditPost() {
         if (serverResponse) {
           setErrors(serverResponse);
         } else {
-          setShowConfirmModal(true);
+          // setShowConfirmModal(true);
+          navigate(`/profile/session`);
         }
       } catch (error) {
         setErrors({ server: error.message });
@@ -105,17 +118,31 @@ function EditPost() {
               className="input imageurl"
               style={{ display: "none" }}
             />
-            <label className="label imageurl">
-              <div className="upload-button">Upload Post Image</div>
-              <p className="upload-notes">
-                <br></br>
-                1400 x 1400 pixels minimum <br></br>(bigger is better)
-              </p>
-              <p className="upload-notes">
-                <br></br>
-                .jpg, .gif, or .png, 10MB max
-              </p>
-            </label>
+            {previewImage ? (
+              <div>
+                <img
+                  src={previewImage}
+                  alt="Post Image Preview"
+                  style={{
+                    width: '243px', height: '220px',
+                    objectFit: 'cover', borderRadius: '10px'
+                  }}
+                />
+                <button type="button" className="button remove-image" onClick={handleClearFile}>Remove Image</button>
+              </div>
+            ) : (
+              <label className="label imageurl">
+                <div className="upload-button">Upload Post Image</div>
+                <p className="upload-notes">
+                  <br></br>
+                  1400 x 1400 pixels minimum <br></br>(bigger is better)
+                </p>
+                <p className="upload-notes">
+                  <br></br>
+                  .jpg, .gif, or .png, 10MB max
+                </p>
+              </label>
+            )}
           </div>
           {errors.imageUrl && <p className="error-message">{errors.imageUrl}</p>}
 
@@ -183,12 +210,12 @@ function EditPost() {
               className="button cancel"
               onClick={handleCancel}
             >
-              cancel
+              Cancel
             </button>
           </div>
           {/* </div> */}
         </form>
-        {showConfirmModal && (
+        {/* {showConfirmModal && (
           <ConfirmationModal
             onClose={() => {
               setShowConfirmModal(false)
@@ -196,7 +223,7 @@ function EditPost() {
             }}
             message={"You have updated this post!"}
           />
-        )}
+        )} */}
       </div>
     </div>
   );
