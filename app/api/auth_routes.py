@@ -70,9 +70,9 @@ def sign_up():
         db.session.add(user)
         db.session.commit()
 
-        new_likes = Like(userId=user.id)
+        # new_likes = Like(userId=user.id)
 
-        db.session.add(new_likes)
+        # db.session.add(new_likes)
         db.session.commit()
 
         login_user(user)
