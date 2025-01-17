@@ -120,6 +120,7 @@ li a {
 }
 #logout-button {
   border: none;
+  background: none;
   font-size: 15px;
 }
 ul li button:hover {

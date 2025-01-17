@@ -13,6 +13,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 const ProfilePage = () => {
     const dispatch = useDispatch();
+    const defaultProfileURL = "https://res.cloudinary.com/dmvfvyilq/image/upload/v1737061535/default-avatar-icon-of-social-media-user-vector_oz28zo.jpg";
     const [user, setUser] = useState(null);
     const [error, setError] = useState("");
     const [showModal, setShowModal] = useState(false);
@@ -106,7 +107,7 @@ const ProfilePage = () => {
             <div className="all-post-row">
                 <div className="profile-header">
                     <div className="profile-header-row-1">
-                        <img src={user.profileImageUrl} alt="profile pic" id="big-profile-pic" />
+                        <img src={user.profileImageUrl ? (user.profileImageUrl) : (defaultProfileURL)} alt="profile pic" id="big-profile-pic" />
                         <div className="profile-header-details">{user.posts.length} posts</div>
                         <div className="profile-header-details">121 followers</div>
                         <div className="profile-header-details">33 follows</div>
