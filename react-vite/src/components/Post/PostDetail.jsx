@@ -33,6 +33,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 const PostDetail = () => {
   const { postId } = useParams();
   const sessionUser = useSelector((state) => state.session.user);
+  const defaultProfileURL = "https://res.cloudinary.com/dmvfvyilq/image/upload/v1737061535/default-avatar-icon-of-social-media-user-vector_oz28zo.jpg";
   // const favorites = useSelector(state => selectFavoritesItem(state, postId))
   const [post, setPost] = useState(null);
   const [comments, setComments] = useState([]);
@@ -189,7 +190,7 @@ const PostDetail = () => {
               <p className="post-created-time">
                 {formatDate(post.createdAt)}
               </p>
-              
+
               {/* Comments Section */}
               <div className="comments-section">
                 <p className="comments-title">Comments</p>
@@ -199,7 +200,8 @@ const PostDetail = () => {
                       <div className="comment" key={index}>
                         <div className="comment-image">
                           <img
-                            src={comment.profileImageUrl}
+                            // src={comment.profileImageUrl}
+                            src={comment.profileImageUrl ? (comment.profileImageUrl) : (defaultProfileURL)}
                             alt={`${comment.username}'s profile pic`}
                             className="profile-image"
                           />
